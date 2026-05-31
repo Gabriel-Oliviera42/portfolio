@@ -1,185 +1,173 @@
 <!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<html lang="pt-BR">
 	<head>
-		<title>Gabriel Lourenço - Portfólio</title>
+		<title>Gabriel Lourenco - Portfolio Full-Stack</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Portfolio de Gabriel Lourenco de Oliveira, estudante de Ciencia da Computacao e desenvolvedor full-stack com projetos em web, IA, bancos de dados, jogos e ferramentas criativas." />
+		<meta name="theme-color" content="#1f2933" />
+		<meta property="og:title" content="Gabriel Lourenco - Portfolio Full-Stack" />
+		<meta property="og:description" content="Projetos, habilidades e experimentos de Gabriel Lourenco em desenvolvimento full-stack." />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="images/avatar.png" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-    /* Transforma o link em uma caixa padronizada e controla o espaço abaixo dela */
-    .work-item > a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 196px; 
-        background-color: #f4f6f8; 
-        border-radius: 8px;
-        overflow: hidden;
-        border: 1px solid #e5e5e5; 
-        margin-bottom: 15px !important; /* Define o espaço exato e elegante até o título */
-        text-decoration: none;
-    }
-
-    /* Ajusta a imagem e remove a margem invisível gigante original do template */
-    .work-item > a img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; 
-        margin-bottom: 0 !important; /* O PULO DO GATO: Remove o espaço estranho do template */
-        border-radius: 0;
-    }
-</style>
 	</head>
-	<body class="is-preload">
+	<body class="is-preload portfolio-shell">
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/avatar.png" alt="" /></a>
-					<h1><strong>Gabriel Lourenço de Oliveira</strong>, 
-						<br />Estudante de Ciência da Computação e Desenvolvedor Full-Stack</h1>
+		<header id="header">
+			<div class="inner profile-panel">
+				<div class="profile-visual">
+					<a href="#main" class="image avatar" id="profile-avatar-link">
+						<img id="profile-avatar" src="images/avatar.png" alt="Foto de Gabriel Lourenco" />
+					</a>
+					<span id="theme-icon" class="theme-icon icon solid fa-code" aria-hidden="true"></span>
 				</div>
-			</header>
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>Sobre Mim</h2>
-						</header>
-						<p>Sou um estudante de Ciência da Computação focado em resolver problemas reais com tecnologia. Tenho experiência robusta em Back-end (C#/.NET, Python, Node) e Front-end (React, JavaScript), com vivência prática que vai desde a arquitetura MVC até o deploy de servidores em ambiente de produção com tokens de autenticação. Atualmente, foco bastante no uso de Mongo Atlas e na criação de soluções escaláveis.</p>
-					</section>
-
-				<!-- Two -->
-					<section id="two">
-						<h2>Meus Projetos</h2>
-						
-						<h3>Destaques Acadêmicos</h3>
-						<p><strong>Sistema de Gestão Acadêmica (1º Lugar em Hackathon):</strong> Desenvolvimento de solução premiada focada na gestão de atividades de alunos. Utilização de Arquitetura MVC (Model-View-Controller) para estruturação do back-end, facilitando a manutenção e escalabilidade. Integração com Agentes de IA e persistência de dados em MongoDB. Atualmente em evolução para TCC visando implementação real na universidade.</p>
-						
-						<p><strong>Acessibilidade na Web (TCC / Iniciação Científica):</strong> Pesquisa e desenvolvimento de soluções focadas em acessibilidade (WCAG) para plataformas web, com o objetivo de promover a inclusão digital e aprimorar interfaces. Tecnologias/Conceitos: Análise de usabilidade, Front-end (HTML5, CSS3, JavaScript) e implementação de testes de conformidade. Resultados: Finalização da IC, gerando diretrizes práticas para o desenvolvimento de sistemas mais inclusivos.</p>
-						
-						<h3>Projetos Práticos</h3>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://deck-fill-mtg.vercel.app/" target="_blank"><img src="images/sites/Deck Fill MTG (Proxy).png" alt="Deck Fill MTG" class="image fit" /></a>
-								<h3>Deck Fill MTG (Proxy)</h3>
-								<p>Projeto pessoal full-stack consumindo API externa para criação de proxies personalizados de Magic: The Gathering. Construído com foco em performance e design, aprimorando funcionalidades de sites existentes da comunidade. (Nota: hospedado em servidor gratuito, pode levar alguns segundos para inicializar).</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://gabriel-oliviera42.github.io/Jornada-no-Front-end/" target="_blank"><img src="images/sites/Jornada no Front-end.png" alt="Jornada no Front-end" class="image fit" /></a>
-								<h3>Jornada no Front-end</h3>
-								<p>Projeto desenvolvido focado em aprimorar habilidades avançadas de UI/UX, estruturação semântica e estilização com CSS moderno, aplicando boas práticas de responsividade acompanhando as aulas do canal Cadaboost.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://gabriel-oliviera42.github.io/Projeto-Cadeboost-1/" target="_blank"><img src="images/sites/Projeto Cadeboost.png" alt="Projeto Cadeboost" class="image fit" /></a>
-								<h3>Projeto Cadeboost</h3>
-								<p>Aplicação Front-end baseada em tutoriais avançados, demonstrando domínio na criação de interfaces interativas e dinâmicas com tecnologias web modernas.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://gabriel-oliviera42.github.io/PROJETO-LANDING-PAGE-One-Bit-Code/" target="_blank"><img src="images/sites/Landing Page One Bit Code.png" alt="Landing Page One Bit Code" class="image fit" /></a>
-								<h3>Landing Page One Bit Code</h3>
-								<p>Projeto prático de estudos voltado para a estruturação de Landing Pages responsivas, com foco na apresentação de produtos, conversão e usabilidade em dispositivos móveis e desktops.</p>
-							</article>
-						</div>
-					</section>
-
-				<!-- Three -->
-					<section id="three">
-						<h2>Habilidades e Certificações</h2>
-						
-						<h3>Linguagens & Frameworks</h3>
-						<ul>
-							<li>C# (.NET / .NET Core), Python, Java, C++</li>
-							<li>Ecossistema Web: React, JavaScript, HTML5, CSS3 avançado</li>
-						</ul>
-						
-						<h3>Arquitetura, Fundamentos & Engenharia de Software</h3>
-						<ul>
-							<li>Programação Orientada a Objetos (POO) e Estruturas de Dados</li>
-							<li>Arquitetura MVC (Model-View-Controller) e desenvolvimento de APIs REST</li>
-							<li>Autenticação e Segurança (Sistemas baseados em Tokens/JWT)</li>
-							<li>Acessibilidade Web (Padrões WCAG) e UI/UX</li>
-							<li>Metodologias Ágeis (Scrum/Kanban)</li>
-						</ul>
-						
-						<h3>Banco de Dados & Infraestrutura</h3>
-						<ul>
-							<li>Bancos Relacionais: SQL Server, MySQL, PostgreSQL</li>
-							<li>Bancos NoSQL: MongoDB (Atlas), Neo4j</li>
-							<li>Infra: Deploy e configuração de Servidores, ambientes Linux, integração com Agentes de IA</li>
-						</ul>
-						
-						<h3>Ferramentas de Desenvolvimento</h3>
-						<ul>
-							<li>Git e GitHub (Controle de versão e colaboração)</li>
-							<li>VS Code, Visual Studio</li>
-						</ul>
-						
-						<h3>Principais Certificações Complementares</h3>
-						<ul>
-							<li>Desenvolvimento Front-end (200h)</li>
-							<li>Bancos de Dados Relacionais - MySQL (120h)</li>
-							<li>Lógica e Programação em Python (100h+)</li>
-							<li>Versionamento de Código - GitHub (100h)</li>
-							<li>JavaScript Moderno (60h)</li>
-						</ul>
-					</section>
-
-				<!-- Four -->
-					<section id="four">
-						<h2>Contato</h2>
-						<p>Entre em contato para discutir oportunidades de trabalho ou projetos colaborativos.</p>
-						<div class="row">
-							<div class="col-12">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Localização</span></h3>
-										Areado - Minas Gerais<br />
-										Brasil
-									</li>
-									<li>
-										<h3 class="icon solid fa-mobile-alt"><span class="label">Telefone</span></h3>
-										35 998458853
-									</li>
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">E-mail</span></h3>
-										<a href="mailto:gabriellourenco343@gmail.com">gabriellourenco343@gmail.com</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-
+				<div class="profile-copy">
+					<p id="profile-label" class="eyebrow">Desenvolvedor full-stack</p>
+					<h1><strong>Gabriel Lourenco de Oliveira</strong><span>Ciencia da Computacao, web, dados e ideias que viram projeto.</span></h1>
+					<p id="theme-caption" class="theme-caption">Projetos, estudos e ferramentas organizados por tema, linguagem e contexto.</p>
+				</div>
+				<p class="profile-status"><span aria-hidden="true"></span>Aberto a projetos, estagio e pesquisa</p>
+				<ul class="profile-facts">
+					<li><span class="icon solid fa-map-marker-alt" aria-hidden="true"></span><span>Areado, MG</span></li>
+					<li><span class="icon solid fa-graduation-cap" aria-hidden="true"></span><span>Ciencia da Computacao</span></li>
+					<li><span class="icon solid fa-layer-group" aria-hidden="true"></span><span>Full-stack</span></li>
+				</ul>
+				<ul class="icons profile-icons">
+					<li><a href="https://github.com/gabriel-oliviera42" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://www.linkedin.com/in/gabriel-lourenco-ab7893273" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					<li><a href="mailto:gabriellourenco343@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
 			</div>
+		</header>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://github.com/gabriel-oliviera42" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="mailto:gabriellourenco343@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Gabriel Lourenço</li>
-					</ul>
+		<main id="main">
+			<section id="one" class="intro-section">
+				<header class="major">
+					<p class="eyebrow">Portfolio</p>
+					<h2>Construo solucoes praticas com tecnologia, pesquisa e criatividade.</h2>
+				</header>
+				<p>Sou estudante de Ciencia da Computacao, com foco em desenvolvimento full-stack e resolucao de problemas reais. Tenho experiencia com C#/.NET, Python, Node, React, JavaScript, bancos relacionais e MongoDB Atlas, alem de pesquisa em acessibilidade web e projetos com integracao de IA.</p>
+				<ul class="actions">
+					<li><a href="#projects" class="button primary">Ver projetos</a></li>
+					<li><a href="#contact" class="button">Contato</a></li>
+				</ul>
+			</section>
+
+			<section id="highlights" class="highlight-section">
+				<h2>Destaques academicos</h2>
+				<div class="spotlight-grid">
+					<article class="spotlight-item">
+						<h3>Sistema de Gestao Academica</h3>
+						<p class="project-meta">1o lugar em hackathon | MVC | MongoDB | IA</p>
+						<p>Solucao premiada para gestao de atividades de alunos, com arquitetura MVC, persistencia em MongoDB e integracao com agentes de IA. O projeto segue em evolucao como base para TCC e possivel implementacao real na universidade.</p>
+					</article>
+					<article class="spotlight-item">
+						<h3>Acessibilidade na Web</h3>
+						<p class="project-meta">Iniciacao Cientifica | WCAG | Usabilidade</p>
+						<p>Pesquisa e desenvolvimento de diretrizes praticas para interfaces mais inclusivas, cobrindo testes de conformidade, analise de usabilidade e boas praticas de HTML, CSS e JavaScript acessiveis.</p>
+					</article>
 				</div>
-			</footer>
+			</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<section id="projects" class="projects-section">
+				<div class="section-heading">
+					<div>
+						<p class="eyebrow">Projetos</p>
+						<h2>Biblioteca de projetos</h2>
+					</div>
+					<p id="project-count" class="project-count">Carregando projetos...</p>
+				</div>
 
+				<div class="project-toolbar" aria-label="Filtros de projetos">
+					<label class="search-field" for="project-search">
+						<span class="icon solid fa-search" aria-hidden="true"></span>
+						<input id="project-search" type="search" placeholder="Buscar por nome, tecnologia ou tema" autocomplete="off" />
+					</label>
+
+					<div class="filter-fields">
+						<label class="select-field" for="language-filter">
+							<span>Linguagem</span>
+							<select id="language-filter"></select>
+						</label>
+						<div class="multi-field">
+							<span>Tema</span>
+							<div id="theme-filter" class="theme-options" aria-label="Temas"></div>
+						</div>
+						<label class="select-field" for="tag-filter">
+							<span>Tag</span>
+							<select id="tag-filter"></select>
+						</label>
+						<label class="select-field" for="status-filter">
+							<span>Status</span>
+							<select id="status-filter"></select>
+						</label>
+					</div>
+
+				</div>
+
+				<div id="active-themes" class="active-themes" aria-live="polite"></div>
+				<div id="project-grid" class="project-grid" aria-live="polite"></div>
+				<p id="empty-state" class="empty-state" hidden>Nenhum projeto encontrado com esses filtros.</p>
+			</section>
+
+			<section id="skills" class="skills-section">
+				<h2>Habilidades</h2>
+				<div class="skills-grid">
+					<article>
+						<h3>Linguagens & Frameworks</h3>
+						<p>C#/.NET, Python, Java, C++, React, JavaScript, HTML5 e CSS3.</p>
+					</article>
+					<article>
+						<h3>Arquitetura & Software</h3>
+						<p>POO, estruturas de dados, MVC, APIs REST, JWT, acessibilidade WCAG, UI/UX e metodos ageis.</p>
+					</article>
+					<article>
+						<h3>Dados & Infraestrutura</h3>
+						<p>SQL Server, MySQL, PostgreSQL, MongoDB Atlas, Neo4j, Linux, deploy e integracao com IA.</p>
+					</article>
+					<article>
+						<h3>Ferramentas</h3>
+						<p>Git, GitHub, VS Code, Visual Studio e organizacao de projetos para publicacao.</p>
+					</article>
+				</div>
+			</section>
+
+			<section id="contact">
+				<h2>Contato</h2>
+				<p>Entre em contato para oportunidades de trabalho, estagio, pesquisa ou projetos colaborativos.</p>
+				<ul class="labeled-icons">
+					<li>
+						<h3 class="icon solid fa-home"><span class="label">Localizacao</span></h3>
+						Areado - Minas Gerais<br />
+						Brasil
+					</li>
+					<li>
+						<h3 class="icon solid fa-mobile-alt"><span class="label">Telefone</span></h3>
+						<a href="tel:+5535998458853">+55 35 99845-8853</a>
+					</li>
+					<li>
+						<h3 class="icon solid fa-envelope"><span class="label">E-mail</span></h3>
+						<a href="mailto:gabriellourenco343@gmail.com">gabriellourenco343@gmail.com</a>
+					</li>
+					<li>
+						<h3 class="icon brands fa-github"><span class="label">GitHub</span></h3>
+						<a href="https://github.com/gabriel-oliviera42" target="_blank" rel="noopener noreferrer">github.com/gabriel-oliviera42</a>
+					</li>
+					<li>
+						<h3 class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></h3>
+						<a href="https://www.linkedin.com/in/gabriel-lourenco-ab7893273" target="_blank" rel="noopener noreferrer">linkedin.com/in/gabriel-lourenco-ab7893273</a>
+					</li>
+				</ul>
+			</section>
+		</main>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/projects-data.js"></script>
+		<script src="assets/js/projects.js"></script>
 	</body>
 </html>

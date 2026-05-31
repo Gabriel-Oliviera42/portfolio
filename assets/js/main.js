@@ -9,12 +9,10 @@
 	var $window = $(window),
 		$body = $('body'),
 		$header = $('#header'),
-		$footer = $('#footer'),
-		$main = $('#main'),
 		settings = {
 
 			// Parallax background effect?
-				parallax: true,
+				parallax: false,
 
 			// Parallax factor (lower = more intense, higher = less intense).
 				parallaxFactor: 20
@@ -50,15 +48,6 @@
 
 		}
 
-	// Footer.
-		breakpoints.on('<=medium', function() {
-			$footer.insertAfter($main);
-		});
-
-		breakpoints.on('>medium', function() {
-			$footer.appendTo($header);
-		});
-
 	// Header.
 
 		// Parallax background.
@@ -92,26 +81,5 @@
 				});
 
 			}
-
-	// Main Sections: Two.
-
-		// Lightbox gallery.
-			$window.on('load', function() {
-
-				$('#two').poptrox({
-					caption: function($a) { return $a.next('h3').text(); },
-					overlayColor: '#2c2c2c',
-					overlayOpacity: 0.85,
-					popupCloserText: '',
-					popupLoaderText: '',
-					selector: '.work-item a.image',
-					usePopupCaption: true,
-					usePopupDefaultStyling: false,
-					usePopupEasyClose: false,
-					usePopupNav: true,
-					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
-				});
-
-			});
 
 })(jQuery);

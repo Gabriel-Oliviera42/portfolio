@@ -1,33 +1,73 @@
-Strata by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Portfolio - Gabriel Lourenco
+============================
 
+Site estatico para apresentar projetos, habilidades e contatos.
 
-A simple, minimalist template that actually began life as an unused redesign of my
-personal site. Includes a (configurable) parallax background effect, Poptrox-powered
-lightbox gallery, a bunch of pre-styled elements, and Sass sources for the Sass-inclined.
+Estrutura principal
+-------------------
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+- index.html: estrutura da pagina.
+- assets/css/main.css: estilos do template e customizacoes do portfolio.
+- assets/js/projects-data.js: lista de projetos, tags, linguagens e temas.
+- assets/js/projects.js: busca, filtros, ordenacao e avatar tematico.
+- projects: paginas individuais de detalhes dos projetos.
+- images/sites: imagens dos projetos.
 
-(* = Not included)
+Como adicionar um projeto
+-------------------------
 
-Feedback, bug reports, and comments are not only welcome, but strongly encouraged :)
+Abra assets/js/projects-data.js e adicione um novo item em window.PORTFOLIO_PROJECTS:
 
-AJ
-aj@lkn.io | @ajlkn
+{
+	title: "Nome do projeto",
+	slug: "nome-do-projeto",
+	description: "Descricao curta do que o projeto faz.",
+	image: "images/sites/imagem.png",
+	detailUrl: "projects/nome-do-projeto.html",
+	demoUrl: "https://link-do-projeto.com",
+	codeUrl: "https://github.com/usuario/repositorio",
+	status: "Publicado",
+	special: false,
+	languages: ["JavaScript", "React"],
+	tags: ["frontend", "jogos"],
+	themes: ["jogos"],
+	featuredNote: ""
+}
 
-PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
+Tags e filtros
+--------------
 
+Os filtros de linguagem, tema, tag e status aparecem automaticamente com base nos projetos cadastrados.
+Para destacar um projeto, use special: true. Ele aparece antes dos outros e recebe uma estrela.
+Para guardar uma ideia sem mostrar no site, use draft: true.
 
-Credits:
+Avatares tematicos
+------------------
 
-	Demo Images:
-		Unsplash (unsplash.com)
+O espaco para trocar a foto por tema ja existe em window.PORTFOLIO_THEME_PROFILES.
+Cada tema pode controlar imagem, rotulo, texto, icone e cores do painel esquerdo:
 
-	Icons:
-		Font Awesome (fontawesome.io)
+rpg: {
+	label: "RPG",
+	caption: "Texto do tema RPG",
+	image: "images/avatar.png",
+	iconClass: "icon solid fa-dice-d20",
+	accent: "#c084fc",
+	panelStart: "rgba(40, 24, 69, 0.82)",
+	panelEnd: "rgba(19, 18, 35, 0.95)"
+}
 
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+Combinacoes tambem podem existir, por exemplo "ensino+rpg", "ensino+jogos", "rpg+jogos" ou "ensino+rpg+jogos". O filtro de temas permite marcar mais de um tema; quando existir uma combinacao cadastrada, o painel esquerdo usa esse perfil visual.
+Os temas principais atuais sao ensino, rpg e jogos. Tags como "ia" ainda podem continuar como tag de busca quando o projeto realmente usar inteligencia artificial.
+Por enquanto todos os perfis visuais usam images/avatar.png. Quando quiser voltar com imagens tematicas, basta trocar o campo image de cada perfil.
+
+Paginas de detalhes
+-------------------
+
+O card inteiro abre a pagina definida em detailUrl. O botao "Ver projeto" aparece apenas quando demoUrl existe.
+Cada arquivo dentro de projects pode ter um layout diferente, entao projetos especiais podem receber textos, imagens, sessoes e organizacao proprios.
+
+Publicacao
+----------
+
+O projeto pode ser publicado no GitHub Pages, Vercel, Netlify ou qualquer hospedagem de arquivos estaticos.
