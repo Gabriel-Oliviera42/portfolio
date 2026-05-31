@@ -1,0 +1,29 @@
+# Arquivos internos do processo de criacao
+PADRAO_PAGINAS_DE_PROJETO.md
+.codex-edge-profile/
+preview-*.png
+preview-*.jpg
+preview-*.jpeg
+
+# Sistema operacional
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor e ambiente local
+.vscode/
+.idea/
+*.code-workspace
+
+# Dependencias e builds, caso o projeto ganhe ferramentas depois
+node_modules/
+dist/
+build/
+
+# Variaveis e logs locais
+.env
+.env.*
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
