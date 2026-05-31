@@ -21,51 +21,6 @@ A proposta do site é funcionar como uma vitrine organizada do meu processo como
 
 O projeto é estático, então pode ser publicado em GitHub Pages, Vercel, Netlify ou qualquer hospedagem simples de arquivos.
 
-## Estrutura
-
-```text
-.
-+-- assets/
-|   +-- css/
-|   +-- js/
-|   +-- videos/
-+-- images/
-|   +-- sites/
-|   +-- themes/
-+-- projects/
-+-- index.html
-+-- README.md
-```
-
-## Como os projetos são cadastrados
-
-A lista de projetos fica em:
-
-```text
-assets/js/projects-data.js
-```
-
-Cada projeto pode ter título, descrição, imagem, tecnologias, temas, tags, links e página própria de detalhes.
-
-Exemplo resumido:
-
-```js
-{
-	title: "Nome do projeto",
-	slug: "nome-do-projeto",
-	description: "Descrição curta do projeto.",
-	image: "images/sites/imagem.png",
-	detailUrl: "projects/nome-do-projeto.html",
-	demoUrl: "https://link-do-projeto.com",
-	codeUrl: "https://github.com/usuario/repositorio",
-	status: "Publicado",
-	special: false,
-	languages: ["HTML", "CSS", "JavaScript"],
-	tags: ["frontend", "estudo"],
-	themes: ["ensino"]
-}
-```
-
 ## Páginas de detalhes
 
 Cada projeto pode ter uma página própria dentro de `projects/`.
