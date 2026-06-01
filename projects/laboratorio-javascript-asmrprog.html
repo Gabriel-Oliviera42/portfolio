@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+	<head>
+		<title>Laboratório JavaScript com AsmrProg - Gabriel Lourenço</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Coleção de estudos guiados em JavaScript feitos por Gabriel Lourenço a partir de tutoriais do canal AsmrProg, reunindo jogos, interface animada, gerador de senhas e gráficos." />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="project-detail-page project-asmrprog-page">
+		<main id="main">
+			<nav class="detail-nav">
+				<a href="../index.html#projects" class="button small">Voltar para projetos</a>
+			</nav>
+
+			<header class="detail-hero">
+				<div>
+					<p class="eyebrow">Estudos guiados | JavaScript</p>
+					<h1>Laboratório JavaScript com AsmrProg</h1>
+					<p class="detail-summary">Essa página reúne alguns dos projetos que eu fiz em uma fase bem inicial dos meus estudos, quando eu ainda estava aprendendo acompanhando vídeos, pausando, copiando, errando e tentando entender o que cada parte do código fazia.</p>
+					<div class="detail-actions">
+						<div class="detail-primary-actions">
+							<a href="#mini-projetos" class="button primary">Ver mini projetos</a>
+							<a href="https://www.youtube.com/@asmrprog" target="_blank" rel="noopener noreferrer" class="button">Canal AsmrProg</a>
+						</div>
+						<div class="detail-social-actions" aria-label="Links pessoais">
+							<a href="https://github.com/gabriel-oliviera42" target="_blank" rel="noopener noreferrer" class="button icon-only" title="GitHub"><span class="icon brands fa-github" aria-hidden="true"></span><span class="label">GitHub</span></a>
+							<a href="https://www.linkedin.com/in/gabriel-lourenco-ab7893273" target="_blank" rel="noopener noreferrer" class="button icon-only" title="LinkedIn"><span class="icon brands fa-linkedin-in" aria-hidden="true"></span><span class="label">LinkedIn</span></a>
+							<a href="mailto:gabriellourenco343@gmail.com" class="button icon-only" title="E-mail"><span class="icon solid fa-envelope" aria-hidden="true"></span><span class="label">E-mail</span></a>
+						</div>
+					</div>
+				</div>
+				<figure class="detail-media lab-collage-media">
+					<img src="../images/sites/Laboratorio JavaScript AsmrProg.png" alt="Colagem visual com os cinco estudos em JavaScript convergindo para o centro" />
+				</figure>
+			</header>
+
+			<div class="detail-layout detail-layout-wide">
+				<div>
+					<section class="detail-section detail-lead">
+						<h2>Por que juntei esses projetos</h2>
+						<p>Eu fiz esses projetos em uma época em que estudar programação ainda era muito mais sobre seguir junto com alguém do que criar uma solução sozinho. Eu via os vídeos do canal AsmrProg, abria o editor, tentava reproduzir o que estava na tela e ia descobrindo aos poucos onde eu errava.</p>
+						<p>Na época eu publiquei alguns deles no LinkedIn como parte de um desafio de 7 projetos em 7 dias. Olhando hoje, eu vejo que os posts eram simples e até um pouco empolgados demais, mas eles mostram bem a fase em que eu estava: eu queria praticar, colocar alguma coisa no ar e sentir que estava evoluindo.</p>
+						<p>Por isso, em vez de deixar cada mini projeto perdido como se fosse uma entrega isolada, eu preferi transformar tudo em um laboratório. O valor aqui não está em dizer que eu criei tudo do zero, porque não foi isso. O valor está em mostrar uma fase real do meu aprendizado, quando eu ainda estava construindo repertório copiando com atenção, testando e tentando entender.</p>
+						<p class="lab-reflection-note">Hoje eu consigo olhar para esse conjunto com mais maturidade: ele não representa meu nível atual, mas representa uma parte importante do caminho que me trouxe até aqui.</p>
+					</section>
+
+					<section id="mini-projetos" class="detail-section">
+						<h2>Os mini projetos</h2>
+						<p>Agora a ideia é tratar cada estudo como uma peça do meu aprendizado. Eles nasceram de tutoriais, mas cada um me colocou diante de um tipo diferente de problema: movimento, interface, regra, formulário, dado visual e organização de estado.</p>
+
+						<div class="lab-project-stack">
+							<article class="lab-study-card">
+								<div class="lab-study-media">
+									<video autoplay muted loop playsinline preload="metadata" aria-label="Demonstração do jogo de xadrez">
+										<source src="../assets/videos/projects/asmrprog-chess.mp4" type="video/mp4" />
+										Seu navegador não conseguiu carregar o vídeo do jogo de xadrez.
+									</video>
+								</div>
+								<div class="lab-study-content">
+									<p class="lab-study-kicker">Projeto #5 | Tabuleiro e regras</p>
+									<h3>Jogo de Xadrez</h3>
+									<p>O xadrez foi o projeto mais pesado dessa coleção, principalmente porque ele carrega regras demais para quem ainda estava começando. Eu usei muito código guiado e bibliotecas prontas, como chess.js e chessboard.js, então faço questão de não vender esse estudo como algo autoral. O mérito dele, para mim, foi outro: entrar em contato com uma estrutura mais complexa do que uma tela comum.</p>
+									<p>Mesmo sem dominar tudo, eu pude observar como um tabuleiro precisa representar posição, peça, movimento, escolha do usuário e histórico de jogadas. E já deixo registrado: não repara muito nas minhas jogadas no vídeo. A parte importante aqui era ver as peças se mexendo e entender como a interface conversava com as regras do jogo.</p>
+									<div class="lab-study-layout">
+										<div>
+											<p>Hoje eu separaria melhor a lógica da interface e documentaria com mais cuidado o que veio de biblioteca e o que estava sendo montado no projeto. Na época, terminar e ver as peças se movendo já era uma vitória. Esse estudo fica aqui justamente por isso: ele mostra uma fase de coragem meio desorganizada, mas importante para aprender.</p>
+											<a href="https://gabriel-oliviera42.github.io/Jogo-de-xadrez/" target="_blank" rel="noopener noreferrer" class="button small lab-project-button">Abrir projeto</a>
+										</div>
+										<div class="lab-study-notes">
+											<h4>O que esse estudo treinou</h4>
+											<ul>
+												<li>HTML, CSS, JavaScript, jQuery, chess.js e chessboard.js.</li>
+												<li>Representação de tabuleiro.</li>
+												<li>Estado de peças e movimentos.</li>
+												<li>Interface baseada em regras.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</article>
+
+							<article class="lab-study-card">
+								<div class="lab-study-media">
+									<video autoplay muted loop playsinline preload="metadata" aria-label="Demonstração do jogo da cobrinha">
+										<source src="../assets/videos/projects/asmrprog-snake.mp4" type="video/mp4" />
+										Seu navegador não conseguiu carregar o vídeo do jogo da cobrinha.
+									</video>
+								</div>
+								<div class="lab-study-content">
+									<p class="lab-study-kicker">Projeto #3 | Lógica de jogo</p>
+									<h3>Jogo da Cobrinha</h3>
+									<p>Esse foi o estudo que mais me deu sensação de estar programando algo vivo. Mesmo visualmente simples, a cobrinha dependia de uma lógica que eu ainda não dominava bem: posição, direção, colisão, pontuação e atualização constante da tela.</p>
+									<p>Na época, eu não pensava em arquitetura nem em separar responsabilidades. Eu queria entender por que o quadrado se movia, por que ele crescia, por que bater na parede encerrava o jogo e como o teclado mudava o comportamento. Era HTML, CSS e JavaScript direto no navegador, com aquele tipo de retorno imediato que ajuda muito quando a gente está começando.</p>
+									<div class="lab-study-layout">
+										<div>
+											<p>Hoje eu vejo esse projeto como uma porta de entrada para lógica de jogos. Ele me mostrou que uma interface pode ser simples e ainda assim exigir raciocínio. O placar, o movimento em loop e as colisões me obrigaram a olhar para estado de um jeito que uma landing page comum não exigiria.</p>
+											<a href="https://gabriel-oliviera42.github.io/Projeto-Jogo-da-cobrinha/" target="_blank" rel="noopener noreferrer" class="button small lab-project-button">Abrir projeto</a>
+										</div>
+										<div class="lab-study-notes">
+											<h4>O que esse estudo treinou</h4>
+											<ul>
+												<li>HTML, CSS, JavaScript e Font Awesome.</li>
+												<li>Controle por teclado.</li>
+												<li>Atualização contínua de tela.</li>
+												<li>Colisão e pontuação.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</article>
+
+							<article class="lab-study-card">
+								<div class="lab-study-media">
+									<video autoplay muted loop playsinline preload="metadata" aria-label="Demonstração da tela de login animada">
+										<source src="../assets/videos/projects/asmrprog-login.mp4" type="video/mp4" />
+										Seu navegador não conseguiu carregar o vídeo da tela de login.
+									</video>
+								</div>
+								<div class="lab-study-content">
+									<p class="lab-study-kicker">Projeto #4 | Interface e movimento</p>
+									<h3>Tela de Login Animada</h3>
+									<p>A tela de login foi diferente da cobrinha porque o foco não era vencer, pontuar ou calcular movimento. O foco era sensação. Eu estava vendo uma interface mudar de estado, usar transição, alternar entre cadastro e entrada e parecer mais próxima de uma tela real.</p>
+									<p>Esse projeto me fez perceber que CSS não é só cor e tamanho. Pequenos movimentos mudam a forma como uma página é percebida. Na época eu acompanhava o tutorial tentando deixar tudo igual, mas hoje eu consigo enxergar que ali eu estava praticando hierarquia visual, posicionamento, contraste, formulário e microinteração. Foi também um daqueles projetos em que os ícones ajudavam a tela a parecer mais completa.</p>
+									<div class="lab-study-layout">
+										<div>
+											<p>O que mais ficou desse estudo foi a noção de que front-end também tem ritmo. Uma transição ruim chama atenção pelo motivo errado; uma transição bem encaixada faz a tela parecer mais natural. Ainda era um projeto guiado, mas já me aproximava do cuidado visual que eu tentaria desenvolver depois.</p>
+											<a href="https://gabriel-oliviera42.github.io/Projeto-tela-de-login-animada/" target="_blank" rel="noopener noreferrer" class="button small lab-project-button">Abrir projeto</a>
+										</div>
+										<div class="lab-study-notes">
+											<h4>O que esse estudo treinou</h4>
+											<ul>
+												<li>HTML, CSS, JavaScript e Font Awesome.</li>
+												<li>Transições e estados visuais.</li>
+												<li>Formulários e botões.</li>
+												<li>Composição de tela centralizada.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</article>
+
+							<article class="lab-study-card">
+								<div class="lab-study-media">
+									<video autoplay muted loop playsinline preload="metadata" aria-label="Demonstração do gerador de senhas">
+										<source src="../assets/videos/projects/asmrprog-password.mp4" type="video/mp4" />
+										Seu navegador não conseguiu carregar o vídeo do gerador de senhas.
+									</video>
+								</div>
+								<div class="lab-study-content">
+									<p class="lab-study-kicker">Projeto #7 | Regras e entrada de dados</p>
+									<h3>Gerador de Senhas</h3>
+									<p>O gerador de senhas foi um estudo pequeno, mas com uma característica importante: ele não era só visual. Ele recebia escolhas do usuário e precisava montar um resultado a partir dessas regras. Tamanho da senha, tipos de caracteres e opções marcadas mudavam o que o JavaScript precisava fazer.</p>
+									<p>Na época eu ainda não tinha uma visão madura de segurança, então eu não olhava para esse projeto como uma ferramenta robusta de verdade. Mesmo assim, ele foi útil para entender como uma interface pode controlar uma lógica por trás. O formulário deixa de ser só campo na tela e passa a ser entrada para um algoritmo, com ícone, slider e opções mudando o resultado final.</p>
+									<div class="lab-study-layout">
+										<div>
+											<p>Hoje eu melhoraria validações, mensagens, acessibilidade e talvez explicaria melhor o que torna uma senha forte. Mas como estudo inicial ele cumpriu bem o papel: me obrigou a combinar checkbox, slider, botão, texto gerado e uma regra clara de saída.</p>
+											<a href="https://gabriel-oliviera42.github.io/Gerador-de-senha/" target="_blank" rel="noopener noreferrer" class="button small lab-project-button">Abrir projeto</a>
+										</div>
+										<div class="lab-study-notes">
+											<h4>O que esse estudo treinou</h4>
+											<ul>
+												<li>HTML, CSS, JavaScript e Material Symbols.</li>
+												<li>Leitura de inputs e checkboxes.</li>
+												<li>Construção de strings aleatórias.</li>
+												<li>Opções configuráveis pelo usuário.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</article>
+
+							<article class="lab-study-card">
+								<div class="lab-study-media">
+									<video autoplay muted loop playsinline preload="metadata" aria-label="Demonstração do gerador de gráficos">
+										<source src="../assets/videos/projects/asmrprog-charts.mp4" type="video/mp4" />
+										Seu navegador não conseguiu carregar o vídeo do gerador de gráficos.
+									</video>
+								</div>
+								<div class="lab-study-content">
+									<p class="lab-study-kicker">Projeto #4 | Dados na tela</p>
+									<h3>Gerador de Gráficos Simples</h3>
+									<p>O gerador de gráficos me marcou porque mudava o tipo de raciocínio. Em vez de animar uma tela ou controlar um jogo, eu precisava transformar dados digitados em uma visualização. Isso me fez olhar para o front-end como uma ponte entre informação e entendimento.</p>
+									<p>Na prática, o projeto era simples: campos, botão, tipo de gráfico e uma área visual renderizada com Chart.js. Mas ele me apresentou uma ideia muito importante: quando a interface lida com dados, o usuário precisa confiar no que está vendo. Rótulo, valor, escala e organização importam mais do que parecia para mim naquele momento.</p>
+									<div class="lab-study-layout">
+										<div>
+											<p>Hoje eu vejo esse estudo como uma semente para dashboards, relatórios e telas analíticas. Ele ainda não tem a maturidade de uma ferramenta real, mas foi um passo interessante para entender que programação também serve para tornar informação mais legível.</p>
+											<a href="https://gabriel-oliviera42.github.io/Criador-de-Tabelas/" target="_blank" rel="noopener noreferrer" class="button small lab-project-button">Abrir projeto</a>
+										</div>
+										<div class="lab-study-notes">
+											<h4>O que esse estudo treinou</h4>
+											<ul>
+												<li>HTML, CSS, JavaScript e Chart.js.</li>
+												<li>Entrada de dados pelo usuário.</li>
+												<li>Atualização visual de gráfico.</li>
+												<li>Relação entre dado e representação.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</article>
+
+						</div>
+					</section>
+
+					<section class="detail-section">
+						<h2>Conclusão</h2>
+						<p>Eu não colocaria esses projetos no portfólio para tentar parecer que eles são complexos ou totalmente autorais. Eles não são. Eu colocaria porque eles contam uma parte honesta da minha evolução: a fase em que eu precisava acompanhar alguém fazendo para conseguir fazer também.</p>
+						<p>Hoje eu tenho mais repertório para olhar para cada um deles e perceber problemas, limitações e coisas que eu faria diferente. Mas isso não diminui o valor que eles tiveram. Pelo contrário: mostra que eu evoluí o suficiente para conseguir avaliar meu próprio começo com mais clareza.</p>
+						<p>Esse laboratório fica aqui como registro de prática. Foi uma fase de aprender com tutorial, publicar sem medo, testar ideias pequenas e ir acumulando confiança. Para mim, ele representa bem o momento em que programação começou a sair do vídeo e entrar na minha mão.</p>
+					</section>
+				</div>
+
+				<aside class="detail-aside detail-aside-sticky">
+					<section>
+						<h2>Ficha</h2>
+						<ul>
+							<li><strong>Status:</strong> Publicado</li>
+							<li><strong>Tipo:</strong> Coleção de estudos guiados</li>
+							<li><strong>Tecnologias:</strong> HTML, CSS, JavaScript, Chart.js, jQuery, chess.js e chessboard.js</li>
+							<li><strong>Temas:</strong> Jogos, UI, lógica, dados e bibliotecas via CDN</li>
+							<li><strong>Origem:</strong> Tutoriais do canal AsmrProg</li>
+						</ul>
+					</section>
+
+					<section class="detail-aside-block">
+						<h2>Projetos publicados</h2>
+						<ul class="detail-link-list">
+							<li><a href="https://gabriel-oliviera42.github.io/Jogo-de-xadrez/" target="_blank" rel="noopener noreferrer"><span class="icon solid fa-chess" aria-hidden="true"></span>Jogo de Xadrez</a></li>
+							<li><a href="https://gabriel-oliviera42.github.io/Projeto-Jogo-da-cobrinha/" target="_blank" rel="noopener noreferrer"><span class="icon solid fa-gamepad" aria-hidden="true"></span>Jogo da Cobrinha</a></li>
+							<li><a href="https://gabriel-oliviera42.github.io/Projeto-tela-de-login-animada/" target="_blank" rel="noopener noreferrer"><span class="icon solid fa-user-lock" aria-hidden="true"></span>Tela de Login</a></li>
+							<li><a href="https://gabriel-oliviera42.github.io/Gerador-de-senha/" target="_blank" rel="noopener noreferrer"><span class="icon solid fa-key" aria-hidden="true"></span>Gerador de Senhas</a></li>
+							<li><a href="https://gabriel-oliviera42.github.io/Criador-de-Tabelas/" target="_blank" rel="noopener noreferrer"><span class="icon solid fa-chart-line" aria-hidden="true"></span>Gerador de Gráficos</a></li>
+						</ul>
+					</section>
+
+					<section class="detail-aside-block">
+						<h2>Referência</h2>
+						<ul class="detail-link-list">
+							<li><a href="https://www.youtube.com/@asmrprog" target="_blank" rel="noopener noreferrer"><span class="icon brands fa-youtube" aria-hidden="true"></span>Canal AsmrProg</a></li>
+						</ul>
+					</section>
+
+					<section class="detail-aside-block">
+						<h2>Aprendizados</h2>
+						<ul>
+							<li>Manipulação do DOM na prática.</li>
+							<li>Eventos, estado e resposta visual.</li>
+							<li>CSS para interfaces pequenas.</li>
+							<li>Publicação com GitHub Pages.</li>
+							<li>Importância de reconhecer projetos guiados.</li>
+						</ul>
+					</section>
+				</aside>
+			</div>
+		</main>
+	</body>
+</html>

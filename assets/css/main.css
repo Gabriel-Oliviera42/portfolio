@@ -3794,7 +3794,8 @@ input, select, textarea {
 		width: 100%;
 	}
 
-	.project-jornada-page #main {
+	.project-jornada-page #main,
+	.project-asmrprog-page #main {
 		max-width: 86em;
 	}
 
@@ -3822,7 +3823,8 @@ input, select, textarea {
 		margin-bottom: 3em;
 	}
 
-	.project-jornada-page .detail-hero {
+	.project-jornada-page .detail-hero,
+	.project-asmrprog-page .detail-hero {
 		align-items: center;
 		gap: 2.75em;
 		grid-template-columns: minmax(0, 0.55fr) minmax(34em, 1.45fr);
@@ -3855,11 +3857,17 @@ input, select, textarea {
 		width: 100%;
 	}
 
-	.project-jornada-page .detail-media img {
+	.project-jornada-page .detail-media img,
+	.project-asmrprog-page .detail-media img {
 		aspect-ratio: 16 / 9;
 	}
 
-	.project-jornada-page .detail-media {
+	.project-asmrprog-page .detail-media img {
+		aspect-ratio: 16 / 10;
+	}
+
+	.project-jornada-page .detail-media,
+	.project-asmrprog-page .detail-media {
 		box-shadow: 0 20px 50px rgba(31, 41, 51, 0.1);
 	}
 
@@ -4070,6 +4078,119 @@ input, select, textarea {
 		font-size: 1em;
 		line-height: 1.65;
 		margin-bottom: 0;
+	}
+
+	.lab-reflection-note {
+		background: #ffffff;
+		border: 1px solid var(--portfolio-line);
+		border-left: 4px solid var(--portfolio-accent);
+		border-radius: 8px;
+		color: var(--portfolio-ink);
+		font-size: 1.02em;
+		line-height: 1.65;
+		margin: 1.4em 0 0;
+		padding: 1em 1.15em;
+	}
+
+	.lab-collage-media {
+		background: #edf7fa;
+	}
+
+	.lab-project-stack {
+		display: grid;
+		gap: 1.25em;
+		margin-top: 1.25em;
+	}
+
+	.lab-study-card {
+		background: #ffffff;
+		border: 1px solid var(--portfolio-line);
+		border-radius: 8px;
+		box-shadow: 0 14px 34px rgba(31, 41, 51, 0.07);
+		overflow: hidden;
+	}
+
+	.lab-study-media {
+		background: #0f172a;
+		border-bottom: 1px solid var(--portfolio-line);
+	}
+
+	.lab-study-media video {
+		aspect-ratio: 16 / 9;
+		background: #0f172a;
+		display: block;
+		height: auto;
+		object-fit: cover;
+		pointer-events: none;
+		width: 100%;
+	}
+
+	.lab-study-content {
+		padding: 1.25em;
+	}
+
+	.lab-study-kicker {
+		color: var(--portfolio-accent-dark);
+		font-size: 0.78em;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		line-height: 1.35;
+		margin-bottom: 0.45em;
+		text-transform: uppercase;
+	}
+
+	.lab-study-content h3 {
+		font-size: 1.28em;
+		line-height: 1.25;
+		margin-bottom: 0.45em;
+	}
+
+	.lab-study-layout {
+		display: grid;
+		gap: 1em;
+		grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.55fr);
+		margin-top: 1em;
+	}
+
+	.lab-study-notes {
+		background: var(--portfolio-soft);
+		border: 1px solid var(--portfolio-line);
+		border-radius: 8px;
+		padding: 1em;
+	}
+
+	.lab-study-notes h4 {
+		color: var(--portfolio-ink);
+		font-size: 0.95em;
+		margin-bottom: 0.45em;
+	}
+
+	.lab-study-notes ul {
+		list-style: disc;
+		margin: 0;
+		padding-left: 1.1em;
+	}
+
+	.lab-study-notes li {
+		padding-left: 0.1em;
+	}
+
+	.lab-project-button {
+		background-color: var(--portfolio-accent);
+		border-color: var(--portfolio-accent);
+		box-shadow: 0 8px 18px rgba(31, 157, 138, 0.2);
+		color: #ffffff !important;
+		font-weight: 700;
+		margin-top: 0.35em;
+		transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+	}
+
+	.lab-project-button:hover {
+		background-color: var(--portfolio-accent-dark);
+		border-color: var(--portfolio-accent-dark);
+		box-shadow: 0 12px 24px rgba(31, 157, 138, 0.26);
+		color: #ffffff !important;
+		transform: translateY(-1px);
 	}
 
 	.detail-gallery figure {
@@ -4303,6 +4424,7 @@ input, select, textarea {
 		.project-grid,
 		.detail-points,
 		.detail-gallery,
+		.lab-study-layout,
 		.project-demo-grid,
 		.detail-hero,
 		.detail-layout,
@@ -4318,7 +4440,8 @@ input, select, textarea {
 			position: static;
 		}
 
-		.project-jornada-page .detail-hero {
+		.project-jornada-page .detail-hero,
+		.project-asmrprog-page .detail-hero {
 			grid-template-columns: 1fr;
 		}
 
@@ -4392,10 +4515,13 @@ input, select, textarea {
 
 		.detail-lead,
 		.detail-points article,
+		.lab-study-content,
+		.lab-study-notes,
 		.detail-placeholder,
 		.detail-aside {
 			padding: 1.05em;
 		}
+
 
 		.section-heading {
 			align-items: stretch;

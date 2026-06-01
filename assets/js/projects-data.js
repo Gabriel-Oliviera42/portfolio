@@ -60,6 +60,21 @@ window.PORTFOLIO_PROJECTS = [
 		featuredNote: ""
 	},
 	{
+		title: "Laboratorio JavaScript com AsmrProg",
+		slug: "laboratorio-javascript-asmrprog",
+		description: "Colecao de cinco estudos guiados em JavaScript, reunindo jogos, interface animada, gerador de senhas e visualizacao de dados.",
+		image: "images/sites/Laboratorio JavaScript AsmrProg.png",
+		detailUrl: "projects/laboratorio-javascript-asmrprog.html",
+		demoUrl: "",
+		codeUrl: "",
+		status: "Publicado",
+		special: true,
+		languages: ["HTML", "CSS", "JavaScript"],
+		tags: ["frontend", "ensino", "jogos", "ui"],
+		themes: ["ensino", "jogos"],
+		featuredNote: "Colecao de estudos guiados"
+	},
+	{
 		title: "Projeto Cadeboost",
 		slug: "projeto-cadeboost",
 		description: "Interface web desenvolvida em estudos avancados de interacao, composicao visual e componentes responsivos.",
