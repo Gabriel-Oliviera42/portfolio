@@ -15,19 +15,19 @@ window.PORTFOLIO_PROJECTS = [
 		featuredNote: "1o lugar em hackathon"
 	},
 	{
-		title: "Acessibilidade na Web",
+		title: "AcessiLab",
 		slug: "acessibilidade-web",
-		description: "Pesquisa de iniciacao cientifica sobre WCAG, usabilidade e boas praticas para interfaces mais inclusivas.",
-		image: "images/sites/Jornada no Front-end.png",
+		description: "Plataforma de auditoria automatizada de acessibilidade web com WCAG, Playwright, Axe Core e sugestoes de correcao assistidas por IA. TCC em evolucao a partir de iniciacao cientifica.",
+		image: "images/sites/TCC - AcessiLab.png",
 		detailUrl: "projects/acessibilidade-web.html",
-		demoUrl: "",
-		codeUrl: "",
-		status: "Pesquisa",
+		demoUrl: "http://129.121.43.216:8081/",
+		codeUrl: "https://github.com/Gabriel-Oliviera42/tc-acessibilidade",
+		status: "Em evolucao",
 		special: true,
-		languages: ["HTML", "CSS", "JavaScript"],
-		tags: ["ensino", "acessibilidade", "frontend", "pesquisa"],
+		languages: ["Python", "FastAPI", "React", "MongoDB"],
+		tags: ["ensino", "acessibilidade", "pesquisa", "ia", "backend", "full-stack"],
 		themes: ["ensino"],
-		featuredNote: "Iniciacao cientifica"
+		featuredNote: "TCC | Iniciacao cientifica"
 	},
 	{
 		title: "Deck Fill MTG (Proxy)",
@@ -68,7 +68,7 @@ window.PORTFOLIO_PROJECTS = [
 		demoUrl: "",
 		codeUrl: "",
 		status: "Publicado",
-		special: true,
+		special: false,
 		languages: ["HTML", "CSS", "JavaScript"],
 		tags: ["frontend", "ensino", "jogos", "ui"],
 		themes: ["ensino", "jogos"],

@@ -3795,7 +3795,8 @@ input, select, textarea {
 	}
 
 	.project-jornada-page #main,
-	.project-asmrprog-page #main {
+	.project-asmrprog-page #main,
+	.project-acessilab-page #main {
 		max-width: 86em;
 	}
 
@@ -3824,7 +3825,8 @@ input, select, textarea {
 	}
 
 	.project-jornada-page .detail-hero,
-	.project-asmrprog-page .detail-hero {
+	.project-asmrprog-page .detail-hero,
+	.project-acessilab-page .detail-hero {
 		align-items: center;
 		gap: 2.75em;
 		grid-template-columns: minmax(0, 0.55fr) minmax(34em, 1.45fr);
@@ -3858,7 +3860,8 @@ input, select, textarea {
 	}
 
 	.project-jornada-page .detail-media img,
-	.project-asmrprog-page .detail-media img {
+	.project-asmrprog-page .detail-media img,
+	.project-acessilab-page .detail-media img {
 		aspect-ratio: 16 / 9;
 	}
 
@@ -3867,7 +3870,8 @@ input, select, textarea {
 	}
 
 	.project-jornada-page .detail-media,
-	.project-asmrprog-page .detail-media {
+	.project-asmrprog-page .detail-media,
+	.project-acessilab-page .detail-media {
 		box-shadow: 0 20px 50px rgba(31, 41, 51, 0.1);
 	}
 
@@ -4441,7 +4445,8 @@ input, select, textarea {
 		}
 
 		.project-jornada-page .detail-hero,
-		.project-asmrprog-page .detail-hero {
+		.project-asmrprog-page .detail-hero,
+		.project-acessilab-page .detail-hero {
 			grid-template-columns: 1fr;
 		}
 

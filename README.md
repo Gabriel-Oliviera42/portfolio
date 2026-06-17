@@ -21,6 +21,16 @@ A proposta do site é funcionar como uma vitrine organizada do meu processo como
 
 O projeto é estático, então pode ser publicado em GitHub Pages, Vercel, Netlify ou qualquer hospedagem simples de arquivos.
 
+## Documentação
+
+As regras e decisões para evoluir o portfólio estão em:
+
+```text
+docs/
+```
+
+Essa pasta explica o modelo de dados, o padrão das páginas de projeto, o fluxo para adicionar novos projetos e um caminho de automação futura.
+
 ## Páginas de detalhes
 
 Cada projeto pode ter uma página própria dentro de `projects/`.

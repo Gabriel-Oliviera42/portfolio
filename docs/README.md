@@ -33,3 +33,4 @@ Quando a quantidade de projetos crescer ou quando fizer sentido ter uma área ad
 ## Registros de andamento
 
 - [Laboratório JavaScript com AsmrProg](./05-andamento-laboratorio-asmrprog.md): contexto da primeira versão da página, imagem principal, vídeos usados e pendências para continuar.
+- [Guia completo para novo projeto](./06-guia-completo-novo-projeto.md): checklist, template HTML base e organização de arquivos sempre que for adicionar um projeto.
