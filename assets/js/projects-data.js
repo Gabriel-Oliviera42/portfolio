@@ -1,20 +1,5 @@
 window.PORTFOLIO_PROJECTS = [
 	{
-		title: "Sistema de Gestao Academica",
-		slug: "sistema-gestao-academica",
-		description: "Sistema premiado em hackathon para organizar atividades academicas, com arquitetura MVC, MongoDB e integracao com agentes de IA.",
-		image: "images/sites/Projeto Cadeboost.png",
-		detailUrl: "projects/sistema-gestao-academica.html",
-		demoUrl: "",
-		codeUrl: "",
-		status: "Em evolucao",
-		special: true,
-		languages: ["C#", ".NET", "MongoDB"],
-		tags: ["ensino", "ia", "backend", "full-stack"],
-		themes: ["ensino"],
-		featuredNote: "1o lugar em hackathon"
-	},
-	{
 		title: "AcessiLab",
 		slug: "acessibilidade-web",
 		description: "Plataforma de auditoria automatizada de acessibilidade web com WCAG, Playwright, Axe Core e sugestoes de correcao assistidas por IA. TCC em evolucao a partir de iniciacao cientifica.",

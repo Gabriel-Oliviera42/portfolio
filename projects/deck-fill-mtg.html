@@ -1,54 +1,174 @@
 <!DOCTYPE HTML>
 <html lang="pt-BR">
-	<head>
-		<title>Deck Fill MTG - Gabriel Lourenco</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Detalhes do projeto Deck Fill MTG, ferramenta para criar proxies personalizados de Magic: The Gathering." />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-	</head>
-	<body class="project-detail-page">
-		<main id="main">
-			<nav class="detail-nav">
-				<a href="../index.html#projects" class="button small">Voltar para projetos</a>
-			</nav>
+    <head>
+        <title>Deck Fill MTG - Gabriel Lourenço</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Detalhes do projeto Deck Fill MTG, uma aplicação web para criação e impressão de decks proxy de Magic: The Gathering." />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+    </head>
+    <body class="project-detail-page project-deckfill-page">
+        <main id="main">
+            
+            <header class="detail-hero">
+                <div>
+                    <nav class="detail-nav">
+                        <a href="../index.html#projects" class="button small">Voltar para projetos</a>
+                    </nav>
+                    <p class="eyebrow">Projeto Pessoal | Full-Stack</p>
+                    <h1>Deck Fill MTG</h1>
+                    <p class="detail-summary">Uma ferramenta completa criada para jogadores de Magic: The Gathering. 
+                        O objetivo da aplicação é permitir que os usuários busquem cartas, montem seus decks personalizados e gerem arquivos otimizados para a impressão de proxies para jogos casuais.</p>
+                    <div class="detail-actions">
+                        <div class="detail-primary-actions">
+                            <a href="https://deck-fill-mtg.vercel.app/" target="_blank" rel="noopener noreferrer" class="button primary">Acessar o site</a>
+							<a href="#erros" class="button">Meus erros</a>
+						</div>
+                        <div class="detail-social-actions" aria-label="Links pessoais">
+                            <a href="https://github.com/Gabriel-Oliviera42/DeckFill" target="_blank" rel="noopener noreferrer" class="button icon-only" title="GitHub"><span class="icon brands fa-github" aria-hidden="true"></span><span class="label">GitHub</span></a>
+                            <a href="https://www.linkedin.com/in/gabriel-lourenco-ab7893273" target="_blank" rel="noopener noreferrer" class="button icon-only" title="LinkedIn"><span class="icon brands fa-linkedin-in" aria-hidden="true"></span><span class="label">LinkedIn</span></a>
+                            <a href="mailto:gabriellourenco343@gmail.com" class="button icon-only" title="E-mail"><span class="icon solid fa-envelope" aria-hidden="true"></span><span class="label">E-mail</span></a>
+                        </div>
+                    </div>
+                </div>
+                <figure class="detail-media">
+                    <img src="../images/sites/Deck Fill MTG (Proxy).png" alt="Tela inicial do projeto Deck Fill MTG" />
+                </figure>
+            </header>
 
-			<header class="detail-hero">
-				<div>
-					<p class="eyebrow">Projeto especial</p>
-					<h1>Deck Fill MTG (Proxy)</h1>
-					<p class="detail-summary">Ferramenta full-stack para criar proxies personalizados de Magic: The Gathering usando dados de API externa.</p>
-					<div class="detail-actions">
-						<a href="https://deck-fill-mtg.vercel.app/" target="_blank" rel="noopener noreferrer" class="button primary">Ver projeto</a>
-					</div>
-				</div>
-				<figure class="detail-media">
-					<img src="../images/sites/Deck Fill MTG (Proxy).png" alt="Tela do Deck Fill MTG" />
-				</figure>
-			</header>
+            <div class="detail-layout detail-layout-wide">
+                <div>
+                    <section class="detail-section detail-lead"> 
+                        <h2>O que exatamente é isso?</h2>
 
-			<div class="detail-layout">
-				<div>
-					<section class="detail-section">
-						<h2>Resumo</h2>
-						<p>Projeto pessoal criado para melhorar o fluxo de montagem de proxies, com foco em praticidade, performance e visual mais agradavel para a comunidade de Magic.</p>
+                        <p>Se você não é do mundo dos Card Games, pode estar se perguntando o que é esse projeto. 
+                            Magic: The Gathering (MTG) é um dos jogos de cartas mais complexos e caros do mundo. 
+                            Muitas vezes, os jogadores querem testar um baralho (deck) novo antes de gastar dinheiro 
+                            comprando as cartas originais. É aí que entram as <strong>Proxies</strong>.</p>
+
+                        <p>Uma "Proxy" nada mais é do que uma impressão não-oficial de uma carta, usada exclusivamente 
+                            para testes e jogos casuais com amigos. O problema é que procurar imagens em boa qualidade, 
+                            ajustar o tamanho correto para impressão e organizar tudo em uma folha A4 dá um trabalho absurdo.</p>
+
+                        <p>O <strong>Deck Fill</strong> nasceu para resolver exatamente essa dor. Ele é um sistema 
+                            onde o usuário pesquisa as cartas, adiciona ao seu deck virtual e, com um clique, o site 
+                            organiza e gera tudo pronto para a impressora. Rápido, prático e sem dor de cabeça.</p>
+                    </section>
+
+                    <section class="detail-section">
+                        <h2>O Desafio Técnico (E como o projeto cresceu)</h2>
+                        <ol class="detail-flow">
+                            <li>
+                                <strong>Construção do Front-end.</strong>
+                                <span>A interface precisava ser intuitiva. Criei um sistema de busca em tempo real e um 
+                                    gerenciador de estado para que o usuário pudesse ver seu deck sendo montado dinamicamente 
+                                    antes de enviá-lo para impressão.</span>
+                            </li>
+                            <li>
+                                <strong>Desenvolvimento da API (Back-end).</strong>
+                                <span>Para não depender de APIs lentas de terceiros, construí meu próprio back-end em Python 
+                                    utilizando o framework FastAPI. O servidor precisava processar buscas rápidas e entregar as imagens corretas.</span>
+                            </li>
+                            <li>
+                                <strong>Lidando com um Volume Massivo de Dados.</strong>
+                                <span>Foi aqui que o projeto tomou proporções gigantescas. Inicialmente focado em MTG, decidi 
+                                    expandir o banco de dados (SQLite) para suportar outros jogos como Yu-Gi-Oh!, Pokémon e Lorcana. 
+                                    O resultado? Mais de 600 MB só de bancos de dados locais!</span>
+                            </li>
+                            <li>
+                                <strong>Pausa Estratégica.</strong>
+                                <span>Gerenciar infraestrutura gratuita para quase 1 GB de banco de dados se tornou inviável. 
+                                    Como desenvolvedor, precisei tomar a decisão madura de congelar a escalabilidade do back-end, 
+                                    garantir que a versão atual ficasse estável e documentar o aprendizado formidável que tive 
+                                    ao lidar com um projeto desse tamanho.</span>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="detail-section">
+                        <h2>O que esse projeto me ensinou</h2>
+                        <div class="detail-points">
+                            <article>
+                                <h3>Gerenciamento de Escopo</h3>
+                                <p>Aprendi na prática o que significa "Scope Creep". Querer adicionar suporte para 7 jogos diferentes me mostrou como o excesso de funcionalidades pode travar o deploy de um software. Entregue o MVP primeiro!</p>
+                            </article>
+                            <article>
+                                <h3>APIs e Back-end em Python</h3>
+                                <p>Tive uma imersão profunda na criação de servidores com FastAPI, entendendo rotas, requisições HTTP, CORS e comunicação direta do servidor com o banco de dados.</p>
+                            </article>
+                            <article>
+                                <h3>Limitações de Infraestrutura</h3>
+                                <p>Descobri da forma mais técnica possível como funcionam as restrições de plataformas em nuvem (como Render, Vercel e Fly.io) e limites de versionamento no GitHub para arquivos gigantes.</p>
+                            </article>
+                            <article>
+                                <h3>Bancos de Dados Relacionais</h3>
+                                <p>Trabalhar com arquivos SQLite pesados me forçou a entender como estruturar os dados para que o site conseguisse realizar as buscas pelas cartas de forma eficiente.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="detail-section">
+                        <h2>Demonstração</h2>
+                        <p>Abaixo você pode ver o funcionamento prático do sistema, desde a busca fluida pelas cartas até a montagem da estrutura do deck na interface.</p>
+                        <div class="project-demo-grid">
+                            <article class="project-demo-video" style="grid-column: 1 / -1;">
+                                <div class="project-demo-frame">
+                                    <video autoplay muted loop playsinline preload="metadata" poster="../images/sites/Deck Fill MTG (Proxy).png" aria-label="Demonstração do Projeto Deck Fill">
+                                        <source src="../assets/videos/projects/DeckFill.mp4" type="video/mp4" />
+                                        Seu navegador não conseguiu carregar o vídeo do projeto.
+                                    </video>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+					<section class="detail-section" id="erros">
+						<h2>A ilusão do "É só consumir a API"</h2>
+						
+						<p>Quando decidi expandir o site para 7 jogos diferentes, eu fui pela emoção. Achei que seria apenas plugar as APIs de cada Card Game e pronto. A realidade cobrou caro. Como eu não estudei a documentação de cada uma previamente, me deparei com problemas bizarros durante o desenvolvimento: uma API me retornava imagens com marcas d'água gigantes inutilizando a proxy, enquanto outra tinha um sistema de busca tão confuso e engessado que eu precisava fazer malabarismos no código só para o usuário conseguir achar uma carta simples.</p>
+						<p>A falta de um cuidado anterior para tratar esses dados transformou meu back-end em uma verdadeira colcha de retalhos na tentativa de contornar as limitações de cada provedor, claro que não é o unico problema e com certeza não percebi tudos os meus erros, mas só de olhar para tras e ver que eu sei oque eu deveria fazer já me da vontade de fazer um projeto desse tamanho mesmo sabendo que vou cometer outros erros para aprender com eles</p>
+						
 					</section>
 
-					<section class="detail-section">
-						<h2>O que destacar</h2>
-						<p>Consumo de API externa, organizacao de interface, fluxo de busca e montagem de cartas. Esta pagina pode receber depois detalhes tecnicos sobre cache, tratamento de erros e escolhas de UX.</p>
+					<section class="detail-section detail-lead">
+						<h2>O que eu farei no futuro (Visão 2.0)</h2>
+						
+						<p>Olhando para esse projeto hoje, eu vejo perfeitamente onde errei pela pressa de ver tudo funcionando na minha tela. Mas é exatamente por isso que considero esse site um marco no meu aprendizado.</p>
+						<p>No futuro, pretendo reescrever este projeto com o carinho e a maturidade técnica que ele exige. A minha abordagem para a versão 2.0 será completamente diferente:</p>
+						<p>Estudo profundo de cada API: Antes de escrever qualquer linha de código, vou ler as documentações de cabo a rabo. Preciso entender os limites de requisição (rate limits), o padrão de resposta e como higienizar os dados para garantir que nenhuma imagem com marca d'água ou texto quebrado chegue ao usuário.</p>
+						<p>Arquitetura antes do Código:Vou desenhar a modelagem dos dados primeiro. Em vez de baixar o mundo inteiro e gerar 600 MB de banco de dados local para contornar buscas ruins, vou construir um sistema de consumo inteligente e cache eficiente.</p>
+						<p>Um jogo por vez: Aprendi que a complexidade escala rápido demais. Vou focar em refazer a infraestrutura para que um único jogo (o MTG) rode de forma impecável, profissional e escalável, antes de sequer pensar em adicionar o segundo.</p>
 					</section>
-				</div>
 
-				<aside class="detail-aside">
-					<h2>Ficha</h2>
-					<ul>
-						<li><strong>Status:</strong> Publicado</li>
-						<li><strong>Tags:</strong> RPG, Jogos, Ferramenta, Full-stack</li>
-						<li><strong>Tecnologias:</strong> JavaScript, API, CSS</li>
-					</ul>
-				</aside>
-			</div>
-		</main>
-	</body>
+                </div>
+
+                <aside class="detail-aside detail-aside-sticky">
+                    <section>
+                        <h2>Ficha</h2>
+                        <ul>
+                            <li><strong>Status:</strong> MVP Concluído / Em evolução</li>
+                            <li><strong>Tipo:</strong> Aplicação Web / Ferramenta de Utilidade</li>
+                            <li><strong>Tecnologias Front:</strong> JavaScript, CSS, HTML5 (Vercel)</li>
+                            <li><strong>Tecnologias Back:</strong> Python, FastAPI, SQLite</li>
+                        </ul>
+                    </section>
+
+                    <section class="detail-aside-block">
+                        <h2>Links do projeto</h2>
+                        <ul class="detail-link-list">
+                            <li><a href="https://deck-fill-mtg.vercel.app/" target="_blank" rel="noopener noreferrer"><span class="icon solid fa-external-link-alt" aria-hidden="true"></span>Site ao vivo</a></li>
+                            <li><a href="https://github.com/Gabriel-Oliviera42/DeckFill" target="_blank" rel="noopener noreferrer"><span class="icon brands fa-github" aria-hidden="true"></span>Repositório no GitHub</a></li>
+                        </ul>
+                    </section>
+
+                    <section class="detail-aside-block">
+                        <h2>Destaques</h2>
+                        <ul>
+                            <li>Criação de API própria para evitar gargalos. Manipulação de dezenas de milhares de registros no banco de dados.</li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+        </main>
+    </body>
 </html>
