@@ -74,21 +74,6 @@ window.PORTFOLIO_PROJECTS = [
 		themes: ["ensino"],
 		featuredNote: ""
 	},
-	{
-		title: "Landing Page One Bit Code",
-		slug: "landing-page-one-bit-code",
-		description: "Landing page responsiva criada para praticar apresentacao de produto, conversao e experiencia mobile.",
-		image: "images/sites/Landing Page One Bit Code.png",
-		detailUrl: "projects/landing-page-one-bit-code.html",
-		demoUrl: "https://gabriel-oliviera42.github.io/PROJETO-LANDING-PAGE-One-Bit-Code/",
-		codeUrl: "",
-		status: "Publicado",
-		special: false,
-		languages: ["HTML", "CSS", "JavaScript"],
-		tags: ["frontend", "landing-page", "ensino"],
-		themes: ["ensino"],
-		featuredNote: ""
-	}
 ];
 
 window.PORTFOLIO_THEME_PROFILES = {
