@@ -1,5 +1,7 @@
 # Arquivos internos do processo de criacao
 PADRAO_PAGINAS_DE_PROJETO.md
+CLAUDE.md
+.claude/
 .codex-edge-profile/
 preview-*.png
 preview-*.jpg
