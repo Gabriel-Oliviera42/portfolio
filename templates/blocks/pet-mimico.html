@@ -1,0 +1,50 @@
+<section id="mimico" class="detail-section">
+	<h2>O mímico</h2>
+	<p>Eu queria um mascote de verdade, não só um nome bonito. Escolhi um mímico, baú de tesouro com dentes, porque combina com o tema de RPG e dá pra fazer coisa divertida com ele: morder, olhar pro cursor, essas coisas. Começou num rascunho no Canva, exportado em peças separadas (mandíbulas, olhos, sombra) pra eu poder montar sem redesenhar do zero.</p>
+	<p>O mímico abaixo é o mesmo componente do Chompbox de verdade, portado de React pra JavaScript puro só pra essa página. Sete olhos (três em cima, quatro embaixo) com pupila seguindo o mouse, mordida ao passar o cursor por cima, e de vez em quando ele morde sozinho, sem ninguém pedir.</p>
+	<div class="chompbox-mimic" data-interactive data-auto-bite>
+		<img class="chompbox-mimic-shadow" src="../images/chompbox-mimico/Sombra.png" alt="" draggable="false" />
+		<div class="chompbox-mimic-mouth"></div>
+		<div class="chompbox-jaw-top">
+			<img src="../images/chompbox-mimico/ParteDeCima.png" alt="" draggable="false" />
+			<div class="chompbox-eye" style="left: 30%; top: 42%; width: 13%;">
+				<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+				<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+				<div class="chompbox-eye-lid chompbox-eye-squint-left" style="--lid-color: #d97706; animation-delay: 0s;"></div>
+			</div>
+			<div class="chompbox-eye" style="left: 50%; top: 30%; width: 13%;">
+				<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+				<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+				<div class="chompbox-eye-lid" style="--lid-color: #d97706; animation-delay: -0.4s;"></div>
+			</div>
+			<div class="chompbox-eye" style="left: 70%; top: 42%; width: 13%;">
+				<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+				<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+				<div class="chompbox-eye-lid chompbox-eye-squint-right" style="--lid-color: #d97706; animation-delay: -0.8s;"></div>
+			</div>
+		</div>
+		<div class="chompbox-jaw-bottom">
+			<img src="../images/chompbox-mimico/ParteDeBaixo.png" alt="" draggable="false" />
+			<div class="chompbox-eye" style="left: 17%; top: 46%; width: 12%;">
+				<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+				<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+				<div class="chompbox-eye-lid" style="--lid-color: #92400d; animation-delay: -1.2s;"></div>
+			</div>
+			<div class="chompbox-eye" style="left: 33%; top: 58%; width: 11%;">
+				<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+				<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+				<div class="chompbox-eye-lid" style="--lid-color: #92400d; animation-delay: -1.6s;"></div>
+			</div>
+			<div class="chompbox-eye" style="left: 67%; top: 58%; width: 11%;">
+				<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+				<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+				<div class="chompbox-eye-lid" style="--lid-color: #92400d; animation-delay: -2.0s;"></div>
+			</div>
+			<div class="chompbox-eye" style="left: 83%; top: 46%; width: 12%;">
+				<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+				<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+				<div class="chompbox-eye-lid" style="--lid-color: #92400d; animation-delay: -2.4s;"></div>
+			</div>
+		</div>
+	</div>
+</section>

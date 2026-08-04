@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+	<head>
+		<title>Chompbox - Montador de Encontros de D&D 5e - Gabriel Lourenço</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Chompbox, montador de encontros de D&D 5e com banco de cerca de 4.400 criaturas, filtros visuais e gerador automático com lógica de relações entre monstros." />
+		<meta property="og:title" content="Chompbox - Montador de Encontros de D&D 5e" />
+		<meta property="og:description" content="Ferramenta pessoal para montar encontros de D&D 5e, com banco de ~4.400 criaturas limpo campo a campo e gerador automático." />
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="../images/sites/Chompbox.webp" />
+		<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
+		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+		<link rel="stylesheet" href="../assets/css/tokens.css" />
+		<link rel="stylesheet" href="../assets/css/base.css" />
+		<link rel="stylesheet" href="../assets/css/components.css" />
+		<link rel="stylesheet" href="../assets/css/blocks.css" />
+		<link href="https://fonts.cdnfonts.com/css/mestizo-font" rel="stylesheet" />
+	</head>
+	<body class="project-detail-page detail-wide theme-accent-rpg">
+		<main id="main">
+
+			<header class="detail-hero">
+				<div>
+					<nav class="detail-nav">
+						<a href="../index.html#projects" class="button small">Voltar para projetos</a>
+					</nav>
+					<p class="eyebrow">Projeto pessoal | Ferramenta para D&amp;D 5e</p>
+					<h1>Chompbox</h1>
+					<p class="detail-summary">O Chompbox é um montador de encontros de D&D 5e que eu queria ter desde a faculdade, inspirado no <a href="https://koboldplus.club" target="_blank" rel="noopener noreferrer" class="inline-accent-link">Kobold Fight Club</a>, mas com a lógica de geração automática do meu jeito e sem depender de site de terceiro pra uma coisa que mexo toda semana.</p>
+					<div class="detail-actions">
+						<div class="detail-primary-actions">
+							<a href="https://chomp-box.vercel.app/" target="_blank" rel="noopener noreferrer" class="button primary">Ver projeto</a>
+							<a href="#demonstracao" class="button">Ver demonstração</a>
+						</div>
+						<div class="detail-social-actions" aria-label="Links pessoais">
+							<a href="https://github.com/gabriel-oliviera42" target="_blank" rel="noopener noreferrer" class="button icon-only" title="GitHub"><span class="icon brands fa-github" aria-hidden="true"></span><span class="label">GitHub</span></a>
+							<a href="https://www.linkedin.com/in/gabriel-lourenco-ab7893273" target="_blank" rel="noopener noreferrer" class="button icon-only" title="LinkedIn"><span class="icon brands fa-linkedin-in" aria-hidden="true"></span><span class="label">LinkedIn</span></a>
+							<a href="mailto:gabriellourenco343@gmail.com" class="button icon-only" title="E-mail"><span class="icon solid fa-envelope" aria-hidden="true"></span><span class="label">E-mail</span></a>
+						</div>
+					</div>
+				</div>
+				<figure class="detail-media theme-preview" data-theme-preview>
+					<button type="button" class="button small theme-preview-toggle" data-theme-preview-toggle aria-pressed="false">
+						<span class="icon solid fa-moon" aria-hidden="true"></span>
+						<span class="theme-preview-toggle-label">Ver modo escuro</span>
+					</button>
+					<img src="../images/sites/Chompbox.webp" data-light-src="../images/sites/Chompbox.webp" data-dark-src="../images/sites/Chompbox - Modo Escuro.webp" alt="Interface do Chompbox mostrando a biblioteca de criaturas e os filtros" />
+				</figure>
+			</header>
+
+			<div class="detail-layout detail-layout-wide">
+				<div>
+					<section class="detail-section detail-lead">
+						<h2>Por que eu fiz</h2>
+						<p>Eu já queria fazer um site assim desde o início da faculdade. Não pra copiar ou roubar a ideia de ninguém, eu gosto muito de RPG, e a ideia parecia bem palpável: um site que pega as criaturas, faz a matemática do D&D e te dá um encontro pronto. Olhando pra trás, pro Gabriel de antes, era literalmente "só isso".</p>
+						<p>O Gabriel de hoje pensa a mesma coisa. Só que sem o "só" no início da frase.</p>
+					</section>
+
+					<section class="detail-section">
+						<h2>O que é um encontro</h2>
+						<p>Se você não joga D&D, um resumo rápido ajuda a entender o resto da página. Numa sessão de mesa, o mestre (quem narra a aventura) de vez em quando bota o grupo de jogadores contra um ou mais monstros. Isso é um encontro.</p>
+						<p>Pra não ficar fácil nem impossível demais, existe uma conta por trás. Cada criatura tem um Challenge Rating (CR), um número que estima o quão perigosa ela é sozinha, e cada grupo de jogadores tem um orçamento de XP baseado no nível e na quantidade deles. Montar um encontro bom é escolher criaturas que, somadas, fiquem dentro desse orçamento. É exatamente essa conta que o Chompbox automatiza.</p>
+					</section>
+
+					<section class="detail-section">
+						<h2>Meu processo</h2>
+						<ol class="detail-flow">
+							<li>
+								<strong>Pesquisei o Kobold Fight Club.</strong>
+								<span>Usei a lógica dele como norte antes de escrever qualquer código, queria entender direito o que fazia o site funcionar bem antes de sair inventando por cima.</span>
+							</li>
+							<li>
+								<strong>Reparei que só tinha uns 300 monstros.</strong>
+								<span>Achei pouco, e como qualquer programador inexperiente com muito tempo livre, decidi criar meu próprio banco do zero. Foi aí que começou minha dor de cabeça de verdade.</span>
+							</li>
+							<li>
+								<strong>Juntei mais de 4.500 criaturas via Python.</strong>
+								<span>De fontes bem diferentes espalhadas pela internet, sem padrão nenhum entre elas: tinha D&D, outros sistemas de RPG, jogos e até criatura de série de TV misturados.</span>
+							</li>
+							<li>
+								<strong>Padronizei o banco em várias rodadas.</strong>
+								<span>Parte por IA, parte por script, parte na mão. Foi de longe a etapa que mais demorou, quase dois meses inteiros arrumando campo por campo.</span>
+								<a class="detail-flow-jump" href="#banco-de-dados">Ver essa parte</a>
+							</li>
+							<li>
+								<strong>Desenhei o mímico e a logo.</strong>
+								<span>Depois de mais de dois meses só no banco, umas duas semanas de cereja no bolo: fui no Canva mexendo imagem por imagem, com o mesmo cuidado que gastei nos tamanhos dos filtros.</span>
+								<a class="detail-flow-jump" href="#mimico">Ver essa parte</a>
+							</li>
+							<li>
+								<strong>Fechei com os filtros e o gerador de encontro.</strong>
+								<span>A lógica do gerador eu já tinha pronta de uns 3 meses antes, sobrou só polir os filtros visuais e juntar tudo numa interface só, testando bastante com criaturas reais do banco.</span>
+								<a class="detail-flow-jump" href="#filtros">Ver os filtros</a>
+								<a class="detail-flow-jump" href="#gerador-de-encontro">Ver o gerador</a>
+							</li>
+						</ol>
+					</section>
+
+					<section id="banco-de-dados" class="detail-section">
+						<h2>O banco de dados</h2>
+						<p>Como eu não tinha uma API própria além da que já vinha usando, fui atrás sozinho: juntei mais de 4.500 criaturas de fontes espalhadas pela internet, via Python. Tinha de tudo, D&D, outros sistemas de RPG, jogos, até criatura de série de TV. O problema nunca foi pouco dado, foi dado sem padrão nenhum.</p>
+						<p>Imaginei como seria a busca no site final e desenhei um padrão pra cada campo. Depois era "só" encaixar as 4.500 criaturas nele. Uma parte dava pra ajustar por código, mas a maioria, uns 80%, era praticamente impossível assim, cada uma escrita de um jeito diferente. Botei a mão na IA: um script mandava cada criatura, uma por uma, pra um chat com um prompt pedindo pra deixar no padrão. Dois dias rodando depois, nem metade tinha ficado certo, e boa parte do que ficou não estava boa o suficiente.</p>
+						<figure class="detail-inline-image detail-inline-image-float detail-inline-image-float-sm">
+							<img src="../images/sites/Chompbox - Scripts VSCode.webp" alt="Lista de scripts Python numerados no VS Code, usados pra padronizar o banco" />
+						</figure>
+						<p>Não dava pra ficar mandando de novo esperando dar certo sozinho. Vou deixar uma imagem do VS Code do lado pra vocês verem quanto tempo perdi nisso: escrevi uma trilha de scripts em Python, mais de 30, numerados, e fui arrumando na mão o que dava. Cada script resolvia um problema de cada vez: padronizar bioma, unificar tipo de criatura, separar sistema de origem, entre outras coisas que eu ia encontrando pelo caminho.</p>
+						<p>Por exemplo, 904 criaturas tinham a fórmula de dado certa em <code>hit_points</code> mas o número final errado, recalculadas a partir do dado (a fonte de verdade em D&D). O campo <code>type_base</code> foi de 30 valores pra 17, juntando sinônimo tipo Fiend/Diabo/Demônio numa categoria só, e <code>biomes</code> foi de 86 pra 71. Teve script só pra separar <code>system</code> de <code>source</code>, que originalmente era um campo só meio confuso, misturando "é D&D 5e" com "de que sourcebook veio". Foi aí que apareceu o crossover com Magic: The Gathering e com Stranger Things, escondido no meio de criaturas marcadas como "sistema próprio".</p>
+						<p>As relações entre criaturas foram a parte mais difícil de resolver só com script, essa levou mais 3 passagens de IA até ficar boa. No fim não é um banco perfeito, mas é bom o suficiente pra usar sem me dar dor de cabeça, e olhando pra trás valeu cada uma das noites que passei escrevendo esses scripts um por um, testando de novo, e corrigindo o que ainda tinha ficado torto.</p>
+						<p class="detail-clear-float">Um exemplo divertido de como uma criatura fica no banco final: sim, o Demogorgon de Stranger Things está lá dentro, registrado separado do demônio de mesmo nome do D&D oficial (o campo <code>system</code> foi feito exatamente pra isso, distinguir de onde cada criatura veio de verdade).</p>
+						<pre><code>{
+  "name": "Demogorgon (Stranger Things)",
+  "hit_points": ["123", "(13d12 + 39)"],
+  "alignment": "Caótico e Neutro",
+  "armor_class": 17,
+  "size": ["Grande"],
+  "challenge_rating": "8",
+  "speed": ["12 Metros"],
+  "identity": "Chefe*",
+  "roles": ["Brutamontes"],
+  "biomes": ["Terras Ermas", "Cavernas de Cristal"],
+  "type_base": ["Gigante"],
+  "sapience": ["Senciente"],
+  "niche_and_community": ["Predador Ápice", "Territorial"],
+  "relations": ["&lt;&gt; Outros Gigantes"],
+  "system": "Cultura Pop (Cinema/TV)"
+}</code></pre>
+						<div class="detail-points">
+							<article>
+								<h3>identity / roles / biomes / sapience</h3>
+								<p>Aceitam um sufixo de intensidade: sem nada é padrão, <code>+</code>/<code>++</code> é mais intenso, <code>-</code> é menos, e <code>*</code> marca uma variante especial (só em <code>identity</code>). "Floresta+" e "Floresta" são o mesmo bioma em intensidades diferentes.</p>
+							</article>
+							<article>
+								<h3>relations</h3>
+								<p>Cada item é um sinal mais um alvo. <code>!</code> inimigo direto, <code>v</code> domina o alvo (subordinado, presa ou adorador), <code>^</code> serve o alvo (obedece, foi criado por, venera), <code>&lt;&gt;</code> neutro ou complexo. <code>^</code> e <code>v</code> são o mesmo vínculo visto dos dois lados.</p>
+							</article>
+						</div>
+					</section>
+
+					<section id="mimico" class="detail-section">
+						<h2>O mímico</h2>
+						<p>Eu queria um mascote de verdade, não só um nome bonito. Escolhi um mímico, baú de tesouro com dentes, porque combina com o tema de RPG e dá pra fazer coisa divertida com ele: morder, olhar pro cursor, essas coisas. Começou num rascunho no Canva, exportado em peças separadas (mandíbulas, olhos, sombra) pra eu poder montar sem redesenhar do zero.</p>
+						<p>Cheguei a pensar numa língua também, mas subestimei o trabalho que isso ia dar. Não é a parte de um projeto que eu mais gosto de passar horas resolvendo, então deixei de lado. Depois de mais de dois meses só no banco de dados, esse pedaço de design foi tipo umas duas semanas de cereja no bolo.</p>
+						<p>Os dois abaixo são o mesmo componente do Chompbox de verdade, portado de React pra JavaScript puro só pra essa página: o mímico grande, e a logo do site com ele no lugar do primeiro "O" de "CHOMP". Sete olhos (três em cima, quatro embaixo) com pupila seguindo o mouse, mordida ao passar o cursor por cima, e de vez em quando ele morde sozinho, sem ninguém pedir.</p>
+						<div class="chompbox-showcase">
+							<div class="chompbox-mimic" data-interactive data-auto-bite>
+								<img class="chompbox-mimic-shadow" src="../images/chompbox-mimico/Sombra.png" alt="" draggable="false" />
+								<div class="chompbox-mimic-mouth"></div>
+								<div class="chompbox-jaw-top">
+									<img src="../images/chompbox-mimico/ParteDeCima.png" alt="" draggable="false" />
+									<div class="chompbox-eye" style="left: 30%; top: 42%; width: 13%;">
+										<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+										<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+										<div class="chompbox-eye-lid chompbox-eye-squint-left" style="--lid-color: #d97706; animation-delay: 0s;"></div>
+									</div>
+									<div class="chompbox-eye" style="left: 50%; top: 30%; width: 13%;">
+										<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+										<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+										<div class="chompbox-eye-lid" style="--lid-color: #d97706; animation-delay: -0.4s;"></div>
+									</div>
+									<div class="chompbox-eye" style="left: 70%; top: 42%; width: 13%;">
+										<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+										<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+										<div class="chompbox-eye-lid chompbox-eye-squint-right" style="--lid-color: #d97706; animation-delay: -0.8s;"></div>
+									</div>
+								</div>
+								<div class="chompbox-jaw-bottom">
+									<img src="../images/chompbox-mimico/ParteDeBaixo.png" alt="" draggable="false" />
+									<div class="chompbox-eye" style="left: 17%; top: 46%; width: 12%;">
+										<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+										<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+										<div class="chompbox-eye-lid" style="--lid-color: #92400d; animation-delay: -1.2s;"></div>
+									</div>
+									<div class="chompbox-eye" style="left: 33%; top: 58%; width: 11%;">
+										<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+										<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+										<div class="chompbox-eye-lid" style="--lid-color: #92400d; animation-delay: -1.6s;"></div>
+									</div>
+									<div class="chompbox-eye" style="left: 67%; top: 58%; width: 11%;">
+										<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+										<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+										<div class="chompbox-eye-lid" style="--lid-color: #92400d; animation-delay: -2.0s;"></div>
+									</div>
+									<div class="chompbox-eye" style="left: 83%; top: 46%; width: 12%;">
+										<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+										<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+										<div class="chompbox-eye-lid" style="--lid-color: #92400d; animation-delay: -2.4s;"></div>
+									</div>
+								</div>
+							</div>
+
+							<div class="chompbox-logo">
+								<span>CH</span>
+								<span class="chompbox-logo-mark">
+									<div class="chompbox-mimic chompbox-mimic-inline" data-interactive data-auto-bite style="--mimic-width: 0.775em;">
+										<img class="chompbox-mimic-shadow" src="../images/chompbox-mimico/Sombra.png" alt="" draggable="false" />
+										<div class="chompbox-mimic-mouth"></div>
+										<div class="chompbox-jaw-top">
+											<img src="../images/chompbox-mimico/ParteDeCima.png" alt="" draggable="false" />
+											<div class="chompbox-eye" style="left: 30%; top: 42%; width: 13%;">
+												<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+												<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+												<div class="chompbox-eye-lid chompbox-eye-squint-left" style="--lid-color: #d97706; animation-delay: 0s;"></div>
+											</div>
+											<div class="chompbox-eye" style="left: 50%; top: 30%; width: 13%;">
+												<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+												<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+												<div class="chompbox-eye-lid" style="--lid-color: #d97706; animation-delay: -0.4s;"></div>
+											</div>
+											<div class="chompbox-eye" style="left: 70%; top: 42%; width: 13%;">
+												<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+												<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+												<div class="chompbox-eye-lid chompbox-eye-squint-right" style="--lid-color: #d97706; animation-delay: -0.8s;"></div>
+											</div>
+										</div>
+										<div class="chompbox-jaw-bottom">
+											<img src="../images/chompbox-mimico/ParteDeBaixo.png" alt="" draggable="false" />
+											<div class="chompbox-eye" style="left: 17%; top: 46%; width: 12%;">
+												<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+												<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+												<div class="chompbox-eye-lid" style="--lid-color: #92400d; animation-delay: -1.2s;"></div>
+											</div>
+											<div class="chompbox-eye" style="left: 33%; top: 58%; width: 11%;">
+												<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+												<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+												<div class="chompbox-eye-lid" style="--lid-color: #92400d; animation-delay: -1.6s;"></div>
+											</div>
+											<div class="chompbox-eye" style="left: 67%; top: 58%; width: 11%;">
+												<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+												<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+												<div class="chompbox-eye-lid" style="--lid-color: #92400d; animation-delay: -2.0s;"></div>
+											</div>
+											<div class="chompbox-eye" style="left: 83%; top: 46%; width: 12%;">
+												<img class="chompbox-eye-sclera" src="../images/chompbox-mimico/Olho.png" alt="" draggable="false" />
+												<img class="chompbox-eye-pupil" src="../images/chompbox-mimico/Pupila.png" alt="" draggable="false" />
+												<div class="chompbox-eye-lid" style="--lid-color: #92400d; animation-delay: -2.4s;"></div>
+											</div>
+										</div>
+									</div>
+								</span>
+								<span>MP</span>
+								<span class="chompbox-logo-accent">BOX</span>
+							</div>
+						</div>
+					</section>
+
+					<section id="filtros" class="detail-section">
+						<h2>Os filtros</h2>
+						<p>Os filtros seguem o padrão do Kobold Fight Club que eu queria imitar de propósito: CR e HP em barra de duas alças arrastável, sincronizada com os selects, e Alinhamento como grade de ícones 3x3 com atalho de linha/coluna/diagonal. Clicar no ícone de "Leal" liga as três combinações daquela coluna de uma vez.</p>
+						<figure class="detail-inline-image detail-inline-image-float detail-inline-image-float-lg">
+							<img src="../images/sites/Chompbox - Referencia de Tamanhos.webp" alt="Imagem de referência com uma criatura de cada tamanho, usada para recortar as silhuetas do filtro" />
+						</figure>
+						<p>Pro filtro de Tamanho eu queria uma barra visual, tipo gráfico de silhuetas crescendo, em vez de só botão de texto. Essa do lado é a imagem que usei de referência: fui no Canva mexendo imagem por imagem, uma criatura de cada tamanho, cor sólida, todas no mesmo espaço de coordenadas, o mesmo tanto de cuidado que gastei nas peças do mímico. Medi tudo pixel a pixel e recortei cada silhueta pelo próprio bounding box medido nela, sem atalho, tamanho por tamanho. Isso importa de verdade pro Enorme e o Gargantuesco, que se encostam de propósito na barra final, exatamente como eu queria que ficasse desde o rascunho no Canva.</p>
+						<p class="detail-clear-float">Nada nos filtros é fixo no código, as opções vêm todas do próprio banco (<code>/api/meta</code>), então se um dia eu adicionar uma criatura com um tipo novo, o filtro já aparece sozinho.</p>
+					</section>
+
+					<section id="gerador-de-encontro" class="detail-section">
+						<h2>O gerador de encontro</h2>
+						<p>Essa foi a parte que mais gostei de pensar a lógica. Além dos templates óbvios (chefe único, dupla, trio, horda), tem um de "chefe com lacaios" que usa um campo que eu inventei no banco, o <code>relations</code>: cada criatura ganhou uma lista de vínculos com sinal (inimigo, domina, serve, neutro/complexo) apontando pra outra criatura ou categoria.</p>
+						<p>O gerador escolhe um chefe e depois prioriza quem tem vínculo de verdade com ele: chefe domina o tipo do lacaio, ou o lacaio serve o chefe ou a categoria dele. Bota um Dragão Vermelho de chefe e ele prefere puxar Kobolds como lacaio, não uma mistura aleatória sem tema. Mas se o banco não documentou nenhum vínculo específico pra aquele chefe, cai pro sorteio normal sem travar.</p>
+						<p>Também tem uma opção de "qualidade de itens mágicos" por grupo (Escassos, Padrão, Abundantes) que ajusta o orçamento de XP pra cima ou pra baixo. Não é regra oficial do livro, é uma customização que fez sentido pra refletir grupos que jogam com mais ou menos itens mágicos do que o esperado pro nível deles.</p>
+						<h3>Debugando o gerador: de 15% de erro pra quase zero</h3>
+						<p>Depois de pronto, reparei que o gerador repetia muito a mesma criatura e às vezes saía mais fraco que a dificuldade pedida. Troquei escolha determinística por sorteio entre várias tentativas boas, e a repetição melhorou. Testando de verdade sobrou um padrão de erro que achei ser só do template "Fuga", porque ele tem um multiplicador de 0.6x no orçamento de propósito e eu comparava contra o valor errado.</p>
+						<p>Achei que tinha resolvido, mas ainda dava erro sem filtro nenhum ativo. Escrevi um teste cobrindo todo nível, dificuldade e template, 1600 chamadas na API, e achei 15,2% de falha real, espalhada, não só no "Fuga". A causa: numa "Dupla", a checagem de orçamento só entra em ação depois do mínimo de integrantes ser atingido, e isso já acontece no mesmo passo da segunda criatura. Na prática, dupla nunca teve escolha inteligente nenhuma.</p>
+						<p>Pesquisei umas técnicas de sorteio ponderado e reescrevi pra montar a combinação item por item, recalculando quanto falta a cada escolha. Caiu pra 4% de falha, e o que sobrou (só nível 18 e 20) eu confirmei que é limite real do banco, não bug: nem as duas criaturas mais fortes que existem fecham a conta nesse nível. Nesse caso o certo é avisar, não forçar um resultado impossível.</p>
+					</section>
+
+					<section id="demonstracao" class="detail-section">
+						<h2>Demonstração</h2>
+						<p>Um trecho curto mostrando os filtros, o mímico e o gerador de encontro em ação.</p>
+						<article class="project-demo-video">
+							<div class="project-demo-frame">
+								<video autoplay muted loop playsinline preload="metadata" poster="../images/sites/Chompbox.webp" aria-label="Demonstração do Chompbox: filtros, mímico e gerador de encontro">
+									<source src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/chompbox/desktop.mp4" type="video/mp4" />
+									Seu navegador não conseguiu carregar o vídeo.
+								</video>
+							</div>
+						</article>
+					</section>
+
+					<section class="detail-section">
+						<h2>Conclusões</h2>
+						<p>Vale deixar claro: esse site não é melhor que aquele em que eu me baseei. Mesmo com muito mais criaturas no banco, a lógica do Kobold Fight Club é mais bem feita que a minha. Mas pra mim o Chompbox funciona melhor, porque eu só venho aqui buscar uma inspiração rápida.</p>
+						<p>E é bem legal ter um combate saindo com um Demogorgon de Stranger Things enfrentando um chefe que é um dinossauro cibernético.</p>
+						<p>No fim das contas, o projeto que eu imaginava fazer em poucas semanas levou mais de dois meses só na parte de dados, e mais duas semanas de design. Não foi rápido, mas a parte mais chata, limpar o banco, foi também a que mais me ensinou sobre lidar com dado que não nasceu organizado.</p>
+						<p>Ainda falta coisa: hoje o mímico tem só 8 mensagens de curiosidade pra tela vazia, quero chegar em umas 15 com calma. Fora isso, agora é ir usando em mesa de verdade e ajustando o que incomodar.</p>
+					</section>
+				</div>
+
+				<aside class="detail-aside detail-aside-sticky">
+					<section>
+						<h2>Ficha</h2>
+						<ul>
+							<li><strong>Status:</strong> Publicado</li>
+							<li><strong>Tipo:</strong> Ferramenta pessoal</li>
+							<li><strong>Tecnologias:</strong> React, Vite, Tailwind, Zustand, Python, FastAPI</li>
+							<li><strong>Temas:</strong> RPG</li>
+						</ul>
+					</section>
+
+					<section class="detail-aside-block">
+						<h2>Links do projeto</h2>
+						<ul class="detail-link-list">
+							<li><a href="https://chomp-box.vercel.app/" target="_blank" rel="noopener noreferrer"><span class="icon solid fa-external-link-alt" aria-hidden="true"></span>Chompbox publicado</a></li>
+							<li><a href="https://github.com/Gabriel-Oliviera42/ChompBox" target="_blank" rel="noopener noreferrer"><span class="icon brands fa-github" aria-hidden="true"></span>Repositório</a></li>
+						</ul>
+					</section>
+
+					<section class="detail-aside-block">
+						<h2>Aprendizados</h2>
+						<ul>
+							<li>Limpeza de banco de dados grande de verdade, campo a campo, sem automatizar às cegas.</li>
+							<li>Frontend com bastante estado pra sincronizar (Zustand).</li>
+							<li>Backend Python como função serverless, servindo tudo em memória.</li>
+						</ul>
+					</section>
+				</aside>
+			</div>
+		</main>
+		<script src="../assets/js/projects-data.js"></script>
+		<script src="../assets/js/theme-utils.js"></script>
+		<script src="../assets/js/detail-theme.js"></script>
+		<script src="../assets/js/theme-preview.js"></script>
+		<script src="../assets/js/chompbox-mimic.js"></script>
+		<script src="../assets/js/sw-register.js" defer></script>
+		<script src="../assets/js/konami.js" defer></script>
+		<script src="../assets/js/reading-time.js" defer></script>
+	</body>
+</html>
