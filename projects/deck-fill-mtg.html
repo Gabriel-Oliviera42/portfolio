@@ -5,9 +5,18 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Detalhes do projeto Deck Fill MTG, uma aplicação web para criação e impressão de decks proxy de Magic: The Gathering." />
-        <link rel="stylesheet" href="../assets/css/main.css" />
+        <meta property="og:title" content="Deck Fill MTG" />
+        <meta property="og:description" content="Ferramenta full-stack para criar e imprimir proxies personalizados de Magic: The Gathering." />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="../images/sites/Deck Fill MTG (Proxy).webp" />
+		<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
+		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+        <link rel="stylesheet" href="../assets/css/tokens.css" />
+        <link rel="stylesheet" href="../assets/css/base.css" />
+        <link rel="stylesheet" href="../assets/css/components.css" />
+        <link rel="stylesheet" href="../assets/css/blocks.css" />
     </head>
-    <body class="project-detail-page project-deckfill-page">
+    <body class="project-detail-page theme-accent-rpg">
         <main id="main">
             
             <header class="detail-hero">
@@ -32,7 +41,7 @@
                     </div>
                 </div>
                 <figure class="detail-media">
-                    <img src="../images/sites/Deck Fill MTG (Proxy).png" alt="Tela inicial do projeto Deck Fill MTG" />
+                    <img src="../images/sites/Deck Fill MTG (Proxy).webp" alt="Tela inicial do projeto Deck Fill MTG" />
                 </figure>
             </header>
 
@@ -113,8 +122,8 @@
                         <div class="project-demo-grid">
                             <article class="project-demo-video" style="grid-column: 1 / -1;">
                                 <div class="project-demo-frame">
-                                    <video autoplay muted loop playsinline preload="metadata" poster="../images/sites/Deck Fill MTG (Proxy).png" aria-label="Demonstração do Projeto Deck Fill">
-                                        <source src="../assets/videos/projects/DeckFill.mp4" type="video/mp4" />
+                                    <video autoplay muted loop playsinline preload="metadata" poster="../images/sites/Deck Fill MTG (Proxy).webp" aria-label="Demonstração do Projeto Deck Fill">
+                                        <source src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/DeckFill.mp4" type="video/mp4" />
                                         Seu navegador não conseguiu carregar o vídeo do projeto.
                                     </video>
                                 </div>
@@ -126,7 +135,7 @@
 						<h2>A ilusão do "É só consumir a API"</h2>
 						
 						<p>Quando decidi expandir o site para 7 jogos diferentes, eu fui pela emoção. Achei que seria apenas plugar as APIs de cada Card Game e pronto. A realidade cobrou caro. Como eu não estudei a documentação de cada uma previamente, me deparei com problemas bizarros durante o desenvolvimento: uma API me retornava imagens com marcas d'água gigantes inutilizando a proxy, enquanto outra tinha um sistema de busca tão confuso e engessado que eu precisava fazer malabarismos no código só para o usuário conseguir achar uma carta simples.</p>
-						<p>A falta de um cuidado anterior para tratar esses dados transformou meu back-end em uma verdadeira colcha de retalhos na tentativa de contornar as limitações de cada provedor, claro que não é o unico problema e com certeza não percebi tudos os meus erros, mas só de olhar para tras e ver que eu sei oque eu deveria fazer já me da vontade de fazer um projeto desse tamanho mesmo sabendo que vou cometer outros erros para aprender com eles</p>
+						<p>A falta de um cuidado anterior para tratar esses dados transformou meu back-end em uma verdadeira colcha de retalhos na tentativa de contornar as limitações de cada provedor. Claro que não é o único problema, e com certeza não percebi todos os meus erros, mas só de olhar para trás e ver que eu sei o que eu deveria fazer já me dá vontade de fazer um projeto desse tamanho, mesmo sabendo que vou cometer outros erros para aprender com eles.</p>
 						
 					</section>
 
@@ -136,7 +145,7 @@
 						<p>Olhando para esse projeto hoje, eu vejo perfeitamente onde errei pela pressa de ver tudo funcionando na minha tela. Mas é exatamente por isso que considero esse site um marco no meu aprendizado.</p>
 						<p>No futuro, pretendo reescrever este projeto com o carinho e a maturidade técnica que ele exige. A minha abordagem para a versão 2.0 será completamente diferente:</p>
 						<p>Estudo profundo de cada API: Antes de escrever qualquer linha de código, vou ler as documentações de cabo a rabo. Preciso entender os limites de requisição (rate limits), o padrão de resposta e como higienizar os dados para garantir que nenhuma imagem com marca d'água ou texto quebrado chegue ao usuário.</p>
-						<p>Arquitetura antes do Código:Vou desenhar a modelagem dos dados primeiro. Em vez de baixar o mundo inteiro e gerar 600 MB de banco de dados local para contornar buscas ruins, vou construir um sistema de consumo inteligente e cache eficiente.</p>
+						<p>Arquitetura antes do Código: vou desenhar a modelagem dos dados primeiro. Em vez de baixar o mundo inteiro e gerar 600 MB de banco de dados local para contornar buscas ruins, vou construir um sistema de consumo inteligente e cache eficiente.</p>
 						<p>Um jogo por vez: Aprendi que a complexidade escala rápido demais. Vou focar em refazer a infraestrutura para que um único jogo (o MTG) rode de forma impecável, profissional e escalável, antes de sequer pensar em adicionar o segundo.</p>
 					</section>
 
@@ -170,5 +179,11 @@
                 </aside>
             </div>
         </main>
+        <script src="../assets/js/projects-data.js"></script>
+        <script src="../assets/js/theme-utils.js"></script>
+        <script src="../assets/js/detail-theme.js"></script>
+        <script src="../assets/js/sw-register.js" defer></script>
+        <script src="../assets/js/konami.js" defer></script>
+        <script src="../assets/js/reading-time.js" defer></script>
     </body>
 </html>

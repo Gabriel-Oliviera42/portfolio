@@ -5,16 +5,21 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="TODO resumo curto para buscadores e preview." />
-		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
+		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+		<link rel="stylesheet" href="../assets/css/tokens.css" />
+		<link rel="stylesheet" href="../assets/css/base.css" />
+		<link rel="stylesheet" href="../assets/css/components.css" />
+		<link rel="stylesheet" href="../assets/css/blocks.css" />
 	</head>
-	<body class="project-detail-page"><!-- Adicionar "detail-wide" se o projeto merecer layout largo (ver docs/06) -->
+	<body class="project-detail-page">
 		<main id="main">
-			<nav class="detail-nav">
-				<a href="../index.html#projects" class="button small">Voltar para projetos</a>
-			</nav>
 
 			<header class="detail-hero">
 				<div>
+					<nav class="detail-nav">
+						<a href="../index.html#projects" class="button small">Voltar para projetos</a>
+					</nav>
 					<p class="eyebrow">TODO categoria | contexto</p>
 					<h1>TODO Nome do Projeto</h1>
 					<p class="detail-summary">TODO resumo em primeira pessoa. Duas a quatro frases explicando o que é, por que importa e em que fase você estava quando fez.</p>
@@ -31,12 +36,13 @@
 					</div>
 				</div>
 				<figure class="detail-media">
-					<img src="../images/sites/TODO imagem.png" alt="TODO descricao da imagem principal" />
+					<img src="../images/sites/TODO imagem.webp" alt="TODO descricao da imagem principal" />
 				</figure>
 			</header>
 
 			<div class="detail-layout detail-layout-wide">
 				<div>
+
 					<section class="detail-section detail-lead">
 						<h2>Por que eu fiz</h2>
 						<p>TODO primeiro paragrafo.</p>
@@ -73,12 +79,12 @@
 
 					<section id="demonstracao" class="detail-section">
 						<h2>Demonstracao</h2>
-						<p>TODO texto introdutorio. Remover secao se nao houver video.</p>
+						<p>TODO texto introdutorio.</p>
 						<div class="project-demo-grid">
 							<article class="project-demo-video">
 								<div class="project-demo-frame">
-									<video autoplay muted loop playsinline preload="metadata" poster="../images/sites/TODO imagem.png" aria-label="TODO descricao do video">
-										<source src="../assets/videos/projects/TODO-video.mp4" type="video/mp4" />
+									<video autoplay muted loop playsinline preload="metadata" poster="../images/sites/TODO imagem.webp" aria-label="TODO descricao do video">
+										<source src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/TODO-slug/desktop.mp4" type="video/mp4" />
 										Seu navegador nao conseguiu carregar o video.
 									</video>
 								</div>
@@ -124,5 +130,11 @@
 				</aside>
 			</div>
 		</main>
+		<script src="../assets/js/projects-data.js"></script>
+		<script src="../assets/js/theme-utils.js"></script>
+		<script src="../assets/js/detail-theme.js"></script>
+		<script src="../assets/js/sw-register.js" defer></script>
+		<script src="../assets/js/konami.js" defer></script>
+		<script src="../assets/js/reading-time.js" defer></script>
 	</body>
 </html>

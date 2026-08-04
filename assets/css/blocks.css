@@ -1,0 +1,417 @@
+/* Carregar depois de tokens.css, base.css e components.css */
+
+	.detail-aside h2 {
+		align-items: center;
+		display: flex;
+		gap: 0.55em;
+	}
+
+	.detail-aside h2:before {
+		background: var(--portfolio-accent);
+		border-radius: 50%;
+		content: "";
+		display: inline-block;
+		flex: 0 0 auto;
+		height: 0.5em;
+		width: 0.5em;
+	}
+
+	.detail-gallery img {
+		border: 1px solid var(--portfolio-line);
+		border-radius: 8px;
+		display: block;
+		height: auto;
+		object-fit: cover;
+		width: 100%;
+	}
+
+	.detail-gallery figcaption {
+		color: var(--portfolio-muted);
+		font-size: 0.82em;
+		margin-top: 0.4em;
+	}
+
+	.theme-accent-jogos .detail-hero h1 {
+		cursor: default;
+		position: relative;
+	}
+
+	.theme-accent-jogos .detail-hero h1:hover {
+		animation: glitch-shift 0.35s steps(2, end) 2;
+	}
+
+	.theme-accent-jogos .detail-hero h1:hover:before,
+	.theme-accent-jogos .detail-hero h1:hover:after {
+		content: attr(data-glitch-text);
+		left: 0;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	.theme-accent-jogos .detail-hero h1:hover:before {
+		animation: glitch-shift-1 0.35s steps(2, end) 2;
+		color: #ff5c8a;
+		clip-path: inset(0 0 55% 0);
+	}
+
+	.theme-accent-jogos .detail-hero h1:hover:after {
+		animation: glitch-shift-2 0.35s steps(2, end) 2;
+		color: #5cf0ff;
+		clip-path: inset(55% 0 0 0);
+	}
+
+	@keyframes glitch-shift {
+		0% { transform: translate(0, 0); }
+		25% { transform: translate(-2px, 1px); }
+		50% { transform: translate(2px, -1px); }
+		75% { transform: translate(-1px, 0); }
+		100% { transform: translate(0, 0); }
+	}
+
+	@keyframes glitch-shift-1 {
+		0% { transform: translate(0, 0); }
+		25% { transform: translate(-3px, 0); }
+		50% { transform: translate(3px, 1px); }
+		75% { transform: translate(-2px, 0); }
+		100% { transform: translate(0, 0); }
+	}
+
+	@keyframes glitch-shift-2 {
+		0% { transform: translate(0, 0); }
+		25% { transform: translate(3px, 0); }
+		50% { transform: translate(-3px, -1px); }
+		75% { transform: translate(2px, 0); }
+		100% { transform: translate(0, 0); }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.theme-accent-jogos .detail-hero h1:hover,
+		.theme-accent-jogos .detail-hero h1:hover:before,
+		.theme-accent-jogos .detail-hero h1:hover:after {
+			animation: none;
+		}
+	}
+
+	.theme-accent-jogos {
+		position: relative;
+	}
+
+	.theme-accent-jogos:before {
+		background: repeating-linear-gradient(0deg, rgba(var(--portfolio-accent-rgb), 0.035) 0px, rgba(var(--portfolio-accent-rgb), 0.035) 1px, transparent 1px, transparent 3px);
+		content: "";
+		inset: 0;
+		pointer-events: none;
+		position: fixed;
+		z-index: 0;
+	}
+
+	.theme-accent-rpg .button.primary {
+		box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25), 0 6px 14px rgba(var(--portfolio-accent-rgb), 0.35);
+	}
+
+	.theme-accent-rpg .fa-dice-d20:hover {
+		animation: dice-roll 0.5s ease;
+		display: inline-block;
+	}
+
+	@keyframes dice-roll {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.theme-accent-rpg .fa-dice-d20:hover {
+			animation: none;
+		}
+	}
+
+	.grifo {
+		background: linear-gradient(180deg, transparent 62%, rgba(94, 234, 212, 0.45) 62%);
+		padding: 0 0.15em;
+	}
+
+	.konami-toast {
+		background: var(--portfolio-ink);
+		border-radius: 8px;
+		bottom: 5em;
+		box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+		color: var(--portfolio-paper);
+		font-size: 0.9em;
+		left: 50%;
+		max-width: 22em;
+		opacity: 0;
+		padding: 1em 1.25em;
+		position: fixed;
+		text-align: center;
+		transform: translate(-50%, 0.5em);
+		transition: opacity 0.3s ease, transform 0.3s ease;
+		z-index: 30;
+	}
+
+	.konami-toast.is-visible {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+
+	body.konami-pulse {
+		animation: konami-pulse 0.6s ease;
+	}
+
+	@keyframes konami-pulse {
+		0%, 100% { filter: none; }
+		50% { filter: saturate(1.5); }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		body.konami-pulse {
+			animation: none;
+		}
+
+		.konami-toast {
+			transition: opacity 0.3s ease;
+		}
+	}
+
+	.theme-preview {
+		position: relative;
+	}
+
+	.theme-preview-toggle {
+		position: absolute;
+		right: 0.75em;
+		top: 0.75em;
+		z-index: 1;
+	}
+
+	.chompbox-mimic {
+		--mimic-width: 220px;
+		--mimic-top-h: calc(var(--mimic-width) * 0.47368);
+		--mimic-bottom-h: calc(var(--mimic-width) * 0.50081);
+		--mimic-gap-h: calc(var(--mimic-top-h) * 0.45);
+		--gaze-x: 0px;
+		--gaze-y: 0px;
+		height: calc(var(--mimic-top-h) + var(--mimic-gap-h) + var(--mimic-bottom-h));
+		margin: 1.5em auto;
+		position: relative;
+		width: var(--mimic-width);
+	}
+
+	@media (max-width: 480px) {
+		.chompbox-mimic {
+			--mimic-width: 170px;
+		}
+	}
+
+	.chompbox-mimic-shadow {
+		left: 50%;
+		position: absolute;
+		top: calc(100% - (var(--mimic-width) * 1.05 * 0.1399));
+		transform: translateX(-50%);
+		width: calc(var(--mimic-width) * 1.05);
+	}
+
+	.chompbox-mimic-mouth {
+		background: #f48f8f;
+		height: calc((var(--mimic-top-h) * 0.3) + var(--mimic-gap-h) + (var(--mimic-bottom-h) * 0.35));
+		left: 10%;
+		position: absolute;
+		right: 10%;
+		top: calc(var(--mimic-top-h) * 0.7);
+		transform-origin: top;
+	}
+
+	.chompbox-jaw-top,
+	.chompbox-jaw-bottom {
+		left: 0;
+		position: absolute;
+		transform-origin: center;
+		width: var(--mimic-width);
+	}
+
+	.chompbox-jaw-top {
+		height: var(--mimic-top-h);
+		top: 0;
+	}
+
+	.chompbox-jaw-bottom {
+		height: var(--mimic-bottom-h);
+		top: calc(var(--mimic-top-h) + var(--mimic-gap-h));
+	}
+
+	.chompbox-jaw-top > img,
+	.chompbox-jaw-bottom > img {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	.chompbox-eye {
+		aspect-ratio: 1 / 1;
+		border-radius: 50%;
+		overflow: hidden;
+		position: absolute;
+		transform: translate(-50%, -50%);
+	}
+
+	.chompbox-eye-sclera {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	.chompbox-eye-pupil {
+		border-radius: 50%;
+		height: 62%;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(calc(-50% + var(--gaze-x)), calc(-50% + var(--gaze-y)));
+		width: 62%;
+	}
+
+	.chompbox-eye-lid {
+		animation: chompbox-blink 4.5s ease-in-out infinite;
+		background: var(--lid-color, #d97706);
+		height: 14%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	@keyframes chompbox-blink {
+		0%, 88%, 100% { height: 14%; }
+		93% { height: 100%; }
+	}
+
+	@keyframes chompbox-bite-top {
+		0%, 100% { transform: translateY(0) scale(1); }
+		45% { transform: translateY(45%) scale(1.03); }
+		70% { transform: translateY(62%) scale(1.05); }
+	}
+
+	@keyframes chompbox-bite-bottom {
+		0%, 100% { transform: translateY(0) scale(1); }
+		45% { transform: translateY(-6%) scale(1.01); }
+		70% { transform: translateY(-10%) scale(1.015); }
+	}
+
+	@keyframes chompbox-bite-mouth {
+		0%, 100% { transform: translateY(0) scaleY(1); }
+		45% { transform: translateY(40.3%) scaleY(0.541); }
+		70% { transform: translateY(55.3%) scaleY(0.351); }
+	}
+
+	@keyframes chompbox-eye-squint-hold-left {
+		0%, 100% { clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 45%); }
+	}
+
+	@keyframes chompbox-eye-squint-hold-right {
+		0%, 100% { clip-path: polygon(0% 0%, 100% 0%, 100% 45%, 0% 75%); }
+	}
+
+	.chompbox-mimic:hover .chompbox-jaw-top,
+	.chompbox-mimic.is-biting .chompbox-jaw-top {
+		animation: chompbox-bite-top 900ms ease-in-out;
+	}
+
+	.chompbox-mimic:hover .chompbox-jaw-bottom,
+	.chompbox-mimic.is-biting .chompbox-jaw-bottom {
+		animation: chompbox-bite-bottom 900ms ease-in-out;
+	}
+
+	.chompbox-mimic:hover .chompbox-mimic-mouth,
+	.chompbox-mimic.is-biting .chompbox-mimic-mouth {
+		animation: chompbox-bite-mouth 900ms ease-in-out;
+	}
+
+	.chompbox-mimic:hover .chompbox-jaw-top,
+	.chompbox-mimic:hover .chompbox-jaw-bottom,
+	.chompbox-mimic:hover .chompbox-mimic-mouth {
+		animation-iteration-count: infinite;
+	}
+
+	.chompbox-mimic:hover .chompbox-eye-squint-left,
+	.chompbox-mimic.is-biting .chompbox-eye-squint-left {
+		animation: chompbox-eye-squint-hold-left 900ms ease-in-out;
+		height: 100%;
+	}
+
+	.chompbox-mimic:hover .chompbox-eye-squint-right,
+	.chompbox-mimic.is-biting .chompbox-eye-squint-right {
+		animation: chompbox-eye-squint-hold-right 900ms ease-in-out;
+		height: 100%;
+	}
+
+	.chompbox-mimic:hover .chompbox-eye-squint-left,
+	.chompbox-mimic:hover .chompbox-eye-squint-right {
+		animation-iteration-count: infinite;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.chompbox-mimic:hover .chompbox-jaw-top,
+		.chompbox-mimic:hover .chompbox-jaw-bottom,
+		.chompbox-mimic:hover .chompbox-mimic-mouth,
+		.chompbox-mimic:hover .chompbox-eye-squint-left,
+		.chompbox-mimic:hover .chompbox-eye-squint-right,
+		.chompbox-mimic.is-biting .chompbox-jaw-top,
+		.chompbox-mimic.is-biting .chompbox-jaw-bottom,
+		.chompbox-mimic.is-biting .chompbox-mimic-mouth,
+		.chompbox-mimic.is-biting .chompbox-eye-squint-left,
+		.chompbox-mimic.is-biting .chompbox-eye-squint-right,
+		.chompbox-eye-lid {
+			animation: none;
+		}
+	}
+
+	.chompbox-showcase {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4.5em;
+		justify-content: center;
+		margin: 1.5em auto;
+	}
+
+	/* margin:auto do .chompbox-mimic vira margem automatica dentro do flex e desalinha, zerar aqui */
+	.chompbox-showcase > .chompbox-mimic {
+		margin: 0;
+	}
+
+	.chompbox-logo {
+		align-items: baseline;
+		display: inline-flex;
+		font-family: "Mestizo Font", serif;
+		font-size: 4em;
+		user-select: none;
+	}
+
+	.chompbox-logo-mark {
+		display: inline-block;
+		height: 0.92em;
+		position: relative;
+		width: 0.775em;
+	}
+
+	.chompbox-logo .chompbox-mimic-inline {
+		left: 0;
+		margin: 0;
+		position: absolute;
+		top: 0.07em;
+	}
+
+	.chompbox-logo-accent {
+		color: var(--portfolio-accent-dark);
+	}
+
+	@media (max-width: 480px) {
+		.chompbox-logo {
+			font-size: 2.6em;
+		}
+	}

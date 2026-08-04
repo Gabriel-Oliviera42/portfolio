@@ -5,7 +5,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="Estudo de caso do projeto Jornada no Front-end, código guiado feito a partir da série da Codeboost depois de uma palestra do Will na faculdade." />
-		<link rel="stylesheet" href="../assets/css/main.css" />
+		<meta property="og:title" content="Jornada no Front-end" />
+		<meta property="og:description" content="Projeto de estudo guiado focado em UI, estrutura semântica, responsividade e CSS moderno." />
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="../images/sites/Jornada no Front-end.webp" />
+		<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
+		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+		<link rel="stylesheet" href="../assets/css/tokens.css" />
+		<link rel="stylesheet" href="../assets/css/base.css" />
+		<link rel="stylesheet" href="../assets/css/components.css" />
+		<link rel="stylesheet" href="../assets/css/blocks.css" />
 	</head>
 	<body class="project-detail-page detail-wide">
 		<main id="main">
@@ -31,7 +40,7 @@
 					</div>
 				</div>
 				<figure class="detail-media">
-					<img src="../images/sites/Jornada no Front-end.png" alt="Tela do projeto Jornada no Front-end" />
+					<img src="../images/sites/Jornada no Front-end.webp" alt="Tela do projeto Jornada no Front-end" />
 				</figure>
 			</header>
 
@@ -108,8 +117,8 @@
 						<div class="project-demo-grid">
 							<article class="project-demo-video">
 								<div class="project-demo-frame">
-									<video autoplay muted loop playsinline preload="metadata" poster="../images/sites/Jornada no Front-end.png" aria-label="Demonstração desktop do projeto Jornada no Front-end">
-										<source src="../assets/videos/projects/jornada-desktop.mp4" type="video/mp4" />
+									<video autoplay muted loop playsinline preload="metadata" poster="../images/sites/Jornada no Front-end.webp" aria-label="Demonstração desktop do projeto Jornada no Front-end">
+										<source src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/jornada-desktop.mp4" type="video/mp4" />
 										Seu navegador não conseguiu carregar o vídeo desktop do projeto.
 									</video>
 								</div>
@@ -121,7 +130,7 @@
 							<article class="project-demo-video is-mobile">
 								<div class="project-demo-frame">
 									<video autoplay muted loop playsinline preload="metadata" aria-label="Demonstração mobile do projeto Jornada no Front-end">
-										<source src="../assets/videos/projects/jornada-mobile.mp4" type="video/mp4" />
+										<source src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/jornada-mobile.mp4" type="video/mp4" />
 										Seu navegador não conseguiu carregar o vídeo mobile do projeto.
 									</video>
 								</div>
@@ -169,5 +178,11 @@
 				</aside>
 			</div>
 		</main>
+		<script src="../assets/js/projects-data.js"></script>
+		<script src="../assets/js/theme-utils.js"></script>
+		<script src="../assets/js/detail-theme.js"></script>
+		<script src="../assets/js/sw-register.js" defer></script>
+		<script src="../assets/js/konami.js" defer></script>
+		<script src="../assets/js/reading-time.js" defer></script>
 	</body>
 </html>

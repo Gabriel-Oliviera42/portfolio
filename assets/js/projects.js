@@ -14,6 +14,9 @@
 		tag: "all",
 		status: "all"
 	};
+	var lastTypedCaption = null;
+	var typewriterInterval = null;
+	var prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 	var grid = document.getElementById("project-grid");
 	var count = document.getElementById("project-count");
@@ -28,6 +31,7 @@
 	var themeCaption = document.getElementById("theme-caption");
 	var profileLabel = document.getElementById("profile-label");
 	var themeIcon = document.getElementById("theme-icon");
+	var clearFiltersBtn = document.getElementById("clear-filters");
 
 	if (!grid || !search || !languageFilter || !themeFilter || !tagFilter || !statusFilter) {
 		return;
@@ -35,6 +39,7 @@
 
 	renderFilterOptions();
 	renderProjects();
+	bindClearFilters();
 
 	search.addEventListener("input", function(event) {
 		state.query = event.target.value.trim().toLowerCase();
@@ -99,6 +104,31 @@
 		});
 	}
 
+	function bindClearFilters() {
+		if (!clearFiltersBtn) {
+			return;
+		}
+
+		clearFiltersBtn.addEventListener("click", function() {
+			state.query = "";
+			state.language = "all";
+			state.themes.clear();
+			state.tag = "all";
+			state.status = "all";
+
+			search.value = "";
+			languageFilter.value = "all";
+			tagFilter.value = "all";
+			statusFilter.value = "all";
+			renderThemeOptions(baseThemes);
+			renderProjects();
+		});
+	}
+
+	function hasActiveFilters() {
+		return Boolean(state.query) || state.language !== "all" || state.themes.size > 0 || state.tag !== "all" || state.status !== "all";
+	}
+
 	function renderProjects() {
 		var filtered = projects
 			.filter(matchesSearch)
@@ -115,6 +145,10 @@
 		emptyState.hidden = filtered.length > 0;
 		count.textContent = filtered.length + " de " + projects.length + " projetos";
 		updateThemePreview(filtered);
+
+		if (clearFiltersBtn) {
+			clearFiltersBtn.hidden = !hasActiveFilters();
+		}
 	}
 
 	function matchesSearch(project) {
@@ -208,20 +242,35 @@
 
 		var key = findThemeProfileKey(selectedThemes);
 		var profile = themeProfiles[key] || themeProfiles[selectedThemes[0]] || themeProfiles.default || {};
-		var avatar = profile.image || "images/avatar.png";
+		var avatar = profile.image || "images/avatar.webp";
 		var caption = profile.caption || "Explorando projetos por tecnologia, tema e impacto.";
 		var label = profile.label || "Desenvolvedor full-stack";
 
 		setProfileAvatar(avatar);
-		themeCaption.textContent = caption;
+		typewriterSet(themeCaption, caption);
 		profileLabel.textContent = label;
 		document.body.setAttribute("data-theme-context", key);
 		document.body.style.setProperty("--profile-accent", profile.accent || "#1f9d8a");
 		document.body.style.setProperty("--profile-panel-start", profile.panelStart || "rgba(23, 33, 38, 0.86)");
 		document.body.style.setProperty("--profile-panel-end", profile.panelEnd || "rgba(23, 33, 38, 0.94)");
 
+		/* forca reflow, alguns navegadores nao recalculam o anel do avatar sozinhos */
+		if (profileAvatar && profileAvatar.parentElement) {
+			profileAvatar.parentElement.style.display = "none";
+			void profileAvatar.parentElement.offsetHeight;
+			profileAvatar.parentElement.style.display = "";
+		}
+
 		if (themeIcon) {
-			themeIcon.className = "theme-icon " + (profile.iconClass || "icon solid fa-code");
+			var newIconClass = "theme-icon " + (profile.iconClass || "icon solid fa-code");
+
+			if (themeIcon.className !== newIconClass) {
+				themeIcon.className = newIconClass;
+				themeIcon.classList.add("is-bouncing");
+				window.setTimeout(function() {
+					themeIcon.classList.remove("is-bouncing");
+				}, 500);
+			}
 		}
 
 		activeThemes.innerHTML = selectedThemes.length ? selectedThemes.slice(0, 4).map(function(theme) {
@@ -267,6 +316,32 @@
 
 		walk(0, []);
 		return result;
+	}
+
+	function typewriterSet(el, text) {
+		if (lastTypedCaption === text) {
+			return;
+		}
+
+		lastTypedCaption = text;
+		window.clearInterval(typewriterInterval);
+
+		if (prefersReducedMotion) {
+			el.textContent = text;
+			return;
+		}
+
+		el.textContent = "";
+		var index = 0;
+
+		typewriterInterval = window.setInterval(function() {
+			index++;
+			el.textContent = text.slice(0, index);
+
+			if (index >= text.length) {
+				window.clearInterval(typewriterInterval);
+			}
+		}, 16);
 	}
 
 	function setProfileAvatar(avatar) {

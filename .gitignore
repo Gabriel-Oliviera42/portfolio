@@ -22,6 +22,12 @@ node_modules/
 dist/
 build/
 
+# Midia pesada: video de projeto vive no Cloudflare R2, nao no repositorio (ver docs/04)
+assets/videos/
+
+# Midia bruta: pasta de intake local para prints/gravacoes antes de otimizar (ver docs/06)
+midia-bruta/
+
 # Variaveis e logs locais
 docs/
 .env

@@ -1,0 +1,30 @@
+/* Tokens de tema do portfolio (cores, sombras, medidas) */
+
+/* Transicao suave entre paginas do mesmo site (navegadores sem suporte simplesmente ignoram, sem custo) */
+@view-transition {
+	navigation: auto;
+}
+
+	:root {
+		--portfolio-ink: #263238;
+		--portfolio-muted: #64717a;
+		--portfolio-line: #dfe6ea;
+		--portfolio-paper: #ffffff;
+		--portfolio-soft: #f5f7f8;
+		--portfolio-accent: #1f9d8a;
+		--portfolio-accent-dark: #167466;
+		--portfolio-gold: #d99b21;
+		--portfolio-rpg: #7c3aed;
+		--portfolio-games: #2563eb;
+		--sidebar-width: clamp(18.5rem, 27vw, 24rem);
+		--profile-accent: var(--portfolio-accent);
+		--profile-panel-start: rgba(23, 33, 38, 0.86);
+		--profile-panel-end: rgba(23, 33, 38, 0.94);
+		--portfolio-media-backdrop: #0f172a;
+		--portfolio-media-placeholder: #e9eef1;
+		--portfolio-shadow-rgb: 31, 41, 51;
+		--portfolio-paper-rgb: 255, 255, 255;
+		--portfolio-accent-rgb: 31, 157, 138;
+		--portfolio-focus-rgb: 86, 216, 231;
+		--portfolio-gold-rgb: 217, 155, 33;
+	}

@@ -5,7 +5,16 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Estudo de caso detalhado do Projeto Cadeboost, uma landing page moderna construída do zero com HTML, CSS e JavaScript seguindo o treinamento prático do canal Codeboost." />
-        <link rel="stylesheet" href="../assets/css/main.css" />
+        <meta property="og:title" content="Projeto Cadeboost" />
+        <meta property="og:description" content="Landing page moderna construída com HTML, CSS e JavaScript, estudo prático de interação e composição visual." />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="../images/sites/Projeto Cadeboost.webp" />
+		<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
+		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+        <link rel="stylesheet" href="../assets/css/tokens.css" />
+        <link rel="stylesheet" href="../assets/css/base.css" />
+        <link rel="stylesheet" href="../assets/css/components.css" />
+        <link rel="stylesheet" href="../assets/css/blocks.css" />
     </head>
     <body class="project-detail-page project-cadeboost-page">
         <main id="main">
@@ -33,7 +42,7 @@
                     </div>
                 </div>
                 <figure class="detail-media">
-                    <img src="../images/sites/Projeto Cadeboost.png" alt="Tela do projeto Cadeboost" />
+                    <img src="../images/sites/Projeto Cadeboost.webp" alt="Tela do projeto Cadeboost" />
                 </figure>
             </header>
 
@@ -107,8 +116,8 @@
                         <p>Além disso, utilizei este projeto para demonstrar a importância de escrever um 
                             código bem estruturado e acessível. Para isso, comparei duas versões de um mesmo 
                             site: esta versão, que possui alguns problemas de acessibilidade mais sutis, 
-                            e <a href="https://gabriel-oliviera42.github.io/Projeto-Cadeboost-2/" 
-                            class="inline-link" target="_blank">outra versão</a>. criada propositalmente com diversos erros. O objetivo era mostrar como 
+                            e <a href="https://gabriel-oliviera42.github.io/Projeto-Cadeboost-2/"
+                            class="inline-link" target="_blank">outra versão</a>, criada propositalmente com diversos erros. O objetivo era mostrar como 
                             barreiras digitais podem afetar a experiência de navegação de diferentes usuários 
                             e como muitas dessas falhas passam despercebidas por quem não depende de recursos 
                             de acessibilidade no dia a dia.</p>
@@ -152,23 +161,23 @@
                         <div class="project-demo-grid">
                             <article class="project-demo-video">
                                 <div class="project-demo-frame">
-                                    <video autoplay muted loop playsinline preload="metadata" poster="../images/sites/Projeto Cadeboost.png" aria-label="Demonstração desktop do Projeto Cadeboost">
-                                        <source src="../assets/videos/projects/FigPRO.mp4" type="video/mp4" />
+                                    <video autoplay muted loop playsinline preload="metadata" poster="../images/sites/Projeto Cadeboost.webp" aria-label="Demonstração desktop do Projeto Cadeboost">
+                                        <source src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/FigPRO.mp4" type="video/mp4" />
                                         Seu navegador não conseguiu carregar o vídeo desktop do projeto.
                                     </video>
                                 </div>
                                 <div class="project-demo-caption">
-                                    <p>Bem, aqui tem uma situação interessante, eu pretendia falar sobre como é um 
-                                        site que trata muito bem a parte da responsividade, mas depois de ver o video 
-                                        que gravei, coloqui aqui no pertifolio, só então persebi um problema, eu não 
-                                        tinha consertado desde que eu fiz a pesquisa para a iniciação cientifica</p>
+                                    <p>Bem, aqui tem uma situação interessante: eu pretendia falar sobre como é um
+                                        site que trata muito bem a parte da responsividade, mas depois de ver o vídeo
+                                        que gravei, coloquei aqui no portfólio, só então percebi um problema que eu não
+                                        tinha consertado desde que fiz a pesquisa para a iniciação científica.</p>
                                 </div>
                             </article>
 
                             <article class="project-demo-video is-mobile">
                                 <div class="project-demo-frame">
                                     <video autoplay muted loop playsinline preload="metadata" aria-label="Demonstração mobile do Projeto Cadeboost">
-                                        <source src="../assets/videos/projects/FigPRO-mobile.mp4" type="video/mp4" />
+                                        <source src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/FigPRO-mobile.mp4" type="video/mp4" />
                                         Seu navegador não conseguiu carregar o vídeo mobile do projeto.
                                     </video>
                                 </div>
@@ -214,5 +223,11 @@
                 </aside>
             </div>
         </main>
+        <script src="../assets/js/projects-data.js"></script>
+        <script src="../assets/js/theme-utils.js"></script>
+        <script src="../assets/js/detail-theme.js"></script>
+        <script src="../assets/js/sw-register.js" defer></script>
+        <script src="../assets/js/konami.js" defer></script>
+        <script src="../assets/js/reading-time.js" defer></script>
     </body>
 </html>

@@ -9,16 +9,39 @@
         <meta property="og:title" content="Gabriel Lourenço - Portfólio Full-Stack" />
         <meta property="og:description" content="Projetos, habilidades e experimentos de Gabriel Lourenço em desenvolvimento full-stack." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="images/avatar.png" />
-        <link rel="stylesheet" href="assets/css/main.css" />
+        <meta property="og:image" content="images/avatar.webp" />
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png" />
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+        <link rel="stylesheet" href="assets/css/tokens.css" />
+        <link rel="stylesheet" href="assets/css/base.css" />
+        <link rel="stylesheet" href="assets/css/components.css" />
+        <link rel="stylesheet" href="assets/css/blocks.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Gabriel Lourenço de Oliveira",
+            "jobTitle": "Desenvolvedor full-stack",
+            "description": "Estudante de Ciência da Computação e desenvolvedor full-stack com projetos em web, IA, bancos de dados, jogos e ferramentas criativas.",
+            "image": "images/avatar.webp",
+            "sameAs": [
+                "https://github.com/gabriel-oliviera42",
+                "https://www.linkedin.com/in/gabriel-lourenco-ab7893273"
+            ]
+        }
+        </script>
     </head>
     <body class="is-preload portfolio-shell">
 
         <header id="header">
+            <div id="theme-particles" class="theme-particles" aria-hidden="true"></div>
+            <div id="theme-icons-decor" class="theme-icons-decor" aria-hidden="true"></div>
             <div class="inner profile-panel">
                 <div class="profile-visual">
                     <a href="#main" class="image avatar" id="profile-avatar-link">
-                        <img id="profile-avatar" src="images/avatar.png" alt="Foto de Gabriel Lourenço" />
+                        <img id="profile-avatar" src="images/avatar.webp" alt="Foto de Gabriel Lourenço" />
                     </a>
                     <span id="theme-icon" class="theme-icon icon solid fa-code" aria-hidden="true"></span>
                 </div>
@@ -57,12 +80,12 @@
             <section id="highlights" class="highlight-section">
                 <h2>Destaques acadêmicos</h2>
                 <div class="spotlight-grid">
-                    <article class="spotlight-item">
+                    <article class="spotlight-item" data-aos="fade-up" data-tilt data-tilt-max="4" data-tilt-glare data-tilt-max-glare="0.15">
                         <h3>Sistema de Gestão Acadêmica</h3>
                         <p class="project-meta">1º lugar em Hackathon | MVC | MongoDB | IA</p>
                         <p>Uma solução premiada, desenvolvida para revolucionar a gestão de atividades de alunos. Estruturada com arquitetura MVC, persistência em MongoDB e uma inovadora integração com agentes de IA. O que nasceu como um desafio de hackathon continua em constante evolução, servindo como base para o meu TCC e com forte potencial de implementação oficial na universidade.</p>
                     </article>
-                    <article class="spotlight-item">
+                    <article class="spotlight-item" data-aos="fade-up" data-aos-delay="80" data-tilt data-tilt-max="4" data-tilt-glare data-tilt-max-glare="0.15">
                         <h3>AcessiLab</h3>
                         <p class="project-meta">TCC | Iniciação Científica | WCAG | IA</p>
                         <p>Plataforma inteligente de auditoria automatizada focada em acessibilidade web, que evoluiu diretamente da minha pesquisa de Iniciação Científica em 2024. O sistema rastreia URLs avaliando os rigorosos critérios da WCAG, organiza as falhas de forma visual e utiliza IA para sugerir correções de código. Tudo isso orquestrado com uma stack robusta envolvendo Python, FastAPI, React e MongoDB.</p>
@@ -87,7 +110,7 @@
 
                     <div class="filter-fields">
                         <label class="select-field" for="language-filter">
-                            <span>Linguagem</span>
+                            <span>Tecnologias</span>
                             <select id="language-filter"></select>
                         </label>
                         <div class="multi-field">
@@ -104,6 +127,8 @@
                         </label>
                     </div>
 
+                    <button type="button" id="clear-filters" class="button small clear-filters" hidden>Limpar filtros</button>
+
                 </div>
 
                 <div id="active-themes" class="active-themes" aria-live="polite"></div>
@@ -114,52 +139,77 @@
             <section id="skills" class="skills-section">
                 <h2>Habilidades</h2>
                 <div class="skills-grid">
-                    <article>
+                    <article data-aos="fade-up">
                         <h3>Linguagens & Frameworks</h3>
                         <p>C#/.NET, Python, Java, C++, ecossistema React, JavaScript (Vanilla e Node.js), HTML5 e CSS3.</p>
                     </article>
-                    <article>
+                    <article data-aos="fade-up" data-aos-delay="60">
                         <h3>Arquitetura & Software</h3>
                         <p>POO, Estruturas de Dados, padrão MVC, construção de APIs REST, autenticação (JWT), acessibilidade (WCAG), fundamentos de UI/UX e métodos ágeis.</p>
                     </article>
-                    <article>
+                    <article data-aos="fade-up" data-aos-delay="120">
                         <h3>Dados & Infraestrutura</h3>
                         <p>SQL Server, MySQL, PostgreSQL, MongoDB Atlas, Neo4j, ambientes Linux, deploy em nuvem e integração com modelos de IA.</p>
                     </article>
-                    <article>
+                    <article data-aos="fade-up" data-aos-delay="180">
                         <h3>Ferramentas</h3>
                         <p>Git, GitHub, VS Code, Visual Studio e organização estratégica de projetos para publicação e portfólio.</p>
                     </article>
                 </div>
             </section>
 
-            <section id="contact">
-                <h2>Contato</h2>
-                <p>Estou sempre aberto a conversar sobre tecnologia! Entre em contato para oportunidades de trabalho, propostas de estágio, pesquisa ou simplesmente para colaborarmos em algum projeto interessante.</p>
-                <ul class="labeled-icons">
-                    <li>
-                        <h3 class="icon solid fa-home"><span class="label">Localização</span></h3>
-                        Areado - Minas Gerais<br />
-                        Brasil
-                    </li>
-                    <li>
-                        <h3 class="icon solid fa-mobile-alt"><span class="label">Telefone</span></h3>
-                        <a href="tel:+5535998458853">+55 35 99845-8853</a>
-                    </li>
-                    <li>
-                        <h3 class="icon solid fa-envelope"><span class="label">E-mail</span></h3>
-                        <a href="mailto:gabriellourenco343@gmail.com">gabriellourenco343@gmail.com</a>
-                    </li>
-                    <li>
-                        <h3 class="icon brands fa-github"><span class="label">GitHub</span></h3>
-                        <a href="https://github.com/gabriel-oliviera42" target="_blank" rel="noopener noreferrer">github.com/gabriel-oliviera42</a>
-                    </li>
-                    <li>
-                        <h3 class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></h3>
-                        <a href="https://www.linkedin.com/in/gabriel-lourenco-ab7893273" target="_blank" rel="noopener noreferrer">linkedin.com/in/gabriel-lourenco-ab7893273</a>
-                    </li>
-                </ul>
+            <section id="certificates" class="certificates-section" hidden>
+                <h2>Certificados</h2>
+                <div id="certificates-grid" class="certificates-grid"></div>
             </section>
+
+            <footer id="contact" class="contact-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Contato</p>
+                        <h2>Vamos conversar?</h2>
+                    </div>
+                </div>
+                <p class="contact-intro">Estou sempre aberto a conversar sobre tecnologia! Entre em contato para oportunidades de trabalho, propostas de estágio, pesquisa ou simplesmente para colaborarmos em algum projeto interessante.</p>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <span class="contact-icon icon solid fa-map-marker-alt" aria-hidden="true"></span>
+                        <div>
+                            <p class="contact-label">Localização</p>
+                            <p class="contact-value">Areado, Minas Gerais — Brasil</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-icon icon solid fa-mobile-alt" aria-hidden="true"></span>
+                        <div>
+                            <p class="contact-label">Telefone</p>
+                            <a class="contact-value" href="tel:+5535998458853">+55 35 99845-8853</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-icon icon solid fa-envelope" aria-hidden="true"></span>
+                        <div>
+                            <p class="contact-label">E-mail</p>
+                            <button type="button" class="contact-value contact-copy" data-copy-value="gabriellourenco343@gmail.com">gabriellourenco343@gmail.com</button>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-icon icon brands fa-github" aria-hidden="true"></span>
+                        <div>
+                            <p class="contact-label">GitHub</p>
+                            <a class="contact-value" href="https://github.com/gabriel-oliviera42" target="_blank" rel="noopener noreferrer">github.com/gabriel-oliviera42</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-icon icon brands fa-linkedin-in" aria-hidden="true"></span>
+                        <div>
+                            <p class="contact-label">LinkedIn</p>
+                            <a class="contact-value" href="https://www.linkedin.com/in/gabriel-lourenco-ab7893273" target="_blank" rel="noopener noreferrer">linkedin.com/in/gabriel-lourenco-ab7893273</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="contact-copy-feedback" id="copy-feedback" role="status" aria-live="polite"></p>
+            </footer>
         </main>
 
         <script src="assets/js/jquery.min.js"></script>
@@ -169,5 +219,15 @@
         <script src="assets/js/main.js"></script>
         <script src="assets/js/projects-data.js"></script>
         <script src="assets/js/projects.js"></script>
+        <script src="assets/js/certificates-data.js"></script>
+        <script src="assets/js/certificates.js"></script>
+        <script src="assets/js/contact.js"></script>
+        <script src="assets/js/sw-register.js" defer></script>
+        <script src="assets/js/konami.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@3/tsparticles.slim.bundle.min.js" defer></script>
+        <script src="assets/js/theme-particles.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+        <script src="assets/js/scroll-effects.js" defer></script>
     </body>
 </html>
