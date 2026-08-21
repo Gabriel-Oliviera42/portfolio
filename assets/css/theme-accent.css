@@ -1,0 +1,100 @@
+/* Camada manual/legada de tema — classes theme-accent-rpg / theme-accent-jogos
+   no <body>. Independente do sistema automático (ver detail-theme.js). Carregar
+   depois de tokens.css, base.css e components.css, junto com blocks.css.
+   Ver docs/02-padrao-de-paginas.md e docs/04-organizacao-css.md. */
+
+	.theme-accent-jogos .detail-hero h1 {
+		cursor: default;
+		position: relative;
+	}
+
+	.theme-accent-jogos .detail-hero h1:hover {
+		animation: glitch-shift 0.35s steps(2, end) 2;
+	}
+
+	.theme-accent-jogos .detail-hero h1:hover:before,
+	.theme-accent-jogos .detail-hero h1:hover:after {
+		content: attr(data-glitch-text);
+		left: 0;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	.theme-accent-jogos .detail-hero h1:hover:before {
+		animation: glitch-shift-1 0.35s steps(2, end) 2;
+		color: #ff5c8a;
+		clip-path: inset(0 0 55% 0);
+	}
+
+	.theme-accent-jogos .detail-hero h1:hover:after {
+		animation: glitch-shift-2 0.35s steps(2, end) 2;
+		color: #5cf0ff;
+		clip-path: inset(55% 0 0 0);
+	}
+
+	@keyframes glitch-shift {
+		0% { transform: translate(0, 0); }
+		25% { transform: translate(-2px, 1px); }
+		50% { transform: translate(2px, -1px); }
+		75% { transform: translate(-1px, 0); }
+		100% { transform: translate(0, 0); }
+	}
+
+	@keyframes glitch-shift-1 {
+		0% { transform: translate(0, 0); }
+		25% { transform: translate(-3px, 0); }
+		50% { transform: translate(3px, 1px); }
+		75% { transform: translate(-2px, 0); }
+		100% { transform: translate(0, 0); }
+	}
+
+	@keyframes glitch-shift-2 {
+		0% { transform: translate(0, 0); }
+		25% { transform: translate(3px, 0); }
+		50% { transform: translate(-3px, -1px); }
+		75% { transform: translate(2px, 0); }
+		100% { transform: translate(0, 0); }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.theme-accent-jogos .detail-hero h1:hover,
+		.theme-accent-jogos .detail-hero h1:hover:before,
+		.theme-accent-jogos .detail-hero h1:hover:after {
+			animation: none;
+		}
+	}
+
+	.theme-accent-jogos {
+		position: relative;
+	}
+
+	.theme-accent-jogos:before {
+		background: repeating-linear-gradient(0deg, rgba(var(--portfolio-accent-rgb), 0.035) 0px, rgba(var(--portfolio-accent-rgb), 0.035) 1px, transparent 1px, transparent 3px);
+		content: "";
+		inset: 0;
+		pointer-events: none;
+		position: fixed;
+		z-index: 0;
+	}
+
+	.theme-accent-rpg .button.primary {
+		box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25), 0 6px 14px rgba(var(--portfolio-accent-rgb), 0.35);
+	}
+
+	.theme-accent-rpg .fa-dice-d20:hover {
+		animation: dice-roll 0.5s ease;
+		display: inline-block;
+	}
+
+	@keyframes dice-roll {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.theme-accent-rpg .fa-dice-d20:hover {
+			animation: none;
+		}
+	}
