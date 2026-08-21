@@ -2,10 +2,16 @@
    A camada manual de tema (theme-accent-rpg / theme-accent-jogos) mora em
    theme-accent.css, carregado à parte só nas páginas que usam essas classes. */
 
+	/* .detail-aside h2, .detail-gallery img e .detail-gallery figcaption estavam
+	   definidos aqui E em components.css. As definicoes nao eram iguais: se
+	   somavam pela cascata. Foram fundidas aqui (fonte de verdade unica, por
+	   serem estrutura de pagina de projeto) preservando o resultado final. */
+
 	.detail-aside h2 {
 		align-items: center;
 		display: flex;
 		gap: 0.55em;
+		margin-bottom: 0.65em;   /* vinha de components.css */
 	}
 
 	.detail-aside h2:before {
@@ -19,6 +25,7 @@
 	}
 
 	.detail-gallery img {
+		aspect-ratio: 16 / 9;     /* vinha de components.css */
 		border: 1px solid var(--portfolio-line);
 		border-radius: 8px;
 		display: block;
@@ -30,7 +37,9 @@
 	.detail-gallery figcaption {
 		color: var(--portfolio-muted);
 		font-size: 0.82em;
-		margin-top: 0.4em;
+		line-height: 1.5;         /* vinha de components.css */
+		margin: 0.4em 0 0;        /* components.css zerava; aqui o topo era 0.4em */
+		padding: 0.8em 1em;       /* vinha de components.css */
 	}
 
 	.grifo {

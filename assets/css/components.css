@@ -1036,8 +1036,7 @@
 		grid-template-columns: minmax(0, 1fr) 20em;
 	}
 
-	.detail-section,
-	.detail-aside {
+	.detail-section {
 		border-top: 1px solid var(--portfolio-line);
 		padding-top: 1.5em;
 	}
@@ -1060,8 +1059,7 @@
 	}
 
 	.detail-lead h2,
-	.detail-section h2,
-	.detail-aside h2 {
+	.detail-section h2 {
 		margin-bottom: 0.65em;
 	}
 
@@ -1275,22 +1273,6 @@
 		grid-column: span 2;
 		margin: 0;
 		overflow: hidden;
-	}
-
-	.detail-gallery img {
-		aspect-ratio: 16 / 9;
-		display: block;
-		height: auto;
-		object-fit: cover;
-		width: 100%;
-	}
-
-	.detail-gallery figcaption {
-		color: var(--portfolio-muted);
-		font-size: 0.82em;
-		line-height: 1.5;
-		margin: 0;
-		padding: 0.8em 1em;
 	}
 
 	.detail-inline-image {
