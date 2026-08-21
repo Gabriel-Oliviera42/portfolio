@@ -1,0 +1,138 @@
+/* CSS exclusivo da pagina do laboratorio AsmrProg
+   (projects/laboratorio-javascript-asmrprog.html).
+   Carregar depois de blocks.css, so nessa pagina.
+
+   Guarda os cards de estudo (.lab-study-*) e o botao de projeto (.lab-project-button).
+   Nao mora em components.css porque nenhum outro projeto usa isso - ver
+   docs/04-organizacao-css.md. */
+
+	.lab-reflection-note {
+		background: var(--portfolio-paper);
+		border: 1px solid var(--portfolio-line);
+		border-left: 4px solid var(--portfolio-accent);
+		border-radius: 8px;
+		color: var(--portfolio-ink);
+		font-size: 1.02em;
+		line-height: 1.65;
+		margin: 1.4em 0 0;
+		padding: 1em 1.15em;
+	}
+
+	/* NAO USADO por nenhuma pagina hoje (verificado em 2026-08-21). Mantido
+	   porque asset morto so sai com pedido explicito - ver CLAUDE.md. */
+	.lab-collage-media {
+		background: var(--portfolio-soft);
+	}
+
+	.lab-project-stack {
+		display: grid;
+		gap: 1.25em;
+		margin-top: 1.25em;
+	}
+
+	.lab-study-card {
+		background: var(--portfolio-paper);
+		border: 1px solid var(--portfolio-line);
+		border-radius: 8px;
+		box-shadow: 0 14px 34px rgba(var(--portfolio-shadow-rgb), 0.07);
+		overflow: hidden;
+	}
+
+	.lab-study-media {
+		background: var(--portfolio-media-backdrop);
+		border-bottom: 1px solid var(--portfolio-line);
+	}
+
+	.lab-study-media video {
+		aspect-ratio: 16 / 9;
+		background: var(--portfolio-media-backdrop);
+		display: block;
+		height: auto;
+		object-fit: cover;
+		pointer-events: none;
+		width: 100%;
+	}
+
+	.lab-study-content {
+		padding: 1.25em;
+	}
+
+	.lab-study-kicker {
+		color: var(--portfolio-accent-dark);
+		font-size: 0.78em;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		line-height: 1.35;
+		margin-bottom: 0.45em;
+		text-transform: uppercase;
+	}
+
+	.lab-study-content h3 {
+		font-size: 1.28em;
+		line-height: 1.25;
+		margin-bottom: 0.45em;
+	}
+
+	.lab-study-layout {
+		display: grid;
+		gap: 1em;
+		grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.55fr);
+		margin-top: 1em;
+	}
+
+	.lab-study-notes {
+		background: var(--portfolio-soft);
+		border: 1px solid var(--portfolio-line);
+		border-radius: 8px;
+		padding: 1em;
+	}
+
+	.lab-study-notes h4 {
+		color: var(--portfolio-ink);
+		font-size: 0.95em;
+		margin-bottom: 0.45em;
+	}
+
+	.lab-study-notes ul {
+		list-style: disc;
+		margin: 0;
+		padding-left: 1.1em;
+	}
+
+	.lab-study-notes li {
+		padding-left: 0.1em;
+	}
+
+	.lab-project-button {
+		background-color: var(--portfolio-accent);
+		border-color: var(--portfolio-accent);
+		box-shadow: 0 8px 18px rgba(var(--portfolio-accent-rgb), 0.2);
+		color: var(--portfolio-paper) !important;
+		font-weight: 700;
+		margin-top: 0.35em;
+		transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+	}
+
+	.lab-project-button:hover {
+		background-color: var(--portfolio-accent-dark);
+		border-color: var(--portfolio-accent-dark);
+		box-shadow: 0 12px 24px rgba(var(--portfolio-accent-rgb), 0.26);
+		color: var(--portfolio-paper) !important;
+		transform: translateY(-1px);
+	}
+
+	/* Extraidos de media queries compartilhadas em components.css, mantendo as
+	   mesmas condicoes e a mesma ordem relativa (depois das regras base). */
+
+	@media screen and (max-width: 980px) {
+		.lab-study-layout {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		.lab-study-content,
+		.lab-study-notes {
+			padding: 1.05em;
+		}
+	}
