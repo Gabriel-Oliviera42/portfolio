@@ -22,11 +22,14 @@ node_modules/
 dist/
 build/
 
-# Midia pesada: video de projeto vive no Cloudflare R2, nao no repositorio (ver docs/04)
+# Midia pesada: video de projeto vive no Cloudflare R2, nao no repositorio (ver docs/05)
 assets/videos/
 
-# Midia bruta: pasta de intake local para prints/gravacoes antes de otimizar (ver docs/06)
+# Midia bruta: pasta de intake local para prints/gravacoes antes de otimizar (ver docs/05)
 midia-bruta/
+
+# Pipeline de midia: scaffold + credenciais, vive no backup privado (ver docs/05)
+tools/media-pipeline/
 
 # Variaveis e logs locais
 docs/
