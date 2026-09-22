@@ -117,8 +117,8 @@
 						<div class="project-demo-grid">
 							<article class="project-demo-video">
 								<div class="project-demo-frame">
-									<video autoplay muted loop playsinline preload="metadata" poster="../images/sites/Jornada no Front-end.webp" aria-label="Demonstração desktop do projeto Jornada no Front-end">
-										<source src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/jornada-desktop.mp4" type="video/mp4" />
+									<video data-lazy muted loop playsinline preload="none" poster="../images/sites/Jornada no Front-end.webp" aria-label="Demonstração desktop do projeto Jornada no Front-end">
+										<source data-src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/jornada-desktop.mp4" type="video/mp4" />
 										Seu navegador não conseguiu carregar o vídeo desktop do projeto.
 									</video>
 								</div>
@@ -129,8 +129,8 @@
 
 							<article class="project-demo-video is-mobile">
 								<div class="project-demo-frame">
-									<video autoplay muted loop playsinline preload="metadata" aria-label="Demonstração mobile do projeto Jornada no Front-end">
-										<source src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/jornada-mobile.mp4" type="video/mp4" />
+									<video data-lazy muted loop playsinline preload="none" aria-label="Demonstração mobile do projeto Jornada no Front-end">
+										<source data-src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/jornada-mobile.mp4" type="video/mp4" />
 										Seu navegador não conseguiu carregar o vídeo mobile do projeto.
 									</video>
 								</div>
@@ -184,5 +184,6 @@
 		<script src="../assets/js/sw-register.js" defer></script>
 		<script src="../assets/js/konami.js" defer></script>
 		<script src="../assets/js/reading-time.js" defer></script>
+		<script src="../assets/js/video-lazy.js" defer></script>
 	</body>
 </html>

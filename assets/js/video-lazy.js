@@ -50,8 +50,20 @@
 			}
 		});
 	}, {
-		// comeca a baixar um pouco antes de aparecer, pra nao dar tela preta
-		rootMargin: "200px 0px"
+		/*
+			Comeca a baixar bem antes de o video aparecer, pra ele ja estar pronto
+			quando a pessoa chegar nele.
+
+			600px e medido, nao chutado: em 22/09/2026 a PRIMEIRA requisicao ao
+			bucket R2 numa aba nova levou ~3,5 s ate o video poder tocar (DNS +
+			TLS + resposta). Com margem pequena o visitante encarava alguns
+			segundos de poster. Com 600px, mais de meia tela de rolagem de
+			antecedencia, esse tempo corre enquanto ele ainda esta lendo.
+
+			Nao adianta aumentar muito mais: margem grande demais carrega tudo de
+			novo e joga fora a economia que motivou este arquivo.
+		*/
+		rootMargin: "600px 0px"
 	});
 
 	videos.forEach(function(video) {
