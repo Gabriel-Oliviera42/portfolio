@@ -12,7 +12,8 @@ window.PORTFOLIO_PROJECTS = [
 		languages: ["Python", "FastAPI", "React", "MongoDB"],
 		tags: ["acessibilidade", "pesquisa", "ia", "backend", "full-stack"],
 		themes: ["ensino"],
-		featuredNote: "TCC | Iniciação científica"
+		featuredNote: "TCC | Iniciação científica",
+		addedAt: "2026-05-31"
 	},
 	{
 		title: "Deck Fill MTG (Proxy)",
@@ -27,7 +28,8 @@ window.PORTFOLIO_PROJECTS = [
 		languages: ["JavaScript", "API", "CSS"],
 		tags: ["ferramenta", "full-stack"],
 		themes: ["rpg", "jogos"],
-		featuredNote: "Projeto pessoal"
+		featuredNote: "Projeto pessoal",
+		addedAt: "2026-05-31"
 	},
 	{
 		title: "Jornada no Front-end",
@@ -42,7 +44,8 @@ window.PORTFOLIO_PROJECTS = [
 		languages: ["HTML", "CSS", "JavaScript"],
 		tags: ["frontend", "ui"],
 		themes: ["ensino"],
-		featuredNote: ""
+		featuredNote: "",
+		addedAt: "2026-05-31"
 	},
 	{
 		title: "Laboratório JavaScript com AsmrProg",
@@ -57,7 +60,8 @@ window.PORTFOLIO_PROJECTS = [
 		languages: ["HTML", "CSS", "JavaScript"],
 		tags: ["frontend", "ui"],
 		themes: ["ensino", "jogos"],
-		featuredNote: "Coleção de estudos guiados"
+		featuredNote: "Coleção de estudos guiados",
+		addedAt: "2026-06-01"
 	},
 	{
 		title: "Projeto Cadeboost",
@@ -72,7 +76,8 @@ window.PORTFOLIO_PROJECTS = [
 		languages: ["HTML", "CSS", "JavaScript"],
 		tags: ["frontend", "ui"],
 		themes: ["ensino"],
-		featuredNote: ""
+		featuredNote: "",
+		addedAt: "2026-05-31"
 	},
 	{
 		title: "Chompbox",
@@ -87,7 +92,24 @@ window.PORTFOLIO_PROJECTS = [
 		languages: ["React", "Vite", "Tailwind", "Python", "FastAPI"],
 		tags: ["ferramenta", "rpg", "dnd", "banco-de-dados", "full-stack", "design"],
 		themes: ["rpg"],
-		featuredNote: "Projeto pessoal"
+		featuredNote: "Projeto pessoal",
+		addedAt: "2026-08-04"
+	},
+	{
+		title: "Este portfólio",
+		slug: "portfolio",
+		description: "O site que você está lendo agora. Diário de projetos em HTML, CSS e JavaScript puro, com busca, filtros e sistema de temas. Foi reconstruído quando adicionar um projeto novo virou trabalho de horas.",
+		image: "images/sites/portfolio.webp",
+		detailUrl: "projects/portfolio.html",
+		demoUrl: "https://gabriel-oliviera42.github.io/portfolio/",
+		codeUrl: "https://github.com/Gabriel-Oliviera42/portfolio",
+		status: "Em evolução",
+		special: false,
+		languages: ["HTML", "CSS", "JavaScript"],
+		tags: ["frontend", "ui", "ferramenta", "programacao-assistida"],
+		themes: ["ensino"],
+		featuredNote: "",
+		addedAt: "2026-09-21"
 	},
 ];
 

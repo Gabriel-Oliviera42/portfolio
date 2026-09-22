@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+	<head>
+		<title>Este portfólio - Gabriel Lourenço</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Estudo de caso do próprio portfólio: como um site feito em cima de template virou um sistema de blocos, depois que adicionar um projeto novo passou a levar horas." />
+		<meta property="og:title" content="Este portfólio" />
+		<meta property="og:description" content="Diário de projetos em HTML, CSS e JavaScript puro, reconstruído quando adicionar um projeto virou trabalho de horas." />
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="../images/sites/portfolio.webp" />
+		<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
+		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+		<link rel="stylesheet" href="../assets/css/tokens.css" />
+		<link rel="stylesheet" href="../assets/css/base.css" />
+		<link rel="stylesheet" href="../assets/css/components.css" />
+		<link rel="stylesheet" href="../assets/css/blocks.css" />
+		<link rel="stylesheet" href="../assets/css/projects/portfolio.css" />
+	</head>
+	<body class="project-detail-page detail-wide">
+		<main id="main">
+
+			<header class="detail-hero">
+				<div>
+					<nav class="detail-nav">
+						<a href="../index.html#projects" class="button small">Voltar para projetos</a>
+					</nav>
+					<p class="eyebrow">Projeto autoral | Este site</p>
+					<h1>Este portfólio</h1>
+					<p class="detail-summary">Este é o site que você está vendo agora, e eu penso nele mais como um diário do que como vitrine. Cada projeto aqui tem uma página contando o que eu tentei, o que deu errado e o que eu entendi no meio do caminho. Esta é a página do próprio caderno.</p>
+					<div class="detail-actions">
+						<div class="detail-primary-actions">
+							<a href="https://gabriel-oliviera42.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="button primary">Ver projeto</a>
+							<a href="https://github.com/Gabriel-Oliviera42/portfolio" target="_blank" rel="noopener noreferrer" class="button">Ver repositório</a>
+						</div>
+						<div class="detail-social-actions" aria-label="Links pessoais">
+							<a href="https://github.com/gabriel-oliviera42" target="_blank" rel="noopener noreferrer" class="button icon-only" title="GitHub"><span class="icon brands fa-github" aria-hidden="true"></span><span class="label">GitHub</span></a>
+							<a href="https://www.linkedin.com/in/gabriel-lourenco-ab7893273" target="_blank" rel="noopener noreferrer" class="button icon-only" title="LinkedIn"><span class="icon brands fa-linkedin-in" aria-hidden="true"></span><span class="label">LinkedIn</span></a>
+							<a href="mailto:gabriellourenco343@gmail.com" class="button icon-only" title="E-mail"><span class="icon solid fa-envelope" aria-hidden="true"></span><span class="label">E-mail</span></a>
+						</div>
+					</div>
+				</div>
+				<figure class="detail-media">
+					<img src="../images/sites/portfolio.webp" alt="Página inicial do portfólio mostrando a biblioteca de projetos com busca e filtros" />
+				</figure>
+			</header>
+
+			<div class="detail-layout detail-layout-wide">
+				<div>
+
+					<section class="detail-section detail-lead">
+						<h2>Um caderno, não um currículo</h2>
+						<p>Eu tinha projeto suficiente pra encher um currículo, e currículo era exatamente o que eu não queria. Uma lista de tecnologias não diz se eu entendi o que fiz, e a parte que eu acho mais honesta de mostrar é justamente o processo: o que travou, o que eu refiz, o que só entendi depois.</p>
+						<p>Comecei pelo design, e aqui eu prefiro ser sincero. Design não é o meu forte hoje, então imagina naquela época. Parti do Strata, um template gratuito do HTML5 UP, porque o que eu queria era um lugar pra mostrar projeto, não um exercício de interface. Quando a interface é o ponto do trabalho eu faço do zero, como no <a href="acessibilidade-web.html" class="inline-accent-link">AcessiLab</a>, que é o meu TCC e onde cada tela foi desenhada por mim. Aqui não era esse o caso, e escolher um ponto de partida pronto me deixou gastar o tempo no que eu realmente queria construir.</p>
+						<p>Ele só deixou de parecer template dos outros bem mais tarde, e por um motivo específico: quando parei de ter uma página padrão e passei a ter um esqueleto base com blocos que eu escolho conforme a história de cada projeto. Aí a estrutura virou minha.</p>
+					</section>
+
+					<section class="detail-section">
+						<h2>A reforma de emergência</h2>
+						<p>O site funcionou bem enquanto tinha quatro projetos. Aí passaram dois meses, eu quis adicionar mais um, e descobri que não lembrava como tinha organizado nada.</p>
+						<p>Pra criar uma página nova eu abria uma antiga, copiava e ia substituindo texto. Se o projeto precisava de algum elemento visual diferente, eu escrevia CSS novo, e como não achava o que já existia, acabava recriando coisa que já estava lá. O <code>main.css</code> chegou a <strong>4543 linhas em um arquivo só</strong>, com regras repetidas que eu mesmo tinha escrito sem perceber.</p>
+						<p>O sintoma não era o site quebrar. Era eu levar horas pra fazer algo que deveria levar minutos, e piorar o arquivo um pouco mais a cada vez.</p>
+						<p>A reforma foi em duas frentes ao mesmo tempo: quebrar o CSS por responsabilidade, e criar um esqueleto de página com blocos reutilizáveis pra nunca mais precisar copiar página antiga. O <a href="chompbox.html" class="inline-accent-link">Chompbox</a> foi o primeiro projeto a nascer já por esse caminho, e a diferença no trabalho foi grande: em vez de caçar o que copiar, eu escolhi quais blocos a história pedia e escrevi o texto.</p>
+					</section>
+
+					<section class="detail-section">
+						<h2>O caderno, por data</h2>
+						<p>Fui atrás das datas no histórico do repositório pra escrever esta parte, porque de cabeça eu lembrava do problema mas não de quando ele apareceu. Os tamanhos de arquivo também saíram de lá.</p>
+						<ol class="detail-flow portfolio-diario">
+							<li>
+								<time datetime="2026-05-01">01/05</time>
+								<strong>Subi a primeira versão.</strong>
+								<span>Peguei o template, troquei os textos pelos meus e botei no ar. O CSS já veio com 3220 linhas e eu não tinha escrito nenhuma delas ainda.</span>
+								<span class="portfolio-medida">3220 linhas de CSS, em 1 arquivo</span>
+							</li>
+							<li>
+								<time datetime="2026-05-31">31/05</time>
+								<strong>Coloquei os primeiros projetos.</strong>
+								<span>Fiz cada página copiando a anterior e trocando o conteúdo. Funcionava bem, e na hora eu não vi problema nenhum nisso.</span>
+								<span class="portfolio-medida">4412 linhas de CSS, em 1 arquivo</span>
+							</li>
+							<li>
+								<time datetime="2026-06-17">17/06</time>
+								<strong>Aqui começou a travar.</strong>
+								<span>Eu já não achava mais as coisas dentro do arquivo. Quando precisava de um estilo, era mais rápido escrever de novo do que procurar, e foi isso que eu fui fazendo sem perceber o tamanho da bola de neve.</span>
+								<span class="portfolio-medida is-pico">4543 linhas de CSS, em 1 arquivo</span>
+							</li>
+							<li>
+								<time datetime="2026-07-18">18/07</time>
+								<strong>Tentei resolver apagando.</strong>
+								<span>Saí caçando o que não era usado e o arquivo caiu quase pela metade. Melhorou de tamanho, mas continuava tudo junto no mesmo lugar, então o problema voltou na página seguinte.</span>
+								<span class="portfolio-medida">2631 linhas de CSS, em 1 arquivo</span>
+							</li>
+							<li>
+								<time datetime="2026-08-04">04/08</time>
+								<strong>Separei de verdade.</strong>
+								<span>O <code>main.css</code> deixou de existir. No lugar entraram arquivos com dono: variáveis, base, os componentes do site e a estrutura de página de projeto. O Chompbox veio logo depois e foi o primeiro que eu montei sem copiar nada.</span>
+								<span class="portfolio-medida">1 arquivo vira 5</span>
+							</li>
+							<li>
+								<time datetime="2026-08-21">21/08</time>
+								<strong>Fechei as pontas soltas.</strong>
+								<span>A camada de tema ganhou arquivo próprio e o CSS que só um projeto usa foi pra uma pasta separada. As regras duplicadas eu juntei em vez de apagar, porque elas se somavam e escolher uma teria mudado o visual sem eu notar.</span>
+								<span class="portfolio-medida">8 arquivos, cada um com um dono</span>
+							</li>
+						</ol>
+					</section>
+
+					<section class="detail-section">
+						<h2>Programação assistida: onde e por quê</h2>
+						<p>Esse projeto eu fiz praticamente sozinho, e usei o Claude Code em duas frentes bem específicas. Faço questão de separar isso, porque tem projeto meu em que a inteligência artificial está dentro do produto, como o <a href="deck-fill-mtg.html" class="inline-accent-link">Deck Fill MTG</a>. Aqui ela foi ferramenta de trabalho, e a diferença importa.</p>
+						<p>A primeira frente foi a reorganização do CSS, aquele arquivo de 4543 linhas. Trabalho mecânico, chato e arriscado de fazer na mão.</p>
+						<p>A segunda foi construir ferramenta pra mim mesmo, e é a parte de que eu mais gosto. A principal é uma <strong>skill</strong>: um arquivo de instruções que o Claude Code carrega quando eu peço pra adicionar um projeto novo. Ela não inventa nada sozinha. Ela descreve o meu fluxo, do meu jeito, pra que a execução siga o meu padrão em vez do padrão genérico de outra pessoa.</p>
+						<p>O trecho abaixo é do arquivo de verdade, e mostra o tipo de coisa que eu achei que valia deixar escrito:</p>
+						<pre class="portfolio-trecho"><code>## Regras que valem o fluxo inteiro
+
+- **Nunca inventar dado.** Link que não existe fica "" e o botão
+  correspondente é removido da página. Na dúvida, perguntar.
+- **Nunca escrever a história do projeto sozinho.** O texto é em
+  primeira pessoa e conta o que o dono viveu. Perguntar e escrever
+  a partir da resposta.
+- **Não verifico visual.** Ao terminar, pedir pro dono abrir no
+  navegador.</code></pre>
+						<span class="portfolio-trecho-fonte">Trecho de <code>.claude/skills/add-portfolio-project/SKILL.md</code></span>
+						<p>Escrever essas regras foi o que fez a diferença. Elas não são sobre código, são sobre o que eu não quero que aconteça: página com link inventado, texto que soa como outra pessoa, e a ilusão de que está tudo certo porque ninguém abriu o navegador.</p>
+						<p>O motivo de esse jeito de trabalhar funcionar aqui tem nome: <strong>as tecnologias são simples o bastante pra eu conferir tudo.</strong> É HTML, CSS e JavaScript puro, sem build. Eu leio o que foi feito, entendo, e só então aceito. Numa stack que eu não dominasse, eu estaria aceitando no escuro, e aí não seria a mesma coisa.</p>
+					</section>
+
+					<section class="detail-section">
+						<h2>O que tem por baixo que não aparece</h2>
+						<div class="detail-points">
+							<article>
+								<h3>Documentação interna</h3>
+								<p>Nove documentos que explicam as decisões, não só o código. Quando formatei o PC e perdi as ferramentas internas, foi a documentação que permitiu reconstruir, e a reconstrução ficou melhor que o original, porque na segunda vez eu já sabia o que queria.</p>
+							</article>
+							<article>
+								<h3>Pipeline de mídia</h3>
+								<p>Imagem vira <code>.webp</code> otimizado, vídeo é comprimido em duas versões e vai pra um bucket externo. Nada é redimensionado na mão.</p>
+							</article>
+							<article>
+								<h3>Auditoria automatizada</h3>
+								<p>Abre as páginas num navegador real, testa busca, filtro e teclado em três larguras, e procura erro de JavaScript. Na primeira execução ela encontrou doze bugs, todos nela mesma, nenhum no site.</p>
+							</article>
+							<article>
+								<h3>Um arquivo como banco de dados</h3>
+								<p>Os projetos vivem num array JavaScript. Não é sofisticado, e é exatamente o suficiente pro tamanho do problema que eu tenho hoje.</p>
+							</article>
+						</div>
+					</section>
+
+					<section id="demonstracao" class="detail-section">
+						<h2>O site em uso</h2>
+						<p>A gravação abaixo mostra a parte que um print não consegue mostrar: a busca filtrando enquanto eu digito, os filtros de tema, e o painel lateral trocando de cor conforme o projeto selecionado.</p>
+						<div class="project-demo-grid">
+							<article class="project-demo-video">
+								<div class="project-demo-frame">
+									<video data-lazy muted loop playsinline preload="none" poster="../images/sites/portfolio.webp" aria-label="Navegação pelo portfólio no computador, mostrando busca, filtros e troca de tema">
+										<source data-src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/portfolio/desktop.mp4" type="video/mp4" />
+										Seu navegador não conseguiu carregar o vídeo do projeto.
+									</video>
+								</div>
+								<div class="project-demo-caption">
+									<p>Quando eu tinha quatro projetos, dava pra achar tudo só olhando. Hoje a busca e os filtros existem porque eu mesmo já precisava deles pra encontrar minhas coisas.</p>
+								</div>
+							</article>
+
+							<article class="project-demo-video is-mobile">
+								<div class="project-demo-frame">
+									<video data-lazy muted loop playsinline preload="none" aria-label="Navegação pelo portfólio no celular">
+										<source data-src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/portfolio/mobile.mp4" type="video/mp4" />
+										Seu navegador não conseguiu carregar o vídeo mobile do projeto.
+									</video>
+								</div>
+							</article>
+						</div>
+					</section>
+
+					<section class="detail-section">
+						<h2>O que vem agora</h2>
+						<p>O caderno continua. As próximas páginas já estão escritas no meu roadmap: separar os dados em JSON de verdade, e depois escrever o conteúdo dos projetos em Markdown em vez de HTML. Nada disso é urgente, porque o teste que importava esse site já passou. Adicionar um projeto voltou a ser rápido.</p>
+					</section>
+
+					<!-- preenchido por assets/js/project-links.js; sem dado, some -->
+					<section class="detail-section" data-continue-reading="2" hidden>
+						<h2>Continuar lendo</h2>
+					</section>
+				</div>
+
+				<aside class="detail-aside detail-aside-sticky">
+					<section>
+						<h2>Ficha</h2>
+						<ul>
+							<li><strong>Status:</strong> Em evolução</li>
+							<li><strong>Tipo:</strong> Projeto autoral</li>
+							<li><strong>Tecnologias:</strong> HTML, CSS, JavaScript</li>
+							<li><strong>Temas:</strong> Ensino</li>
+							<li><strong>No ar desde:</strong> maio de 2026</li>
+						</ul>
+					</section>
+
+					<section class="detail-aside-block">
+						<h2>Links do projeto</h2>
+						<ul class="detail-link-list">
+							<li><a href="https://gabriel-oliviera42.github.io/portfolio/" target="_blank" rel="noopener noreferrer"><span class="icon solid fa-external-link-alt" aria-hidden="true"></span>Projeto publicado</a></li>
+							<li><a href="https://github.com/Gabriel-Oliviera42/portfolio" target="_blank" rel="noopener noreferrer"><span class="icon brands fa-github" aria-hidden="true"></span>Repositório</a></li>
+						</ul>
+					</section>
+
+					<!-- preenchido por assets/js/project-links.js; sem dado, some -->
+					<section class="detail-aside-block" data-latest-project hidden>
+						<h2>Último projeto adicionado</h2>
+					</section>
+
+					<section class="detail-aside-block">
+						<h2>Aprendizados</h2>
+						<ul>
+							<li>O custo está em voltar ao código, não em começar.</li>
+							<li>Separar CSS por responsabilidade, não por página.</li>
+							<li>Documentar a decisão, não só o código.</li>
+							<li>Ferramenta própria economiza mais que atalho.</li>
+						</ul>
+					</section>
+				</aside>
+			</div>
+		</main>
+		<script src="../assets/js/projects-data.js"></script>
+		<script src="../assets/js/theme-utils.js"></script>
+		<script src="../assets/js/detail-theme.js"></script>
+		<script src="../assets/js/sw-register.js" defer></script>
+		<script src="../assets/js/konami.js" defer></script>
+		<script src="../assets/js/reading-time.js" defer></script>
+		<script src="../assets/js/project-links.js" defer></script>
+		<script src="../assets/js/video-lazy.js" defer></script>
+	</body>
+</html>

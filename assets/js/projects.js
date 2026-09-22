@@ -42,7 +42,7 @@
 	bindClearFilters();
 
 	search.addEventListener("input", function(event) {
-		state.query = event.target.value.trim().toLowerCase();
+		state.query = stripAccents(event.target.value.trim().toLowerCase());
 		renderProjects();
 	});
 
@@ -163,7 +163,7 @@
 			project.featuredNote
 		].concat(normalizeList(project.tags), normalizeList(project.languages), normalizeList(project.themes)).join(" ").toLowerCase();
 
-		return haystack.indexOf(state.query) !== -1;
+		return stripAccents(haystack).indexOf(state.query) !== -1;
 	}
 
 	function matchesFields(project) {
@@ -362,6 +362,13 @@
 
 	function normalizeList(value) {
 		return Array.isArray(value) ? value.filter(Boolean) : [];
+	}
+
+	/* Tira acento dos dois lados da busca (termo digitado e texto do projeto).
+	   Sem isso, "portfolio" nao achava "Este portfólio" e "iniciacao" nao achava
+	   "Iniciação" - e quem digita busca raramente usa acento. */
+	function stripAccents(value) {
+		return String(value).normalize("NFD").replace(/[̀-ͯ]/g, "");
 	}
 
 	function unique(values) {

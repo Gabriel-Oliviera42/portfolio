@@ -1,12 +1,26 @@
-<!-- video opcional, trocar por img se so tiver print -->
+<!--
+	Video opcional, trocar por img se so tiver print.
+
+	ATENCAO AO PADRAO: `data-lazy` no <video>, `data-src` no <source>, `preload="none"`
+	e SEM `autoplay`. Isso nao e estilo, e economia de banda: com `autoplay` o
+	navegador baixa o video INTEIRO assim que a pagina abre, mesmo o que esta la
+	embaixo e que a pessoa talvez nunca role ate ver (e o `preload="metadata"` e
+	ignorado nesse caso). Medido em 22/09/2026: a pagina do deck-fill-mtg puxa
+	10,6 MB na abertura, e a do laboratorio dispara 5 videos de uma vez.
+
+	Quem liga os videos e assets/js/video-lazy.js, quando eles chegam perto da tela.
+	SEM ESSE SCRIPT NA PAGINA O VIDEO NAO TOCA, so aparece o poster. Incluir:
+
+	    <script src="../assets/js/video-lazy.js" defer></script>
+-->
 <section id="demonstracao" class="detail-section">
 	<h2>Demonstracao</h2>
 	<p>TODO texto introdutorio. Remover secao se nao houver video/print de demonstracao.</p>
 	<div class="project-demo-grid">
 		<article class="project-demo-video">
 			<div class="project-demo-frame">
-				<video autoplay muted loop playsinline preload="metadata" poster="../images/sites/TODO imagem.webp" aria-label="TODO descricao do video desktop">
-					<source src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/TODO-slug/desktop.mp4" type="video/mp4" />
+				<video data-lazy muted loop playsinline preload="none" poster="../images/sites/TODO imagem.webp" aria-label="TODO descricao do video desktop">
+					<source data-src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/TODO-slug/desktop.mp4" type="video/mp4" />
 					Seu navegador nao conseguiu carregar o video.
 				</video>
 			</div>
@@ -17,8 +31,8 @@
 
 		<article class="project-demo-video is-mobile">
 			<div class="project-demo-frame">
-				<video autoplay muted loop playsinline preload="metadata" aria-label="TODO descricao do video mobile">
-					<source src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/TODO-slug/mobile.mp4" type="video/mp4" />
+				<video data-lazy muted loop playsinline preload="none" aria-label="TODO descricao do video mobile">
+					<source data-src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/TODO-slug/mobile.mp4" type="video/mp4" />
 					Seu navegador nao conseguiu carregar o video mobile.
 				</video>
 			</div>
