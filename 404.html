@@ -1,8 +1,26 @@
 <!DOCTYPE HTML>
 <html lang="pt-BR">
 	<head>
-		<title>Página não encontrada - Gabriel Lourenço</title>
 		<meta charset="utf-8" />
+		<script>
+			/* O GitHub Pages entrega este arquivo pra QUALQUER endereco que nao
+			   existe, inclusive dentro de projects/. Com caminho relativo, em
+			   /portfolio/projects/xyz.html o CSS era procurado em projects/assets/
+			   (a pagina abria sem estilo) e o botao "Voltar" levava pra
+			   projects/index.html, outro 404.
+
+			   A <base> faz todo caminho abaixo partir da raiz do site. Precisa ser
+			   criada ANTES dos <link>, por isso fica no topo do <head>. No GitHub
+			   Pages a raiz e /portfolio/; em localhost e dominio proprio, e /. */
+			(function() {
+				var pasta = location.pathname.split("/")[1];
+				var raiz = /\.github\.io$/.test(location.hostname) && pasta ? "/" + pasta + "/" : "/";
+				var base = document.createElement("base");
+				base.href = raiz;
+				document.head.appendChild(base);
+			})();
+		</script>
+		<title>Página não encontrada - Gabriel Lourenço</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="robots" content="noindex" />
 		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
