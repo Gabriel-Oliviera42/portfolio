@@ -99,3 +99,196 @@
 		top: 0.75em;
 		z-index: 1;
 	}
+
+	/* ---------- blocos que puxam outros projetos (assets/js/project-links.js) ----------
+
+	   Nasceram em projects/portfolio.css. Em 2026-09-30 o DeckFill passou a usar
+	   os dois, e dois projetos reais usando viram bloco generico (docs/08).
+
+	   O JS injeta a cor do tema de cada projeto em --cor-do-projeto. O valor
+	   abaixo e o fallback de quando o JS nao roda ou o card nao tem tema (o de
+	   certificado, no "o que entrou por ultimo"). E o verde ESCURO de proposito:
+	   o claro (--portfolio-accent) da 3.36:1 como texto sobre branco, e o
+	   "Ver certificado" reprovava no contraste AA.
+
+	   Sobre os !important: o base.css tem `a:hover { color: #49bf9d !important }`,
+	   verde herdado do template Strata. Sem eles esse verde sequestra o texto dos
+	   cards no hover (o Chompbox, roxo, ficava verde), e so outro !important
+	   vence um !important. */
+
+	:root {
+		--cor-do-projeto: var(--portfolio-accent-dark);
+	}
+
+	/* ultimo projeto adicionado (card lateral) */
+
+	/* O .detail-aside h2 centraliza o marcador verticalmente, o que funciona em
+	   titulo de uma linha. Este quebra em duas e a bolinha ficava boiando. */
+	[data-latest-project] h2 {
+		align-items: flex-start;
+	}
+
+	[data-latest-project] h2:before {
+		margin-top: 0.42em;
+	}
+
+	.latest-project {
+		align-items: center;
+		border: 1px solid var(--portfolio-line);
+		border-left: 3px solid var(--cor-do-projeto);
+		border-radius: 8px;
+		color: inherit !important;
+		display: flex;
+		gap: 0.7em;
+		padding: 0.7em 0.85em;
+		text-decoration: none;
+		transition: border-color 0.2s ease, background 0.2s ease;
+	}
+
+	.latest-project:hover {
+		background: rgba(0, 0, 0, 0.02);
+		border-color: var(--cor-do-projeto);
+		color: inherit !important;
+	}
+
+	.latest-project:hover .latest-project-name {
+		color: var(--cor-do-projeto) !important;
+	}
+
+	.latest-project:hover .latest-project-date {
+		color: var(--portfolio-muted) !important;
+	}
+
+	.latest-project > .icon {
+		color: var(--cor-do-projeto);
+		flex: 0 0 auto;
+		font-size: 1.15em;
+	}
+
+	.latest-project-text {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+	}
+
+	.latest-project-name {
+		font-weight: 600;
+		line-height: 1.3;
+	}
+
+	.latest-project-date {
+		color: var(--portfolio-muted);
+		font-size: 0.8em;
+		margin-top: 0.1em;
+	}
+
+	/* continuar lendo (fim da pagina) */
+
+	.continue-reading {
+		display: grid;
+		gap: 1em;
+		grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+	}
+
+	.continue-reading-item {
+		border: 1px solid var(--portfolio-line);
+		border-radius: 10px;
+		border-top: 3px solid var(--cor-do-projeto);
+		color: inherit !important;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+		padding: 1em 1.1em 0.9em;
+		text-decoration: none;
+		transition: border-color 0.2s ease, transform 0.2s ease;
+	}
+
+	.continue-reading-item:hover {
+		border-color: var(--cor-do-projeto);
+		color: inherit !important;
+		transform: translateY(-2px);
+	}
+
+	.continue-reading-item:hover .continue-reading-name,
+	.continue-reading-item:hover .continue-reading-cta {
+		color: var(--cor-do-projeto) !important;
+	}
+
+	.continue-reading-item:hover .continue-reading-text {
+		color: var(--portfolio-muted) !important;
+	}
+
+	.continue-reading-head {
+		align-items: center;
+		display: flex;
+		gap: 0.5em;
+	}
+
+	/* linha de cima do "o que entrou por ultimo": o que e o card e quando */
+	.continue-reading-kicker {
+		color: var(--portfolio-muted);
+		font-size: 0.75em;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	.continue-reading-head .icon {
+		color: var(--cor-do-projeto);
+		flex: 0 0 auto;
+	}
+
+	.continue-reading-name {
+		font-size: 1.05em;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+
+	.continue-reading-text {
+		color: var(--portfolio-muted);
+		font-size: 0.88em;
+		line-height: 1.5;
+	}
+
+	.continue-reading-cta {
+		color: var(--cor-do-projeto);
+		font-size: 0.85em;
+		font-weight: 600;
+		margin-top: auto;
+	}
+
+	.continue-reading-cta:after {
+		content: " \2192";
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.continue-reading-item:hover {
+			transform: none;
+		}
+	}
+
+	/* ---------- ficha do card lateral ----------
+
+	   A ficha e uma lista de pares nome/valor ("Status: Publicado"), e a tag
+	   feita pra isso e <dl>: o leitor de tela anuncia "Status" e "Publicado"
+	   como par, em vez de uma lista de frases soltas. Era <ul><li><strong>
+	   ate 2026-09-30; o visual ficou identico (linha de 28px, rotulo na cor
+	   de titulo, valor na cor de texto). Os dois-pontos vem do CSS. */
+
+	.detail-facts {
+		margin: 0;
+	}
+
+	.detail-facts dt,
+	.detail-facts dd {
+		display: inline;
+		margin: 0;
+	}
+
+	.detail-facts dt {
+		color: var(--portfolio-ink);
+	}
+
+	.detail-facts dt:after {
+		content: ":";
+	}

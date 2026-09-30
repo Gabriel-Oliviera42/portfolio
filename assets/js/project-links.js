@@ -1,10 +1,14 @@
 /*
 	Blocos que puxam OUTROS projetos dentro de uma pagina de projeto.
 
-	Dois hoje, os dois em projects/portfolio.html:
+	Tres blocos, cada pagina usa os que quiser:
 
 	  [data-latest-project]   - card lateral, mostra o ultimo projeto cadastrado
 	  [data-continue-reading] - fim da pagina, sugere leituras
+	  [data-latest-additions] - fim da pagina, o ultimo projeto E o ultimo
+	                            certificado (projects/portfolio.html). Precisa
+	                            do certificates-data.js carregado antes; sem
+	                            ele, mostra so o projeto.
 
 	Os dois excluem o projeto da propria pagina e pintam cada item com a cor do
 	tema daquele projeto, usando o mesmo PORTFOLIO_THEME_PROFILES que o
@@ -40,6 +44,7 @@
 
 	preencherUltimo(document.querySelector("[data-latest-project]"));
 	preencherLeituras(document.querySelector("[data-continue-reading]"));
+	preencherNovidades(document.querySelector("[data-latest-additions]"));
 
 	/* ---------- card lateral: o ultimo projeto que entrou ---------- */
 
@@ -153,6 +158,112 @@
 
 		bloco.appendChild(lista);
 		bloco.removeAttribute("hidden");
+	}
+
+	/* ---------- fim da pagina: o que entrou por ultimo ---------- */
+
+	// Reaproveita o visual do "continuar lendo" (.continue-reading-*), com uma
+	// linha a mais em cima dizendo o que e cada card e quando entrou.
+	function preencherNovidades(bloco) {
+		if (!bloco) {
+			return;
+		}
+
+		var itens = [];
+		var projeto = maisRecente(outros, "addedAt");
+
+		if (projeto && formatarData(projeto.addedAt)) {
+			itens.push({
+				href: paraRaiz(projeto.detailUrl),
+				rotulo: "Último projeto · " + formatarData(projeto.addedAt),
+				nome: projeto.title,
+				texto: encurtar(projeto.description || "", 150),
+				chamada: "Continuar lendo",
+				icone: iconeDe(projeto),
+				projeto: projeto
+			});
+		}
+
+		var certificados = (window.PORTFOLIO_CERTIFICATES || []).filter(function(cert) {
+			return cert && cert.id && cert.title;
+		});
+		var cert = maisRecente(certificados, "date");
+
+		if (cert && formatarData(cert.date)) {
+			var icone = document.createElement("span");
+			icone.className = "icon solid fa-certificate";
+			icone.setAttribute("aria-hidden", "true");
+
+			itens.push({
+				href: paraRaiz("index.html#certificado-" + encodeURIComponent(cert.id)),
+				rotulo: "Último certificado · " + formatarData(cert.date),
+				nome: cert.title,
+				texto: cert.issuer + (cert.hours ? " · " + cert.hours + " horas" : ""),
+				chamada: "Ver certificado",
+				icone: icone,
+				projeto: null
+			});
+		}
+
+		if (!itens.length) {
+			return;
+		}
+
+		var lista = document.createElement("div");
+		lista.className = "continue-reading";
+
+		itens.forEach(function(item) {
+			var link = document.createElement("a");
+			link.className = "continue-reading-item";
+			link.href = item.href;
+
+			var rotulo = document.createElement("span");
+			rotulo.className = "continue-reading-kicker";
+			rotulo.textContent = item.rotulo;
+
+			var topo = document.createElement("span");
+			topo.className = "continue-reading-head";
+
+			if (item.icone) {
+				topo.appendChild(item.icone);
+			}
+
+			var nome = document.createElement("span");
+			nome.className = "continue-reading-name";
+			nome.textContent = item.nome;
+			topo.appendChild(nome);
+
+			var texto = document.createElement("span");
+			texto.className = "continue-reading-text";
+			texto.textContent = item.texto;
+
+			var chamada = document.createElement("span");
+			chamada.className = "continue-reading-cta";
+			chamada.textContent = item.chamada;
+
+			link.appendChild(rotulo);
+			link.appendChild(topo);
+			link.appendChild(texto);
+			link.appendChild(chamada);
+
+			if (item.projeto) {
+				pintar(link, item.projeto);
+			}
+
+			lista.appendChild(link);
+		});
+
+		bloco.appendChild(lista);
+		bloco.removeAttribute("hidden");
+	}
+
+	// datas em AAAA-MM-DD: comparar como texto ja ordena por data
+	function maisRecente(lista, campo) {
+		return lista.filter(function(item) {
+			return item[campo];
+		}).sort(function(a, b) {
+			return String(b[campo]).localeCompare(String(a[campo]));
+		})[0];
 	}
 
 	/* ---------- apoio ---------- */

@@ -8,7 +8,14 @@
 		<meta property="og:title" content="Chompbox - Montador de Encontros de D&D 5e" />
 		<meta property="og:description" content="Ferramenta pessoal para montar encontros de D&D 5e, com banco de ~4.400 criaturas limpo campo a campo e gerador automático." />
 		<meta property="og:type" content="article" />
-		<meta property="og:image" content="../images/sites/Chompbox.webp" />
+		<meta property="og:image" content="https://gabriel-oliviera42.github.io/portfolio/images/og/chompbox.jpg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:url" content="https://gabriel-oliviera42.github.io/portfolio/projects/chompbox.html" />
+		<meta property="og:site_name" content="Gabriel Lourenço" />
+		<meta property="og:locale" content="pt_BR" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="canonical" href="https://gabriel-oliviera42.github.io/portfolio/projects/chompbox.html" />
 		<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
 		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
 		<link rel="stylesheet" href="../assets/css/tokens.css" />
@@ -17,7 +24,12 @@
 		<link rel="stylesheet" href="../assets/css/blocks.css" />
 		<link rel="stylesheet" href="../assets/css/theme-accent.css" />
 		<link rel="stylesheet" href="../assets/css/projects/chompbox.css" />
-		<link href="https://fonts.cdnfonts.com/css/mestizo-font" rel="stylesheet" />
+		<!-- Fonte so do logo do Chompbox, vinda de outro site. Carregada como
+		     "print" e trocada pra "all" quando chega: assim ela nao segura a
+		     pagina inteira se o cdnfonts demorar. O logo aparece em serif por
+		     um instante e troca sozinho. -->
+		<link href="https://fonts.cdnfonts.com/css/mestizo-font" rel="stylesheet" media="print" onload="this.media='all'" />
+		<noscript><link href="https://fonts.cdnfonts.com/css/mestizo-font" rel="stylesheet" /></noscript>
 	</head>
 	<body class="project-detail-page detail-wide theme-accent-rpg">
 		<main id="main">
@@ -292,12 +304,12 @@
 				<aside class="detail-aside detail-aside-sticky">
 					<section>
 						<h2>Ficha</h2>
-						<ul>
-							<li><strong>Status:</strong> Publicado</li>
-							<li><strong>Tipo:</strong> Ferramenta pessoal</li>
-							<li><strong>Tecnologias:</strong> React, Vite, Tailwind, Zustand, Python, FastAPI</li>
-							<li><strong>Temas:</strong> RPG</li>
-						</ul>
+						<dl class="detail-facts">
+							<div><dt>Status</dt> <dd>Publicado</dd></div>
+							<div><dt>Tipo</dt> <dd>Ferramenta pessoal</dd></div>
+							<div><dt>Tecnologias</dt> <dd>React, Vite, Tailwind, Zustand, Python, FastAPI</dd></div>
+							<div><dt>Temas</dt> <dd>RPG</dd></div>
+						</dl>
 					</section>
 
 					<section class="detail-aside-block">

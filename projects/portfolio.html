@@ -8,7 +8,14 @@
 		<meta property="og:title" content="Este portfólio" />
 		<meta property="og:description" content="Diário de projetos em HTML, CSS e JavaScript puro, reconstruído quando adicionar um projeto virou trabalho de horas." />
 		<meta property="og:type" content="article" />
-		<meta property="og:image" content="../images/sites/portfolio.webp" />
+		<meta property="og:image" content="https://gabriel-oliviera42.github.io/portfolio/images/og/portfolio.jpg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:url" content="https://gabriel-oliviera42.github.io/portfolio/projects/portfolio.html" />
+		<meta property="og:site_name" content="Gabriel Lourenço" />
+		<meta property="og:locale" content="pt_BR" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="canonical" href="https://gabriel-oliviera42.github.io/portfolio/projects/portfolio.html" />
 		<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
 		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
 		<link rel="stylesheet" href="../assets/css/tokens.css" />
@@ -181,21 +188,21 @@
 					</section>
 
 					<!-- preenchido por assets/js/project-links.js; sem dado, some -->
-					<section class="detail-section" data-continue-reading="2" hidden>
-						<h2>Continuar lendo</h2>
+					<section class="detail-section" data-latest-additions hidden>
+						<h2>O que entrou por último</h2>
 					</section>
 				</div>
 
 				<aside class="detail-aside detail-aside-sticky">
 					<section>
 						<h2>Ficha</h2>
-						<ul>
-							<li><strong>Status:</strong> Em evolução</li>
-							<li><strong>Tipo:</strong> Projeto autoral</li>
-							<li><strong>Tecnologias:</strong> HTML, CSS, JavaScript</li>
-							<li><strong>Temas:</strong> Ensino</li>
-							<li><strong>No ar desde:</strong> maio de 2026</li>
-						</ul>
+						<dl class="detail-facts">
+							<div><dt>Status</dt> <dd>Em evolução</dd></div>
+							<div><dt>Tipo</dt> <dd>Projeto autoral</dd></div>
+							<div><dt>Tecnologias</dt> <dd>HTML, CSS, JavaScript</dd></div>
+							<div><dt>Temas</dt> <dd>Ensino</dd></div>
+							<div><dt>No ar desde</dt> <dd>maio de 2026</dd></div>
+						</dl>
 					</section>
 
 					<section class="detail-aside-block">
@@ -204,11 +211,6 @@
 							<li><a href="https://gabriel-oliviera42.github.io/portfolio/" target="_blank" rel="noopener noreferrer"><span class="icon solid fa-external-link-alt" aria-hidden="true"></span>Projeto publicado</a></li>
 							<li><a href="https://github.com/Gabriel-Oliviera42/portfolio" target="_blank" rel="noopener noreferrer"><span class="icon brands fa-github" aria-hidden="true"></span>Repositório</a></li>
 						</ul>
-					</section>
-
-					<!-- preenchido por assets/js/project-links.js; sem dado, some -->
-					<section class="detail-aside-block" data-latest-project hidden>
-						<h2>Último projeto adicionado</h2>
 					</section>
 
 					<section class="detail-aside-block">
@@ -229,6 +231,7 @@
 		<script src="../assets/js/sw-register.js" defer></script>
 		<script src="../assets/js/konami.js" defer></script>
 		<script src="../assets/js/reading-time.js" defer></script>
+		<script src="../assets/js/certificates-data.js" defer></script>
 		<script src="../assets/js/project-links.js" defer></script>
 		<script src="../assets/js/video-lazy.js" defer></script>
 	</body>
