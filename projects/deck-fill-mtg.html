@@ -1,191 +1,354 @@
 <!DOCTYPE HTML>
 <html lang="pt-BR">
-    <head>
-        <title>Deck Fill MTG - Gabriel Lourenço</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Detalhes do projeto Deck Fill MTG, uma aplicação web para criação e impressão de decks proxy de Magic: The Gathering." />
-        <meta property="og:title" content="Deck Fill MTG" />
-        <meta property="og:description" content="Ferramenta full-stack para criar e imprimir proxies personalizados de Magic: The Gathering." />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="../images/sites/Deck Fill MTG (Proxy).webp" />
+	<head>
+		<title>DeckFill - Gabriel Lourenço</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Estudo de caso do DeckFill: como uma ferramenta de proxies de Magic cresceu até parar de funcionar, e o que mudou quando eu recomecei planejando antes de escrever código." />
+		<meta property="og:title" content="DeckFill" />
+		<meta property="og:description" content="Decklist colada vira PDF de proxies em 63 × 88 mm. Reescrito do zero depois que a primeira versão ficou grande demais pra eu conseguir mexer nela." />
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="https://gabriel-oliviera42.github.io/portfolio/images/og/deck-fill-mtg.jpg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:url" content="https://gabriel-oliviera42.github.io/portfolio/projects/deck-fill-mtg.html" />
+		<meta property="og:site_name" content="Gabriel Lourenço" />
+		<meta property="og:locale" content="pt_BR" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="canonical" href="https://gabriel-oliviera42.github.io/portfolio/projects/deck-fill-mtg.html" />
 		<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
 		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
-        <link rel="stylesheet" href="../assets/css/tokens.css" />
-        <link rel="stylesheet" href="../assets/css/base.css" />
-        <link rel="stylesheet" href="../assets/css/components.css" />
-        <link rel="stylesheet" href="../assets/css/blocks.css" />
-        <link rel="stylesheet" href="../assets/css/theme-accent.css" />
-    </head>
-    <body class="project-detail-page theme-accent-rpg">
-        <main id="main">
-            
-            <header class="detail-hero">
-                <div>
-                    <nav class="detail-nav">
-                        <a href="../index.html#projects" class="button small">Voltar para projetos</a>
-                    </nav>
-                    <p class="eyebrow">Projeto Pessoal | Full-Stack</p>
-                    <h1>Deck Fill MTG</h1>
-                    <p class="detail-summary">Uma ferramenta completa criada para jogadores de Magic: The Gathering. 
-                        O objetivo da aplicação é permitir que os usuários busquem cartas, montem seus decks personalizados e gerem arquivos otimizados para a impressão de proxies para jogos casuais.</p>
-                    <div class="detail-actions">
-                        <div class="detail-primary-actions">
-                            <a href="https://deck-fill-mtg.vercel.app/" target="_blank" rel="noopener noreferrer" class="button primary">Acessar o site</a>
-							<a href="#erros" class="button">Meus erros</a>
+		<link rel="stylesheet" href="../assets/css/tokens.css" />
+		<link rel="stylesheet" href="../assets/css/base.css" />
+		<link rel="stylesheet" href="../assets/css/components.css" />
+		<link rel="stylesheet" href="../assets/css/blocks.css" />
+		<link rel="stylesheet" href="../assets/css/theme-accent.css" />
+		<link rel="stylesheet" href="../assets/css/projects/deck-fill-mtg.css" />
+	</head>
+	<body class="project-detail-page detail-wide theme-accent-rpg">
+		<main id="main">
+
+			<header class="detail-hero">
+				<div>
+					<nav class="detail-nav">
+						<a href="../index.html#projects" class="button small">Voltar para projetos</a>
+					</nav>
+					<p class="eyebrow">Projeto autoral | Ferramenta</p>
+					<h1>DeckFill</h1>
+					<p class="detail-summary">Você cola uma decklist e recebe um PDF pronto pra imprimir, com as cartas no tamanho exato de 63 × 88 mm. Esta é a segunda versão. A primeira funcionou, cresceu, e parou de funcionar, e a história de por que isso aconteceu é a parte mais útil desta página.</p>
+					<div class="detail-actions">
+						<div class="detail-primary-actions">
+							<a href="https://deckfill.pages.dev" target="_blank" rel="noopener noreferrer" class="button primary">Ver projeto</a>
+							<a href="#demonstracao" class="button">Ver as telas</a>
 						</div>
-                        <div class="detail-social-actions" aria-label="Links pessoais">
-                            <a href="https://github.com/Gabriel-Oliviera42/DeckFill" target="_blank" rel="noopener noreferrer" class="button icon-only" title="GitHub"><span class="icon brands fa-github" aria-hidden="true"></span><span class="label">GitHub</span></a>
-                            <a href="https://www.linkedin.com/in/gabriel-lourenco-ab7893273" target="_blank" rel="noopener noreferrer" class="button icon-only" title="LinkedIn"><span class="icon brands fa-linkedin-in" aria-hidden="true"></span><span class="label">LinkedIn</span></a>
-                            <a href="mailto:gabriellourenco343@gmail.com" class="button icon-only" title="E-mail"><span class="icon solid fa-envelope" aria-hidden="true"></span><span class="label">E-mail</span></a>
-                        </div>
-                    </div>
-                </div>
-                <figure class="detail-media">
-                    <img src="../images/sites/Deck Fill MTG (Proxy).webp" alt="Tela inicial do projeto Deck Fill MTG" />
-                </figure>
-            </header>
+						<div class="detail-social-actions" aria-label="Links pessoais">
+							<a href="https://github.com/gabriel-oliviera42" target="_blank" rel="noopener noreferrer" class="button icon-only" title="GitHub"><span class="icon brands fa-github" aria-hidden="true"></span><span class="label">GitHub</span></a>
+							<a href="https://www.linkedin.com/in/gabriel-lourenco-ab7893273" target="_blank" rel="noopener noreferrer" class="button icon-only" title="LinkedIn"><span class="icon brands fa-linkedin-in" aria-hidden="true"></span><span class="label">LinkedIn</span></a>
+							<a href="mailto:gabriellourenco343@gmail.com" class="button icon-only" title="E-mail"><span class="icon solid fa-envelope" aria-hidden="true"></span><span class="label">E-mail</span></a>
+						</div>
+					</div>
+				</div>
+				<figure class="detail-media">
+					<img src="../images/sites/deckfill-erros.webp" alt="Tela do DeckFill explicando linha por linha o que não conseguiu resolver na decklist colada" />
+				</figure>
+			</header>
 
-            <div class="detail-layout detail-layout-wide">
-                <div>
-                    <section class="detail-section detail-lead"> 
-                        <h2>O que exatamente é isso?</h2>
-
-                        <p>Se você não é do mundo dos Card Games, pode estar se perguntando o que é esse projeto. 
-                            Magic: The Gathering (MTG) é um dos jogos de cartas mais complexos e caros do mundo. 
-                            Muitas vezes, os jogadores querem testar um baralho (deck) novo antes de gastar dinheiro 
-                            comprando as cartas originais. É aí que entram as <strong>Proxies</strong>.</p>
-
-                        <p>Uma "Proxy" nada mais é do que uma impressão não-oficial de uma carta, usada exclusivamente 
-                            para testes e jogos casuais com amigos. O problema é que procurar imagens em boa qualidade, 
-                            ajustar o tamanho correto para impressão e organizar tudo em uma folha A4 dá um trabalho absurdo.</p>
-
-                        <p>O <strong>Deck Fill</strong> nasceu para resolver exatamente essa dor. Ele é um sistema 
-                            onde o usuário pesquisa as cartas, adiciona ao seu deck virtual e, com um clique, o site 
-                            organiza e gera tudo pronto para a impressora. Rápido, prático e sem dor de cabeça.</p>
-                    </section>
-
-                    <section class="detail-section">
-                        <h2>O Desafio Técnico (E como o projeto cresceu)</h2>
-                        <ol class="detail-flow">
-                            <li>
-                                <strong>Construção do Front-end.</strong>
-                                <span>A interface precisava ser intuitiva. Criei um sistema de busca em tempo real e um 
-                                    gerenciador de estado para que o usuário pudesse ver seu deck sendo montado dinamicamente 
-                                    antes de enviá-lo para impressão.</span>
-                            </li>
-                            <li>
-                                <strong>Desenvolvimento da API (Back-end).</strong>
-                                <span>Para não depender de APIs lentas de terceiros, construí meu próprio back-end em Python 
-                                    utilizando o framework FastAPI. O servidor precisava processar buscas rápidas e entregar as imagens corretas.</span>
-                            </li>
-                            <li>
-                                <strong>Lidando com um Volume Massivo de Dados.</strong>
-                                <span>Foi aqui que o projeto tomou proporções gigantescas. Inicialmente focado em MTG, decidi 
-                                    expandir o banco de dados (SQLite) para suportar outros jogos como Yu-Gi-Oh!, Pokémon e Lorcana. 
-                                    O resultado? Mais de 600 MB só de bancos de dados locais!</span>
-                            </li>
-                            <li>
-                                <strong>Pausa Estratégica.</strong>
-                                <span>Gerenciar infraestrutura gratuita para quase 1 GB de banco de dados se tornou inviável. 
-                                    Como desenvolvedor, precisei tomar a decisão madura de congelar a escalabilidade do back-end, 
-                                    garantir que a versão atual ficasse estável e documentar o aprendizado formidável que tive 
-                                    ao lidar com um projeto desse tamanho.</span>
-                            </li>
-                        </ol>
-                    </section>
-
-                    <section class="detail-section">
-                        <h2>O que esse projeto me ensinou</h2>
-                        <div class="detail-points">
-                            <article>
-                                <h3>Gerenciamento de Escopo</h3>
-                                <p>Aprendi na prática o que significa "Scope Creep". Querer adicionar suporte para 7 jogos diferentes me mostrou como o excesso de funcionalidades pode travar o deploy de um software. Entregue o MVP primeiro!</p>
-                            </article>
-                            <article>
-                                <h3>APIs e Back-end em Python</h3>
-                                <p>Tive uma imersão profunda na criação de servidores com FastAPI, entendendo rotas, requisições HTTP, CORS e comunicação direta do servidor com o banco de dados.</p>
-                            </article>
-                            <article>
-                                <h3>Limitações de Infraestrutura</h3>
-                                <p>Descobri da forma mais técnica possível como funcionam as restrições de plataformas em nuvem (como Render, Vercel e Fly.io) e limites de versionamento no GitHub para arquivos gigantes.</p>
-                            </article>
-                            <article>
-                                <h3>Bancos de Dados Relacionais</h3>
-                                <p>Trabalhar com arquivos SQLite pesados me forçou a entender como estruturar os dados para que o site conseguisse realizar as buscas pelas cartas de forma eficiente.</p>
-                            </article>
-                        </div>
-                    </section>
-
-                    <section class="detail-section">
-                        <h2>Demonstração</h2>
-                        <p>Abaixo você pode ver o funcionamento prático do sistema, desde a busca fluida pelas cartas até a montagem da estrutura do deck na interface.</p>
-                        <div class="project-demo-grid">
-                            <article class="project-demo-video" style="grid-column: 1 / -1;">
-                                <div class="project-demo-frame">
-                                    <video data-lazy muted loop playsinline preload="none" poster="../images/sites/Deck Fill MTG (Proxy).webp" aria-label="Demonstração do Projeto Deck Fill">
-                                        <source data-src="https://pub-ae6419ec4d5c4e4ab6d50541d232c500.r2.dev/DeckFill.mp4" type="video/mp4" />
-                                        Seu navegador não conseguiu carregar o vídeo do projeto.
-                                    </video>
-                                </div>
-                            </article>
-                        </div>
-                    </section>
-
-					<section class="detail-section" id="erros">
-						<h2>A ilusão do "É só consumir a API"</h2>
-						
-						<p>Quando decidi expandir o site para 7 jogos diferentes, eu fui pela emoção. Achei que seria apenas plugar as APIs de cada Card Game e pronto. A realidade cobrou caro. Como eu não estudei a documentação de cada uma previamente, me deparei com problemas bizarros durante o desenvolvimento: uma API me retornava imagens com marcas d'água gigantes inutilizando a proxy, enquanto outra tinha um sistema de busca tão confuso e engessado que eu precisava fazer malabarismos no código só para o usuário conseguir achar uma carta simples.</p>
-						<p>A falta de um cuidado anterior para tratar esses dados transformou meu back-end em uma verdadeira colcha de retalhos na tentativa de contornar as limitações de cada provedor. Claro que não é o único problema, e com certeza não percebi todos os meus erros, mas só de olhar para trás e ver que eu sei o que eu deveria fazer já me dá vontade de fazer um projeto desse tamanho, mesmo sabendo que vou cometer outros erros para aprender com eles.</p>
-						
-					</section>
+			<div class="detail-layout detail-layout-wide">
+				<div>
 
 					<section class="detail-section detail-lead">
-						<h2>O que eu farei no futuro (Visão 2.0)</h2>
-						
-						<p>Olhando para esse projeto hoje, eu vejo perfeitamente onde errei pela pressa de ver tudo funcionando na minha tela. Mas é exatamente por isso que considero esse site um marco no meu aprendizado.</p>
-						<p>No futuro, pretendo reescrever este projeto com o carinho e a maturidade técnica que ele exige. A minha abordagem para a versão 2.0 será completamente diferente:</p>
-						<p>Estudo profundo de cada API: Antes de escrever qualquer linha de código, vou ler as documentações de cabo a rabo. Preciso entender os limites de requisição (rate limits), o padrão de resposta e como higienizar os dados para garantir que nenhuma imagem com marca d'água ou texto quebrado chegue ao usuário.</p>
-						<p>Arquitetura antes do Código: vou desenhar a modelagem dos dados primeiro. Em vez de baixar o mundo inteiro e gerar 600 MB de banco de dados local para contornar buscas ruins, vou construir um sistema de consumo inteligente e cache eficiente.</p>
-						<p>Um jogo por vez: Aprendi que a complexidade escala rápido demais. Vou focar em refazer a infraestrutura para que um único jogo (o MTG) rode de forma impecável, profissional e escalável, antes de sequer pensar em adicionar o segundo.</p>
+						<h2>O que é uma proxy, pra quem não joga</h2>
+						<p>Magic: The Gathering é um dos jogos de cartas mais caros do mundo. Muitas vezes o jogador quer testar um baralho novo antes de gastar dinheiro comprando as cartas originais, e é aí que entram as proxies: impressões não oficiais, usadas só pra teste e jogo casual entre amigos.</p>
+						<p>O trabalho não está em achar a imagem. Está em achar a imagem certa, no tamanho certo, e organizar tudo numa folha A4 sem que a carta saia com dois milímetros a mais e denuncie o baralho inteiro quando você embaralha. O DeckFill existe pra resolver essa parte chata.</p>
 					</section>
 
-                </div>
+					<section class="detail-section">
+						<h2>A primeira versão funcionou, e foi isso que me enganou</h2>
+						<p>A versão 1 usava Python com FastAPI e um banco SQLite. Ela funcionava, e como funcionava eu fui adicionando coisa. Comecei com Magic e resolvi expandir pra Yu-Gi-Oh!, Pokémon, Lorcana e mais alguns, sete jogos no total, cada um com sua API.</p>
+						<p>Duas coisas quebraram ao mesmo tempo.</p>
+						<p><strong>A primeira foi o banco.</strong> Sete catálogos de carta viraram mais de 600 MB de arquivos SQLite locais, perto de 1 GB no fim. Nenhum plano gratuito de hospedagem aguenta isso, e a sincronização começou a quebrar sozinha. Eu passei a gastar o tempo mantendo a infraestrutura de pé em vez de melhorar o site.</p>
+						<p><strong>A segunda foi pior, e demorei pra admitir.</strong> Eu mexia naquele código todos os dias, por meses, e chegou um ponto em que eu abria o projeto e não conseguia achar as coisas. Não sabia onde estava cada parte nem por que ela tinha sido feita daquele jeito. O código era meu, recente, e mesmo assim eu me perdia nele.</p>
+						<p>Foi por isso que eu parei. Não foi o banco cheio. Foi eu não conseguir mais trabalhar no meu próprio projeto.</p>
+					</section>
 
-                <aside class="detail-aside detail-aside-sticky">
-                    <section>
-                        <h2>Ficha</h2>
-                        <ul>
-                            <li><strong>Status:</strong> MVP Concluído / Em evolução</li>
-                            <li><strong>Tipo:</strong> Aplicação Web / Ferramenta de Utilidade</li>
-                            <li><strong>Tecnologias Front:</strong> JavaScript, CSS, HTML5 (Vercel)</li>
-                            <li><strong>Tecnologias Back:</strong> Python, FastAPI, SQLite</li>
-                        </ul>
-                    </section>
+					<section class="detail-section">
+						<h2>A promessa que eu escrevi nesta mesma página</h2>
+						<p>Quando escrevi sobre o DeckFill aqui no portfólio, em 2026, eu terminei o texto com uma seção chamada "O que eu farei no futuro". Prometi três coisas:</p>
 
-                    <section class="detail-aside-block">
-                        <h2>Links do projeto</h2>
-                        <ul class="detail-link-list">
-                            <li><a href="https://deck-fill-mtg.vercel.app/" target="_blank" rel="noopener noreferrer"><span class="icon solid fa-external-link-alt" aria-hidden="true"></span>Site ao vivo</a></li>
-                            <li><a href="https://github.com/Gabriel-Oliviera42/DeckFill" target="_blank" rel="noopener noreferrer"><span class="icon brands fa-github" aria-hidden="true"></span>Repositório no GitHub</a></li>
-                        </ul>
-                    </section>
+						<blockquote class="citacao-velha">
+							<p><strong>Estudo profundo de cada API.</strong> Antes de escrever qualquer linha de código, vou ler as documentações de cabo a rabo.</p>
+							<p><strong>Arquitetura antes do código.</strong> Vou desenhar a modelagem dos dados primeiro.</p>
+							<p><strong>Um jogo por vez.</strong> Vou focar em refazer a infraestrutura para que um único jogo (o MTG) rode de forma impecável, antes de sequer pensar em adicionar o segundo.</p>
+							<span class="citacao-velha-fonte">Escrito por mim na versão anterior desta página, antes de existir qualquer linha da versão 2.</span>
+						</blockquote>
 
-                    <section class="detail-aside-block">
-                        <h2>Destaques</h2>
-                        <ul>
-                            <li>Criação de API própria para evitar gargalos. Manipulação de dezenas de milhares de registros no banco de dados.</li>
-                        </ul>
-                    </section>
-                </aside>
-            </div>
-        </main>
-        <script src="../assets/js/projects-data.js"></script>
-        <script src="../assets/js/theme-utils.js"></script>
-        <script src="../assets/js/detail-theme.js"></script>
-        <script src="../assets/js/sw-register.js" defer></script>
-        <script src="../assets/js/konami.js" defer></script>
-        <script src="../assets/js/reading-time.js" defer></script>
-		<script src="../assets/js/video-lazy.js" defer></script>
-    </body>
+						<p>O resto desta página é sobre o que aconteceu quando eu levei essas três frases a sério.</p>
+					</section>
+
+					<section class="detail-section">
+						<h2>Primeira promessa: ler antes de escrever</h2>
+						<p>Em vez de ler só a documentação, eu fiz uma coisa que funcionou melhor: montei uma <strong>lista de decklist feita pra quebrar</strong>, com uma linha errada de cada jeito possível, e colei a mesma lista em quatro ferramentas concorrentes pra ver o que cada uma fazia na tela.</p>
+
+						<div class="achado">
+							<span class="achado-numero">O que a pesquisa achou</span>
+							<p>As quatro corrigem a sua lista em silêncio. A mais usada delas trocou <code>1 Sol Ring (XYZ) 274</code>, onde o código da coleção nem existe, por uma carta de 1994, sem dizer nada. Tecnicamente é a correspondência mais próxima. Na prática é um absurdo, e ninguém te conta.</p>
+							<details>
+								<summary>Ver o que cada uma fez</summary>
+								<p>A mesma lista, com doze linhas quebradas de propósito, colada em MTG Print, MPC Autofill e TCGplayer Mass Entry:</p>
+								<ul>
+									<li><code>4 Lightning Bolt (M21) 159</code> virou outra coleção, sem aviso.</li>
+									<li><code>Sideboard (15)</code> deu erro: leram o <code>(15)</code> como código de coleção.</li>
+									<li><code>// comentario</code> foi apagado da tela sem explicação.</li>
+									<li><code>3 Fire // Ice</code> quebrou em duas cartas inexistentes numa delas, porque a barra dupla significa três coisas diferentes no mundo dos card games.</li>
+									<li><code>2 Lighming Bolt</code>, erro de digitação óbvio, não recebeu nenhuma sugestão em nenhuma das três.</li>
+								</ul>
+								<p>A conclusão que virou o produto: a barra dupla é <strong>posicional</strong>. No começo da linha é comentário, no meio é nome de carta. E o erro de digitação é a maior brecha do mercado, porque todo mundo desiste dele.</p>
+							</details>
+						</div>
+
+						<p>Foi dessa pesquisa que saiu a decisão central do projeto: <strong>a tela que explica o erro não é um detalhe, é o produto.</strong> Ela fala qual linha, o que aconteceu, e o que eu fiz a respeito. Quando a carta sugerida está perto do que você digitou, ela oferece um botão de um clique. Quando está longe, ela mostra as opções e manda você escolher, porque oferecer um clique pra um palpite é adivinhar.</p>
+					</section>
+
+					<section class="detail-section">
+						<h2>Segunda promessa: arquitetura antes do código</h2>
+						<p>Foram treze documentos de planejamento antes da primeira tela existir: escopo, referências de interface, decisões de produto, direção visual, o parse, a impressão, a stack, segurança, licenciamento e o contrato da API. Só quando o décimo terceiro fechou as últimas dúvidas é que o código começou.</p>
+						<p>Hoje são trinta documentos, e a regra escrita na abertura de todos eles é <strong>"medido, não lembrado"</strong>: quando o assunto é como os outros fazem, eu abro os sites e testo, e o documento registra o que aconteceu na tela, não o que a documentação promete.</p>
+
+						<div class="achado">
+							<span class="achado-numero">O achado mais incômodo</span>
+							<p>Construindo o parse, descobri que <strong>o meu próprio banco cometia o pecado que a minha pesquisa acusava nos concorrentes.</strong> Eu guardava uma impressão por arte, então pedir uma carta numa coleção específica podia responder "não tenho essa carta nessa coleção" para uma coleção que tem a carta. Só 52% das impressões que existem de verdade estavam no meu banco.</p>
+							<details>
+								<summary>Ver como isso foi descoberto e corrigido</summary>
+								<p>A tese do projeto é que corrigir a lista do usuário em silêncio é o erro central dos concorrentes. Ao escrever o parse, testei <code>[MM2] 105</code> para uma carta que existe nessa coleção e recebi "não encontrada".</p>
+								<p>A causa: o sync guardava só uma impressão por arte distinta, o que fazia sentido pra economizar espaço, e apagava justamente a informação que o usuário estava pedindo. Eram <strong>52% das 105.046 impressões de papel</strong> que a fonte tem.</p>
+								<p>A correção foi guardar todas as impressões e mover a remoção de duplicata para a tela, onde ela é escolha de quem está olhando, e não decisão escondida do servidor.</p>
+								<p>O que eu tiro disso: escrever a crítica dos outros me deu o critério pra achar o mesmo defeito em casa. Sem a pesquisa, eu não teria olhado.</p>
+							</details>
+						</div>
+
+						<div class="achado">
+							<span class="achado-numero">O banco parou de encher</span>
+							<p>Uma coluna guardava o arquivo original de cada carta, comprimido. Eram <strong>118 MB para produzir 32 caracteres</strong>, porque a única coisa que alguém fazia com aquele conteúdo era calcular um código curto pra saber se a carta tinha mudado. O banco caiu de <strong>87% para 30%</strong> do limite do plano gratuito.</p>
+							<details>
+								<summary>Ver os números e por que a ordem importava</summary>
+								<p>O que fez diferença não foi o espaço recuperado, foi o custo de cada carta nova:</p>
+								<ul>
+									<li>custo por impressão: de <strong>2,0 KB para 0,73 KB</strong></li>
+									<li>crescimento anual: de <strong>~20 MB para ~7 MB</strong></li>
+									<li>espaço livre: de 65,5 MB para 349,9 MB</li>
+								</ul>
+								<p>A regra que ficou anotada: <strong>espaço recuperado é evento, custo por linha é taxa.</strong> Limpar o banco sem mudar o custo por linha é ganhar espaço e voltar a gastar no mesmo ritmo.</p>
+								<p>Junto veio um erro de método meu que vale mais que o conserto. Eu estimei o crescimento comparando duas medições com dois dias de diferença e errei por uma ordem de grandeza. O número certo estava dentro do próprio banco: bastava contar quantas cartas foram lançadas por ano nos últimos cinco anos. <strong>Taxa não se mede por duas medições próximas, se mede pelo histórico.</strong></p>
+							</details>
+						</div>
+
+						<div class="achado">
+							<span class="achado-numero">Quarenta vezes mais rápido</span>
+							<p>Trocar a arte de todas as cartas de um deck fazia uma chamada por carta. Num deck de 100, eram <strong>100 chamadas e 50,6 segundos</strong>. Virou uma chamada só de 1,3 segundo.</p>
+							<details>
+								<summary>Ver por que quase não foi código novo</summary>
+								<p>A consulta que responde "qual é a impressão padrão desta carta" já existia e já era usada quando a lista é colada. O trabalho foi deixar de perguntar carta por carta e passar a perguntar pelo deck inteiro de uma vez.</p>
+								<p>Isso conversa com outra medição do projeto: a espera pra abrir um deck era de cerca de 950 ms, e 941 deles eram cinco consultas de ida e volta pela rede, não processamento. <strong>Reduzir o número de consultas vale mais do que deixar cada consulta mais rápida.</strong></p>
+							</details>
+						</div>
+					</section>
+
+					<section class="detail-section">
+						<h2>Terceira promessa: um jogo por vez</h2>
+						<p>Só Magic. O banco continua preparado pra mais de um jogo, e o cabeçalho do site tem um lugar reservado pro seletor, mas é reserva de espaço, não funcionalidade. Reservar o lugar custa nada agora e evita refazer o cabeçalho inteiro depois.</p>
+						<p>Essa foi a promessa mais difícil de cumprir, porque foi exatamente o excesso de jogos que matou a versão 1, e a vontade de adicionar o segundo não some. O que ajuda é que agora existe um custo escrito: depois da faxina no banco, um catálogo inteiro de Pokémon caberia em uns 15 MB. O banco deixou de ser o impedimento, e o que sobra são as perguntas de verdade, que são a licença da fonte de dados e o parse de decklist de cada jogo.</p>
+
+						<div class="achado">
+							<span class="achado-numero">O levantamento que veio antes do código</span>
+							<p>Antes de investir meses, fui apurar o que acontece com quem faz isso. Em 2023 a Wizards derrubou a ferramenta concorrente mais usada por três dias. Ela voltou removendo <strong>uma coisa só: a opção de comprar proxies prontas.</strong> A ferramenta gratuita de imprimir em casa continua no ar até hoje.</p>
+							<details>
+								<summary>Ver onde fica a linha, e o que ela decide no produto</summary>
+								<p>A conclusão é que a linha não é imprimir, é <strong>vender</strong>. Isso decidiu três coisas no DeckFill:</p>
+								<ul>
+									<li>ele é <strong>gratuito por obrigação</strong>, não por generosidade: cobrar acesso quebra a regra da fonte de dados e a política da fabricante ao mesmo tempo;</li>
+									<li><strong>nada de marca própria sobre a imagem da carta.</strong> Eu tinha planejado trocar o símbolo da coleção pela marca do DeckFill pra deixar claro que não é carta real. A apuração mostrou que isso piora: foi um dos itens que o advogado apontou na notificação a outro concorrente. O aviso de "não é carta real" foi pra margem da folha, fora da imagem;</li>
+									<li>o que pode virar negócio um dia não é o catálogo de Magic, é o <strong>motor de impressão</strong>: milímetro, grade, marcas de corte. Isso não é de Magic e serve pra qualquer carta.</li>
+								</ul>
+							</details>
+						</div>
+					</section>
+
+					<section class="detail-section">
+						<h2>O que eu fiz sozinho, e onde usei IA</h2>
+						<p>Faço questão de separar, porque as duas partes deste projeto tiveram origens diferentes.</p>
+						<p><strong>O banco de dados é inteiramente meu.</strong> A modelagem, o comando que sincroniza o catálogo todas as noites, a decisão de inserir em lote depois de eu medir que carta por carta levaria umas 30 horas: tudo isso foi escrito antes de eu usar o Claude Code, sozinho. Depois, trabalhando com ele, apareceram problemas ali dentro que eu não tinha visto. Mas achar defeito em código pronto é outra coisa, e bem mais fácil, do que escrever o código.</p>
+						<p><strong>O resto foi programação assistida, e com um método.</strong> Eu passo mais tempo planejando do que construindo, e mais tempo ainda depois procurando problema no que foi construído. Quando o primeiro ciclo fechou, eu fui atrás dos defeitos com a minha própria mão, conferi tudo e arrumei. É por isso que existem trinta documentos: eles são o que me permite voltar ao projeto depois de duas semanas e ainda entender por que cada coisa está daquele jeito.</p>
+						<p>Que é, exatamente, o que eu não conseguia fazer na versão 1.</p>
+					</section>
+
+					<section class="detail-section">
+						<h2>Onde ele está agora</h2>
+						<div class="detail-points">
+							<article>
+								<h3>No ar e em uso</h3>
+								<p>Front-end em React com TypeScript, back-end em Django sem framework de API, banco Postgres. O PDF é gerado no seu navegador: nenhuma carta que você escolhe passa pelo meu servidor.</p>
+							</article>
+							<article>
+								<h3>63 × 88 mm de verdade</h3>
+								<p>A medida é conferida dentro do arquivo PDF gerado, não confiada à impressora. A tela ainda oferece uma folha de teste pra você medir com régua e ajustar a escala, porque toda impressora erra um pouco.</p>
+							</article>
+							<article>
+								<h3>571 testes</h3>
+								<p>255 no back-end e 316 no front-end. Eles rodam sem banco e sem rede, porque as partes que decidem as coisas foram escritas sem depender de framework.</p>
+							</article>
+							<article>
+								<h3>Catálogo que se atualiza sozinho</h3>
+								<p>36.535 cartas e 106.340 impressões, sincronizadas de madrugada todos os dias por uma rotina automática.</p>
+							</article>
+						</div>
+					</section>
+
+					<section id="demonstracao" class="detail-section">
+						<h2>As telas</h2>
+						<p>Capturadas do site no ar. As duas últimas são da versão 1, e entram aqui porque a comparação é o assunto desta página.</p>
+						<div class="detail-gallery">
+							<figure class="is-destaque">
+								<img src="../images/sites/deckfill-tela-mae.webp" loading="lazy" alt="Tela principal do DeckFill com a grade de cartas e o painel lateral" />
+								<figcaption>A tela onde se passa quase todo o tempo. O painel da direita conta quantas folhas vão sair, sugere os tokens que o deck cria e troca a arte de todas as cartas de uma vez.</figcaption>
+							</figure>
+							<figure class="is-destaque">
+								<img src="../images/sites/deckfill-seletor.webp" loading="lazy" alt="Seletor de arte do DeckFill mostrando 73 artes diferentes da mesma carta em miniatura" />
+								<figcaption>Escolher arte vendo a arte. A ferramenta concorrente resolve a mesma tela com uma lista de texto de 146 linhas.</figcaption>
+							</figure>
+							<figure>
+								<img src="../images/sites/deckfill-impressao.webp" loading="lazy" alt="Tela de impressão do DeckFill com a prévia da folha A4 e as opções de papel e corte" />
+								<figcaption>A folha antes de virar PDF, com as marcas de corte. O aviso pede pra você imprimir uma folha de teste e medir com régua antes de imprimir o deck inteiro.</figcaption>
+							</figure>
+							<figure>
+								<img src="../images/sites/deckfill-entrada.webp" loading="lazy" alt="Tela inicial do DeckFill com o campo para colar a decklist" />
+								<figcaption>A entrada. O exemplo dentro do campo ensina quatro sintaxes diferentes sem precisar de um texto de ajuda.</figcaption>
+							</figure>
+							<figure>
+								<img src="../images/sites/deckfill-decks.webp" loading="lazy" alt="Página de decks prontos do DeckFill" />
+								<figcaption>Decks prontos, montados à mão com a arte escolhida carta por carta. Abrir um deles vira um deck seu, que dá pra editar antes de imprimir.</figcaption>
+							</figure>
+							<figure>
+								<img src="../images/sites/deckfill-sobre.webp" loading="lazy" alt="Página Sobre do DeckFill" />
+								<figcaption>A página Sobre, que existe pra dizer o que a ferramenta é e não é, e pra creditar quem fez os ícones.</figcaption>
+							</figure>
+							<figure>
+								<div class="vaga-imagem">
+									<span class="icon solid fa-image" aria-hidden="true"></span>
+									<span>A versão 1 em uso</span>
+								</div>
+								<figcaption>Espaço reservado para a tela da versão antiga.</figcaption>
+							</figure>
+							<figure>
+								<div class="vaga-imagem">
+									<span class="icon solid fa-image" aria-hidden="true"></span>
+									<span>Os bancos da versão 1</span>
+								</div>
+								<figcaption>Espaço reservado para mostrar o tamanho que os sete catálogos chegaram a ter.</figcaption>
+							</figure>
+						</div>
+					</section>
+
+					<section class="detail-section">
+						<h2>Histórico de versões</h2>
+						<p>Este projeto continua sendo feito. Esta seção cresce a cada mudança grande.</p>
+						<ol class="versoes">
+							<li>
+								<div class="versoes-cabecalho">
+									<span class="versoes-numero">Segundo ciclo</span>
+									<span class="versoes-data">setembro de 2026</span>
+									<span class="versoes-marca">em andamento</span>
+								</div>
+								<p>Depois de usar o site publicado, virou claro que dava pra imprimir mas não dava pra <em>trabalhar</em> no deck. Este ciclo é sobre ir e voltar entre telas sem perder nada, organizar as cartas e achar o que se procura numa lista de cem.</p>
+								<ul>
+									<li>Seletor de arte refeito, com busca por artista, filtro de raridade e faixa de ano.</li>
+									<li>Caixa de filtros e agrupamento da grade.</li>
+									<li>Páginas de decks prontos e Sobre, e o roteador que elas cobraram.</li>
+								</ul>
+							</li>
+							<li>
+								<div class="versoes-cabecalho">
+									<span class="versoes-numero">Primeiro ciclo</span>
+									<span class="versoes-data">setembro de 2026</span>
+									<span class="versoes-marca">fechado</span>
+								</div>
+								<p>O caminho inteiro existindo de ponta a ponta: colar a lista, revisar o deck, gerar o PDF. A carta sai em 63 × 88 mm medidos dentro do arquivo.</p>
+								<ul>
+									<li>As três telas, a tela de erros e o gerador de PDF no navegador.</li>
+									<li>Hospedagem decidida e no ar, com o tempo de acordar do servidor tratado como problema de produto.</li>
+									<li>A faxina que tirou o banco de 87% para 30% do limite.</li>
+								</ul>
+							</li>
+							<li>
+								<div class="versoes-cabecalho">
+									<span class="versoes-numero">Planejamento</span>
+									<span class="versoes-data">agosto e setembro de 2026</span>
+								</div>
+								<p>Treze documentos antes da primeira tela. Escopo, pesquisa dos concorrentes com lista feita pra quebrar, impressão, stack, segurança, licenciamento e o contrato da API.</p>
+							</li>
+							<li>
+								<div class="versoes-cabecalho">
+									<span class="versoes-numero">Versão 1</span>
+									<span class="versoes-data">até junho de 2026</span>
+									<span class="versoes-marca">arquivada</span>
+								</div>
+								<p>Python com FastAPI e SQLite, sete jogos, mais de 600 MB de banco. O site ainda carrega, mas a API por trás está desligada de propósito.</p>
+							</li>
+						</ol>
+					</section>
+
+					<!-- preenchido por assets/js/project-links.js; sem dado, some -->
+					<section class="detail-section" data-continue-reading="2" hidden>
+						<h2>Continuar lendo</h2>
+					</section>
+				</div>
+
+				<aside class="detail-aside detail-aside-sticky">
+					<section>
+						<h2>Ficha</h2>
+						<dl class="detail-facts">
+							<div><dt>Status</dt> <dd>Em evolução</dd></div>
+							<div><dt>Tipo</dt> <dd>Projeto autoral</dd></div>
+							<div><dt>Front-end</dt> <dd>React, TypeScript, Vite</dd></div>
+							<div><dt>Back-end</dt> <dd>Python, Django</dd></div>
+							<div><dt>Banco</dt> <dd>PostgreSQL</dd></div>
+							<div><dt>Temas</dt> <dd>RPG, Jogos</dd></div>
+							<div><dt>Versão 2 desde</dt> <dd>julho de 2026</dd></div>
+						</dl>
+					</section>
+
+					<section class="detail-aside-block">
+						<h2>Links do projeto</h2>
+						<ul class="detail-link-list">
+							<li><a href="https://deckfill.pages.dev" target="_blank" rel="noopener noreferrer"><span class="icon solid fa-external-link-alt" aria-hidden="true"></span>DeckFill no ar</a></li>
+							<li><a href="https://deck-fill-mtg.vercel.app/" target="_blank" rel="noopener noreferrer"><span class="icon solid fa-archive" aria-hidden="true"></span>A versão 1 arquivada</a></li>
+							<li><a href="https://github.com/Gabriel-Oliviera42/DeckFill" target="_blank" rel="noopener noreferrer"><span class="icon brands fa-github" aria-hidden="true"></span>Código da versão 1</a></li>
+						</ul>
+						<p class="detail-aside-nota">O código da versão 2 está fechado por enquanto, porque guarda chaves de acesso e ainda é mexido todo dia.</p>
+					</section>
+
+					<!-- preenchido por assets/js/project-links.js; sem dado, some -->
+					<section class="detail-aside-block" data-latest-project hidden>
+						<h2>Último projeto adicionado</h2>
+					</section>
+
+					<section class="detail-aside-block">
+						<h2>Aprendizados</h2>
+						<ul>
+							<li>O limite não foi o banco cheio, foi eu não achar mais nada no código.</li>
+							<li>Escrever a crítica dos outros me deu o critério pra achar o mesmo erro em casa.</li>
+							<li>Espaço recuperado é evento; custo por linha é taxa.</li>
+							<li>Planejar antes é o que me deixa voltar ao projeto meses depois.</li>
+						</ul>
+					</section>
+				</aside>
+			</div>
+		</main>
+		<script src="../assets/js/projects-data.js"></script>
+		<script src="../assets/js/theme-utils.js"></script>
+		<script src="../assets/js/detail-theme.js"></script>
+		<script src="../assets/js/sw-register.js" defer></script>
+		<script src="../assets/js/konami.js" defer></script>
+		<script src="../assets/js/reading-time.js" defer></script>
+		<script src="../assets/js/project-links.js" defer></script>
+	</body>
 </html>

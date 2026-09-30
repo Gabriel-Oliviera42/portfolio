@@ -1,0 +1,243 @@
+/*
+	CSS exclusivo da pagina projects/deck-fill-mtg.html.
+
+	Segue a regra do docs/04: o que so um projeto usa nasce aqui, nunca em
+	components.css ou blocks.css.
+
+	Quatro coisas moram neste arquivo:
+
+	1. .achado        - o resumo curto com um <details> de "como foi medido"
+	2. .vaga-imagem   - espaco reservado pra imagem que o dono ainda vai tirar
+	3. .versoes       - o historico de versoes, que cresce a cada atualizacao
+	4. .citacao-velha - o trecho citado da versao antiga da propria pagina
+
+	Nenhum deles usa JavaScript. O <details> e nativo do HTML: abre e fecha
+	sozinho, funciona com teclado, e o Ctrl+F do navegador acha texto fechado
+	dentro dele nos navegadores atuais.
+*/
+
+	/* ---------- 1. achado com detalhe expansivel ---------- */
+
+	.achado {
+		border-left: 3px solid var(--portfolio-line);
+		margin: 1.4em 0;
+		padding-left: 1.2em;
+	}
+
+	.achado > p:first-child {
+		margin-top: 0;
+	}
+
+	.achado-numero {
+		color: var(--portfolio-accent-dark);
+		display: block;
+		font-size: 0.82em;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		margin-bottom: 0.3em;
+		text-transform: uppercase;
+	}
+
+	.achado details {
+		margin-top: 0.7em;
+	}
+
+	.achado summary {
+		color: var(--portfolio-accent-dark);
+		cursor: pointer;
+		display: inline-block;
+		font-size: 0.9em;
+		font-weight: 600;
+		list-style: none;
+		padding: 0.15em 0;
+	}
+
+	/* tira o triangulo padrao pra desenhar o nosso, que gira ao abrir */
+	.achado summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.achado summary:before {
+		content: "\25B8";
+		display: inline-block;
+		margin-right: 0.45em;
+		transition: transform 0.2s ease;
+	}
+
+	.achado details[open] summary:before {
+		transform: rotate(90deg);
+	}
+
+	.achado summary:hover {
+		text-decoration: underline;
+	}
+
+	.achado details > *:not(summary) {
+		font-size: 0.94em;
+	}
+
+	.achado details > p:first-of-type {
+		margin-top: 0.7em;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.achado summary:before {
+			transition: none;
+		}
+	}
+
+	/* ---------- 2. espaco reservado pra imagem ---------- */
+
+	/*
+		O dono ainda vai tirar estas fotos. Fica um retangulo na proporcao certa
+		pra pagina ja mostrar o lugar delas, em vez de a secao aparecer torta e
+		depois pular quando a imagem entrar.
+
+		Quando a imagem chegar, trocar o <div class="vaga-imagem"> inteiro por
+		<img src="..." alt="..." /> e pronto - o <figure> e o <figcaption> em
+		volta continuam iguais.
+	*/
+	/*
+		A galeria do blocks.css corta em 16/9 com object-fit: cover, o que serve
+		pra foto mas nao pra captura de tela: aqui as imagens sao 1600x1000 (16/10)
+		e o corte comia 11% da altura, levando junto a barra de baixo das telas.
+		Descoberto em 24/09/2026, no PRIMEIRO uso real do bloco de galeria em
+		qualquer pagina do site.
+
+		Imagem nova que entrar aqui deve ser 16/10 tambem, senao volta a cortar.
+	*/
+	.detail-gallery img {
+		aspect-ratio: 16 / 10;
+	}
+
+	.vaga-imagem {
+		align-items: center;
+		aspect-ratio: 16 / 10;
+		background: var(--portfolio-soft);
+		border: 1px dashed var(--portfolio-line);
+		border-radius: 8px;
+		color: var(--portfolio-muted);
+		display: flex;
+		flex-direction: column;
+		font-size: 0.85em;
+		gap: 0.4em;
+		justify-content: center;
+		padding: 1em;
+		text-align: center;
+	}
+
+	.vaga-imagem .icon {
+		font-size: 1.6em;
+		opacity: 0.5;
+	}
+
+	/* ---------- 3. historico de versoes ---------- */
+
+	.versoes {
+		list-style: none;
+		padding-left: 0;
+	}
+
+	.versoes > li {
+		border-left: 2px solid var(--portfolio-line);
+		padding: 0 0 1.3em 1.35em;
+		position: relative;
+	}
+
+	.versoes > li:last-child {
+		padding-bottom: 0;
+	}
+
+	.versoes > li:before {
+		background: var(--portfolio-accent);
+		border: 2px solid var(--portfolio-paper);
+		border-radius: 50%;
+		content: "";
+		height: 0.85em;
+		left: -0.5em;
+		position: absolute;
+		top: 0.35em;
+		width: 0.85em;
+	}
+
+	/* a versao mais recente fica cheia; as antigas, vazadas */
+	.versoes > li:not(:first-child):before {
+		background: var(--portfolio-paper);
+		border-color: var(--portfolio-line);
+	}
+
+	.versoes-cabecalho {
+		align-items: baseline;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6em;
+	}
+
+	.versoes-numero {
+		color: var(--portfolio-ink);
+		font-weight: 700;
+	}
+
+	.versoes-data {
+		color: var(--portfolio-muted);
+		font-size: 0.85em;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.versoes-marca {
+		background: rgba(var(--portfolio-accent-rgb), 0.12);
+		border-radius: 999px;
+		color: var(--portfolio-accent-dark);
+		font-size: 0.74em;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		padding: 0.15em 0.7em;
+		text-transform: uppercase;
+	}
+
+	.versoes ul {
+		list-style: disc;
+		margin-top: 0.45em;
+		padding-left: 1.2em;
+	}
+
+	.versoes ul li {
+		margin: 0.2em 0;
+	}
+
+	/* explica, no card lateral, por que falta o link do codigo da versao 2 */
+	.detail-aside-nota {
+		color: var(--portfolio-muted);
+		font-size: 0.82em;
+		line-height: 1.5;
+		margin: 0.7em 0 0;
+	}
+
+	/* ---------- 4. citacao da versao antiga desta pagina ---------- */
+
+	.citacao-velha {
+		background: var(--portfolio-soft);
+		border-left: 3px solid var(--portfolio-gold);
+		border-radius: 0 8px 8px 0;
+		margin: 1.2em 0;
+		padding: 1em 1.2em;
+	}
+
+	.citacao-velha p {
+		margin: 0.4em 0;
+	}
+
+	.citacao-velha p:first-child {
+		margin-top: 0;
+	}
+
+	.citacao-velha p:last-child {
+		margin-bottom: 0;
+	}
+
+	.citacao-velha-fonte {
+		color: var(--portfolio-muted);
+		display: block;
+		font-size: 0.82em;
+		margin-top: 0.8em;
+	}
