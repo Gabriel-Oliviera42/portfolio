@@ -5,14 +5,40 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="TODO resumo curto para buscadores e preview." />
+		<!-- Pre-visualizacao quando o link e colado no WhatsApp/LinkedIn. Imagem e
+		     URL precisam ser ENDERECO COMPLETO: quem le e o servidor desses sites,
+		     que nao sabe de qual pagina um caminho relativo partiu. A imagem sai do
+		     pipeline: npm run og -- images/sites/<imagem>.webp --nome TODO-slug -->
+		<meta property="og:title" content="TODO Nome do Projeto" />
+		<meta property="og:description" content="TODO resumo curto." />
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="https://gabriel-oliviera42.github.io/portfolio/images/og/TODO-slug.jpg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:url" content="https://gabriel-oliviera42.github.io/portfolio/projects/TODO-slug.html" />
+		<meta property="og:site_name" content="Gabriel Lourenço" />
+		<meta property="og:locale" content="pt_BR" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="canonical" href="https://gabriel-oliviera42.github.io/portfolio/projects/TODO-slug.html" />
 		<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
 		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
 		<link rel="stylesheet" href="../assets/css/tokens.css" />
 		<link rel="stylesheet" href="../assets/css/base.css" />
 		<link rel="stylesheet" href="../assets/css/components.css" />
 		<link rel="stylesheet" href="../assets/css/blocks.css" />
+		<!-- OPCIONAL: so se o body usar theme-accent-rpg ou theme-accent-jogos (ver docs/02) -->
+		<!-- <link rel="stylesheet" href="../assets/css/theme-accent.css" /> -->
+		<!-- OPCIONAL: so se este projeto tiver CSS proprio (ver docs/04) -->
+		<!-- <link rel="stylesheet" href="../assets/css/projects/TODO-slug.css" /> -->
 	</head>
-	<body class="project-detail-page">
+	<!--
+		detail-wide: layout largo, usado pela maioria das paginas. Remover se o
+		projeto pedir coluna estreita.
+		theme-accent-rpg / theme-accent-jogos: camada MANUAL de tema (efeito visual
+		extra). Nao vem dos dados - decidir de proposito. Se usar, descomentar o
+		link do theme-accent.css acima. Ver docs/02.
+	-->
+	<body class="project-detail-page detail-wide">
 		<main id="main">
 
 			<header class="detail-hero">
@@ -104,12 +130,12 @@
 				<aside class="detail-aside detail-aside-sticky">
 					<section>
 						<h2>Ficha</h2>
-						<ul>
-							<li><strong>Status:</strong> TODO</li>
-							<li><strong>Tipo:</strong> TODO</li>
-							<li><strong>Tecnologias:</strong> TODO</li>
-							<li><strong>Temas:</strong> TODO</li>
-						</ul>
+						<dl class="detail-facts">
+							<div><dt>Status</dt> <dd>TODO</dd></div>
+							<div><dt>Tipo</dt> <dd>TODO</dd></div>
+							<div><dt>Tecnologias</dt> <dd>TODO</dd></div>
+							<div><dt>Temas</dt> <dd>TODO</dd></div>
+						</dl>
 					</section>
 
 					<section class="detail-aside-block">
@@ -136,5 +162,8 @@
 		<script src="../assets/js/sw-register.js" defer></script>
 		<script src="../assets/js/konami.js" defer></script>
 		<script src="../assets/js/reading-time.js" defer></script>
+		<!-- OPCIONAL: so se a pagina usar o bloco vitrine-tema (botao claro/escuro).
+		     Sem este script o botao aparece mas nao faz nada. -->
+		<!-- <script src="../assets/js/theme-preview.js"></script> -->
 	</body>
 </html>

@@ -28,8 +28,10 @@ assets/videos/
 # Midia bruta: pasta de intake local para prints/gravacoes antes de otimizar (ver docs/05)
 midia-bruta/
 
-# Pipeline de midia: scaffold + credenciais, vive no backup privado (ver docs/05)
-tools/media-pipeline/
+# Ferramentas internas: pipeline de midia e auditoria do site. Vivem no backup
+# privado (ver docs/05 e docs/09). tools/ inteiro, nao so uma subpasta - senao
+# cada ferramenta nova nasce publica por esquecimento.
+tools/
 
 # Variaveis e logs locais
 docs/

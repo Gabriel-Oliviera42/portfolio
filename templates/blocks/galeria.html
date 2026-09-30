@@ -1,12 +1,38 @@
+<!--
+	Grade de imagens com legenda.
+
+	DUAS COISAS QUE O PRIMEIRO USO REAL ENSINOU (24/09/2026, deck-fill-mtg):
+
+	1. As imagens sao cortadas em 16/9 (`object-fit: cover` no components.css).
+	   Isso serve pra foto, mas NAO pra captura de tela: uma captura de 1600x1000
+	   perde 11% da altura e leva junto a barra de baixo da interface. Se as suas
+	   imagens nao forem 16/9, ajuste o aspect-ratio no CSS do projeto:
+
+	       .detail-gallery img { aspect-ratio: 16 / 10; }
+
+	2. `class="is-destaque"` faz a figura ocupar a largura inteira, no meio das
+	   outras que ficam em duas colunas. Use nas telas mais importantes.
+
+	3. `loading="lazy"` em toda imagem daqui: a galeria fica no meio da pagina,
+	   e sem isso o navegador baixa todas na abertura (o DeckFill baixava 7).
+	   So a imagem do topo da pagina (detail-media) fica sem, porque ela aparece
+	   de cara.
+
+	Ver docs/08-catalogo-de-blocos.md.
+-->
 <section class="detail-section">
 	<h2>Galeria e materiais</h2>
 	<div class="detail-gallery">
+		<figure class="is-destaque">
+			<img src="../images/sites/TODO imagem principal.webp" loading="lazy" alt="TODO descricao" />
+			<figcaption>TODO legenda. Esta ocupa a largura inteira.</figcaption>
+		</figure>
 		<figure>
-			<img src="../images/sites/TODO imagem 1.webp" alt="TODO descricao" />
+			<img src="../images/sites/TODO imagem 2.webp" loading="lazy" alt="TODO descricao" />
 			<figcaption>TODO legenda opcional.</figcaption>
 		</figure>
 		<figure>
-			<img src="../images/sites/TODO imagem 2.webp" alt="TODO descricao" />
+			<img src="../images/sites/TODO imagem 3.webp" loading="lazy" alt="TODO descricao" />
 			<figcaption>TODO legenda opcional.</figcaption>
 		</figure>
 	</div>

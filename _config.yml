@@ -1,0 +1,9 @@
+# Lido pelo GitHub Pages, que passa o repositorio pelo Jekyll antes de publicar.
+#
+# templates/ fica no repositorio (e dele que as paginas novas sao copiadas), mas
+# nao deve ir pro ar: /portfolio/templates/project-detail-base.html respondia
+# publicamente, com o titulo "TODO Nome do Projeto", e podia aparecer no Google.
+#
+# Nao afeta o site local: `npx serve` ignora este arquivo.
+exclude:
+  - templates/
