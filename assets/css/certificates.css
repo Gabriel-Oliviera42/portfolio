@@ -1,0 +1,260 @@
+/*
+	Certificados: barras da home e a janela que mostra a imagem inteira.
+	Montados por assets/js/certificates.js.
+
+	Arquivo proprio em vez de components.css: e uma secao com comportamento
+	proprio (previa, janela), e o components.css ja e o "vale-tudo" que o
+	docs/04 pede pra nao alimentar. Carregado por index.html.
+*/
+
+	/* ---------- barras ---------- */
+
+	/* min(19em, 100%): em tela de 320px, 19em e mais largo que a coluna e a
+	   barra estourava 8px pro lado (pego pela auditoria de responsividade) */
+	.certificate-list {
+		display: grid;
+		gap: 0.75em;
+		grid-template-columns: repeat(auto-fill, minmax(min(19em, 100%), 1fr));
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.certificate-list li {
+		padding: 0;
+		position: relative;
+	}
+
+	/* a previa flutua pra cima da barra: o item em foco fica por cima dos
+	   vizinhos, senao a barra de baixo cobriria a previa */
+	.certificate-list li:hover,
+	.certificate-list li:focus-within {
+		z-index: 2;
+	}
+
+	.certificate-item {
+		align-items: center;
+		appearance: none;
+		background: var(--portfolio-paper);
+		border: 1px solid var(--portfolio-line);
+		border-radius: 8px;
+		color: inherit;
+		cursor: pointer;
+		display: flex;
+		font: inherit;
+		gap: 0.8em;
+		padding: 0.7em 0.9em;
+		text-align: left;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+		width: 100%;
+	}
+
+	.certificate-item:hover,
+	.certificate-item:focus-visible {
+		border-color: var(--portfolio-accent);
+		box-shadow: 0 8px 20px rgba(var(--portfolio-shadow-rgb), 0.08);
+		transform: translateY(-1px);
+	}
+
+	/* chegou por link direto (index.html#certificado-<id>) */
+	.certificate-list li:target .certificate-item {
+		border-color: var(--portfolio-accent);
+		box-shadow: 0 0 0 3px rgba(var(--portfolio-focus-rgb), 0.35);
+	}
+
+	.certificate-icon {
+		align-items: center;
+		background: rgba(var(--portfolio-accent-rgb), 0.12);
+		border-radius: 50%;
+		color: var(--portfolio-accent-dark);
+		display: flex;
+		flex: 0 0 2.3em;
+		height: 2.3em;
+		justify-content: center;
+		width: 2.3em;
+	}
+
+	.certificate-text {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+	}
+
+	.certificate-name {
+		color: var(--portfolio-ink);
+		font-weight: 600;
+		line-height: 1.3;
+	}
+
+	.certificate-meta {
+		color: var(--portfolio-muted);
+		font-size: 0.82em;
+		line-height: 1.4;
+		margin-top: 0.15em;
+	}
+
+	/* ---------- previa no hover ----------
+
+	   So em aparelho com mouse de verdade (hover + ponteiro fino). No celular
+	   o toque vai direto pra janela, e uma previa ali so atrapalharia. */
+
+	.certificate-preview {
+		display: none;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		.certificate-preview {
+			background: var(--portfolio-paper);
+			border: 1px solid var(--portfolio-line);
+			border-radius: 8px;
+			bottom: calc(100% + 0.6em);
+			box-shadow: 0 18px 40px rgba(var(--portfolio-shadow-rgb), 0.18);
+			display: block;
+			left: 0.9em;
+			opacity: 0;
+			padding: 0.35em;
+			pointer-events: none;
+			position: absolute;
+			transform: translateY(0.4em);
+			transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+			visibility: hidden;
+			width: 17em;
+		}
+
+		.certificate-preview img {
+			border-radius: 5px;
+			display: block;
+			height: auto;
+			width: 100%;
+		}
+
+		.certificate-item:hover .certificate-preview,
+		.certificate-item:focus-visible .certificate-preview {
+			opacity: 1;
+			transform: none;
+			visibility: visible;
+		}
+	}
+
+	/* ---------- janela com a imagem inteira ---------- */
+
+	/* sem padding de proposito: o JS usa "clique no proprio <dialog>" pra saber
+	   que o clique foi no fundo escurecido, e fecha */
+	.certificate-dialog {
+		background: transparent;
+		border: 0;
+		max-height: 94vh;
+		max-width: min(62em, 94vw);
+		padding: 0;
+		width: 100%;
+	}
+
+	.certificate-dialog::backdrop {
+		background: rgba(10, 20, 25, 0.72);
+	}
+
+	/* a pagina de tras nao rola enquanto a janela esta aberta */
+	html:has(.certificate-dialog[open]) {
+		overflow: hidden;
+	}
+
+	.certificate-dialog-body {
+		background: var(--portfolio-paper);
+		border-radius: 12px;
+		box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+		display: grid;
+		gap: 0.9em;
+		max-height: 94vh;
+		overflow: auto;
+		padding: 0.9em 1.2em 1.2em;
+	}
+
+	.certificate-dialog-top {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.certificate-dialog-count {
+		color: var(--portfolio-muted);
+		font-size: 0.85em;
+		margin: 0;
+	}
+
+	.certificate-dialog-close {
+		align-items: center;
+		appearance: none;
+		background: none;
+		border: 0;
+		border-radius: 50%;
+		color: var(--portfolio-ink);
+		cursor: pointer;
+		display: flex;
+		font-size: 1.1em;
+		height: 2.2em;
+		justify-content: center;
+		width: 2.2em;
+	}
+
+	.certificate-dialog-close:hover {
+		background: var(--portfolio-soft);
+	}
+
+	.certificate-dialog-media {
+		margin: 0;
+	}
+
+	.certificate-dialog-media img {
+		background: var(--portfolio-soft);
+		border: 1px solid var(--portfolio-line);
+		border-radius: 8px;
+		display: block;
+		height: auto;
+		max-height: 62vh;
+		object-fit: contain;
+		width: 100%;
+	}
+
+	.certificate-dialog-info h3 {
+		color: var(--portfolio-ink);
+		font-size: 1.15em;
+		line-height: 1.3;
+		margin: 0 0 0.25em 0;
+	}
+
+	.certificate-dialog-meta,
+	.certificate-dialog-code {
+		color: var(--portfolio-muted);
+		font-size: 0.9em;
+		margin: 0 0 0.6em 0;
+	}
+
+	.certificate-dialog-code .button {
+		margin-left: 0.4em;
+	}
+
+	.certificate-dialog-verify {
+		align-items: center;
+		border-bottom: 0;
+		display: inline-flex;
+		font-weight: 700;
+		gap: 0.45em;
+	}
+
+	.certificate-dialog-nav {
+		display: flex;
+		gap: 0.6em;
+		justify-content: space-between;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.certificate-item,
+		.certificate-preview {
+			transition: none;
+		}
+
+		.certificate-item:hover,
+		.certificate-item:focus-visible {
+			transform: none;
+		}
+	}
