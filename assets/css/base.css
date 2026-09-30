@@ -1,5 +1,10 @@
 @import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,700&display=swap");
+/* 600 e 700 porque o site usa os dois (eyebrow, rotulos, selos, <strong>).
+   Pedindo so o 400, o navegador engrossava a letra por conta propria, e o
+   negrito "fabricado" sai mais borrado que o de verdade.
+   display=swap: o texto aparece na fonte reserva enquanto esta carrega, em vez
+   de ficar invisivel. */
 
 /*
 	Strata by HTML5 UP
@@ -28,6 +33,13 @@ section, summary, time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
+
+/* A regra acima ganha do [hidden] do navegador, e o atributo hidden parava de
+   esconder qualquer section, button ou .button. Era por isso que "Limpar
+   filtros" aparecia sem filtro nenhum e a secao de certificados aparecia
+   vazia. O !important e o que garante que hidden sempre vence. */
+[hidden] {
+	display: none !important;}
 
 body {
 	line-height: 1;
@@ -103,6 +115,12 @@ input, select, textarea {
 		font-size: 16pt;
 		font-weight: 400;
 		line-height: 1.75em;
+	}
+
+	/* A regra acima esqueceu o <button>, que nao herda fonte por padrao: o
+	   "Limpar filtros" e o botao claro/escuro do Chompbox saiam em Arial. */
+	button {
+		font-family: inherit;
 	}
 
 	a {
@@ -481,8 +499,19 @@ input, select, textarea {
 			font-weight: 400;
 		}
 
+		/* Esconde o texto so da tela. Com display: none ele sumia tambem pro
+		   leitor de tela, e os icones do perfil (GitHub, LinkedIn, E-mail)
+		   eram anunciados so como "link". */
 		.icon > .label {
-			display: none;
+			border: 0;
+			clip: rect(0, 0, 0, 0);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			white-space: nowrap;
+			width: 1px;
 		}
 
 		.icon:before {

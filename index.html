@@ -9,7 +9,14 @@
         <meta property="og:title" content="Gabriel Lourenço - Portfólio Full-Stack" />
         <meta property="og:description" content="Projetos, habilidades e experimentos de Gabriel Lourenço em desenvolvimento full-stack." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="images/avatar.webp" />
+        <meta property="og:image" content="https://gabriel-oliviera42.github.io/portfolio/images/og/portfolio.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://gabriel-oliviera42.github.io/portfolio/" />
+        <meta property="og:site_name" content="Gabriel Lourenço" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="canonical" href="https://gabriel-oliviera42.github.io/portfolio/" />
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png" />
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
@@ -17,6 +24,7 @@
         <link rel="stylesheet" href="assets/css/base.css" />
         <link rel="stylesheet" href="assets/css/components.css" />
         <link rel="stylesheet" href="assets/css/blocks.css" />
+        <link rel="stylesheet" href="assets/css/certificates.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
         <script type="application/ld+json">
         {
@@ -25,7 +33,8 @@
             "name": "Gabriel Lourenço de Oliveira",
             "jobTitle": "Desenvolvedor full-stack",
             "description": "Estudante de Ciência da Computação e desenvolvedor full-stack com projetos em web, IA, bancos de dados, jogos e ferramentas criativas.",
-            "image": "images/avatar.webp",
+            "image": "https://gabriel-oliviera42.github.io/portfolio/images/avatar.webp",
+            "url": "https://gabriel-oliviera42.github.io/portfolio/",
             "sameAs": [
                 "https://github.com/gabriel-oliviera42",
                 "https://www.linkedin.com/in/gabriel-lourenco-ab7893273"
@@ -158,9 +167,16 @@
                 </div>
             </section>
 
+            <!-- preenchida por assets/js/certificates.js; sem dado, fica escondida -->
             <section id="certificates" class="certificates-section" hidden>
-                <h2>Certificados</h2>
-                <div id="certificates-grid" class="certificates-grid"></div>
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Certificados</p>
+                        <h2>Cursos concluídos</h2>
+                    </div>
+                    <p id="certificates-summary" class="project-count"></p>
+                </div>
+                <ul id="certificates-list" class="certificate-list"></ul>
             </section>
 
             <footer id="contact" class="contact-section">
@@ -171,7 +187,7 @@
                     </div>
                 </div>
                 <p class="contact-intro">Estou sempre aberto a conversar sobre tecnologia! Entre em contato para oportunidades de trabalho, propostas de estágio, pesquisa ou simplesmente para colaborarmos em algum projeto interessante.</p>
-                <div class="contact-grid">
+                <address class="contact-grid">
                     <div class="contact-card">
                         <span class="contact-icon icon solid fa-map-marker-alt" aria-hidden="true"></span>
                         <div>
@@ -207,15 +223,11 @@
                             <a class="contact-value" href="https://www.linkedin.com/in/gabriel-lourenco-ab7893273" target="_blank" rel="noopener noreferrer">linkedin.com/in/gabriel-lourenco-ab7893273</a>
                         </div>
                     </div>
-                </div>
+                </address>
                 <p class="contact-copy-feedback" id="copy-feedback" role="status" aria-live="polite"></p>
             </footer>
         </main>
 
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
         <script src="assets/js/projects-data.js"></script>
         <script src="assets/js/projects.js"></script>

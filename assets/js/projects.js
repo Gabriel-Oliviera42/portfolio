@@ -7,6 +7,28 @@
 	});
 	var themeProfiles = window.PORTFOLIO_THEME_PROFILES || {};
 	var baseThemes = ["ensino", "rpg", "jogos"];
+
+	/* Como cada valor aparece na tela (filtros, tags dos cards, temas ativos).
+
+	   Antes era "maiuscula em toda palavra", e isso gerava "Ia", "Ui", "Dnd",
+	   "Banco De Dados" e ate "Em EvoluçãO": o \b do regex trata letra acentuada
+	   como fim de palavra, entao a letra depois do "ã" virava maiuscula.
+
+	   Agora: tema usa o label do proprio perfil de tema; sigla e palavra com
+	   acento vem deste dicionario; o resto so ganha maiuscula na primeira letra
+	   (ver formatTag). Tag nova com sigla ou acento? Entra aqui.
+
+	   Fica no topo de proposito: os filtros sao montados logo abaixo, e uma
+	   declaracao la no fim do arquivo ainda seria undefined nessa hora. */
+	var TAG_LABELS = {
+		"ia": "IA",
+		"ui": "UI",
+		"dnd": "D&D",
+		"frontend": "Front-end",
+		"backend": "Back-end",
+		"full-stack": "Full-stack",
+		"programacao-assistida": "Programação assistida"
+	};
 	var state = {
 		query: "",
 		language: "all",
@@ -38,6 +60,7 @@
 	}
 
 	renderFilterOptions();
+	readStateFromUrl();
 	renderProjects();
 	bindClearFilters();
 
@@ -141,13 +164,90 @@
 			});
 
 		grid.innerHTML = filtered.map(renderProjectCard).join("");
-		bindProjectCards();
 		emptyState.hidden = filtered.length > 0;
 		count.textContent = filtered.length + " de " + projects.length + " projetos";
 		updateThemePreview(filtered);
 
 		if (clearFiltersBtn) {
 			clearFiltersBtn.hidden = !hasActiveFilters();
+		}
+
+		writeStateToUrl();
+	}
+
+	/* Busca e filtros moram no endereco (?q=python&tema=rpg).
+
+	   Sem isso, abrir um projeto e apertar Voltar trazia a lista inteira de
+	   volta, mas o navegador restaurava a rolagem da lista FILTRADA, e a pessoa
+	   caia num ponto diferente de onde estava. De quebra, da pra mandar um link
+	   ja filtrado pra alguem.
+
+	   replaceState, nao pushState: cada letra digitada nao vira uma entrada no
+	   historico, senao o Voltar teria que ser apertado letra por letra. */
+	function readStateFromUrl() {
+		var params = new URLSearchParams(window.location.search);
+		var busca = params.get("q");
+
+		if (busca) {
+			search.value = busca;
+			state.query = stripAccents(busca.trim().toLowerCase());
+		}
+
+		setSelectFromUrl(languageFilter, params.get("tec"), "language");
+		setSelectFromUrl(tagFilter, params.get("tag"), "tag");
+		setSelectFromUrl(statusFilter, params.get("status"), "status");
+
+		(params.get("tema") || "").split(",").forEach(function(theme) {
+			if (baseThemes.indexOf(theme) !== -1) {
+				state.themes.add(theme);
+			}
+		});
+
+		if (state.themes.size) {
+			renderThemeOptions(baseThemes);
+		}
+	}
+
+	// valor que nao existe mais no select (link antigo) e ignorado em silencio
+	function setSelectFromUrl(select, value, key) {
+		var exists = value && Array.prototype.some.call(select.options, function(option) {
+			return option.value === value;
+		});
+
+		if (exists) {
+			select.value = value;
+			state[key] = value;
+		}
+	}
+
+	function writeStateToUrl() {
+		if (!window.history || !window.history.replaceState) {
+			return;
+		}
+
+		var params = new URLSearchParams();
+		var busca = search.value.trim();
+		var selects = { tec: state.language, tag: state.tag, status: state.status };
+
+		if (busca) {
+			params.set("q", busca);
+		}
+
+		Object.keys(selects).forEach(function(param) {
+			if (selects[param] !== "all") {
+				params.set(param, selects[param]);
+			}
+		});
+
+		if (state.themes.size) {
+			params.set("tema", Array.from(state.themes).join(","));
+		}
+
+		var query = params.toString();
+		var url = window.location.pathname + (query ? "?" + query : "") + window.location.hash;
+
+		if (url !== window.location.pathname + window.location.search + window.location.hash) {
+			window.history.replaceState(window.history.state, "", url);
 		}
 	}
 
@@ -180,17 +280,23 @@
 		var specialBadge = project.special ? "<span class=\"special-badge\" title=\"Projeto especial\" aria-label=\"Projeto especial\">&#9733;</span>" : "";
 		var note = project.featuredNote ? "<p class=\"featured-note\">" + escapeHtml(project.featuredNote) + "</p>" : "";
 		var demo = project.demoUrl ? "<a class=\"button small primary\" href=\"" + escapeAttr(project.demoUrl) + "\" target=\"_blank\" rel=\"noopener noreferrer\">Ver projeto</a>" : "";
-		var code = project.codeUrl ? "<a class=\"button small\" href=\"" + escapeAttr(project.codeUrl) + "\" target=\"_blank\" rel=\"noopener noreferrer\">Codigo</a>" : "";
+		var code = project.codeUrl ? "<a class=\"button small\" href=\"" + escapeAttr(project.codeUrl) + "\" target=\"_blank\" rel=\"noopener noreferrer\">Código</a>" : "";
 		var status = project.status ? "<span class=\"status-pill\">" + escapeHtml(project.status) + "</span>" : "";
 
+		/* O card inteiro e clicavel, mas quem navega e o <a> do titulo: o
+		   .project-card-link:after (components.css) estica o link por cima do
+		   card todo. Antes o card era um <article role="link"> navegando por JS,
+		   com "Ver projeto" e "Codigo" dentro, ou seja, link dentro de link: nao
+		   abria em nova aba, e o leitor de tela so ouvia "Abrir detalhes do
+		   projeto X", sem a descricao nem as tags. */
 		return [
-			"<article class=\"project-card" + (project.special ? " is-special" : "") + "\" data-detail-url=\"" + escapeAttr(detailUrl) + "\" role=\"link\" tabindex=\"0\" aria-label=\"Abrir detalhes do projeto " + escapeAttr(project.title) + "\">",
+			"<article class=\"project-card" + (project.special ? " is-special" : "") + "\">",
 			"<div class=\"project-media\">",
 			"<img src=\"" + escapeAttr(image) + "\" alt=\"Imagem do projeto " + escapeAttr(project.title) + "\" loading=\"lazy\" />",
 			specialBadge,
 			"</div>",
 			"<div class=\"project-body\">",
-			"<div class=\"project-title-row\"><h3>" + escapeHtml(project.title) + "</h3>" + status + "</div>",
+			"<div class=\"project-title-row\"><h3><a class=\"project-card-link\" href=\"" + escapeAttr(detailUrl) + "\">" + escapeHtml(project.title) + "</a></h3>" + status + "</div>",
 			note,
 			"<p>" + escapeHtml(project.description) + "</p>",
 			"<div class=\"tag-list\">" + tags.map(function(tag) {
@@ -200,31 +306,6 @@
 			"</div>",
 			"</article>"
 		].join("");
-	}
-
-	function bindProjectCards() {
-		Array.prototype.forEach.call(grid.querySelectorAll(".project-card"), function(card) {
-			card.addEventListener("click", function(event) {
-				if (event.target.closest("a, button")) {
-					return;
-				}
-				openProject(card);
-			});
-
-			card.addEventListener("keydown", function(event) {
-				if (event.key === "Enter" || event.key === " ") {
-					event.preventDefault();
-					openProject(card);
-				}
-			});
-		});
-	}
-
-	function openProject(card) {
-		var detailUrl = card.getAttribute("data-detail-url");
-		if (detailUrl) {
-			window.location.href = detailUrl;
-		}
 	}
 
 	function updateThemePreview(filtered) {
@@ -415,11 +496,18 @@
 	}
 
 	function formatTag(tag) {
-		return String(tag)
-			.replace(/-/g, " ")
-			.replace(/\b\w/g, function(letter) {
-				return letter.toUpperCase();
-			});
+		var value = String(tag);
+
+		if (themeProfiles[value] && themeProfiles[value].label) {
+			return themeProfiles[value].label;
+		}
+
+		if (TAG_LABELS[value]) {
+			return TAG_LABELS[value];
+		}
+
+		value = value.replace(/-/g, " ");
+		return value.charAt(0).toUpperCase() + value.slice(1);
 	}
 
 	function escapeHtml(value) {

@@ -5,6 +5,22 @@
 		scroll-behavior: smooth;
 	}
 
+	/* Foco de teclado (Tab) com a cor do site, em todo elemento clicavel.
+	   Antes so 3 elementos tinham foco desenhado; o resto usava o contorno
+	   padrao do navegador, fino e de outra cor.
+	   :where() zera a especificidade: qualquer foco mais especifico que ja
+	   existe (card de projeto, busca) continua valendo por cima deste.
+	   :focus-visible so aparece no teclado, nao no clique do mouse. */
+	:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+		outline: 2px solid var(--portfolio-accent-dark);
+		outline-offset: 2px;
+	}
+
+	/* no painel escuro do perfil o verde escuro sumiria */
+	#header :where(a, button):focus-visible {
+		outline-color: #ffffff;
+	}
+
 	body.portfolio-shell {
 		background: var(--portfolio-paper);
 		color: var(--portfolio-muted);
@@ -448,49 +464,6 @@
 		margin: 0 0 0.75em 0;
 	}
 
-	.certificates-grid {
-		display: grid;
-		gap: 1.25em;
-		grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
-	}
-
-	.certificate-card {
-		background: var(--portfolio-soft);
-		border: 1px solid var(--portfolio-line);
-		border-radius: 8px;
-		display: flex;
-		gap: 1em;
-		padding: 1.25em;
-	}
-
-	.certificate-icon {
-		align-items: center;
-		background: rgba(var(--portfolio-accent-rgb), 0.12);
-		border-radius: 50%;
-		color: var(--portfolio-accent-dark);
-		display: flex;
-		flex: 0 0 2.6em;
-		font-size: 1.1em;
-		height: 2.6em;
-		justify-content: center;
-		width: 2.6em;
-	}
-
-	.certificate-body h3 {
-		font-size: 1.02em;
-		margin-bottom: 0.25em;
-	}
-
-	.certificate-meta {
-		color: var(--portfolio-muted);
-		font-size: 0.85em;
-		margin: 0 0 0.6em 0;
-	}
-
-	.certificate-body .tag-list {
-		margin-bottom: 0.6em;
-	}
-
 	.contact-section {
 		background: var(--portfolio-soft);
 		border-radius: 12px;
@@ -504,8 +477,11 @@
 		max-width: 42em;
 	}
 
+	/* e um <address>, a tag de contato do autor da pagina; o navegador poe
+	   italico nela por padrao */
 	.contact-grid {
 		display: grid;
+		font-style: normal;
 		gap: 1em;
 		grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
 	}
@@ -757,19 +733,44 @@
 		flex-direction: column;
 		min-width: 0;
 		overflow: hidden;
+		position: relative;
 		transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 	}
 
 	.project-card:hover,
-	.project-card:focus {
+	.project-card:focus-within {
 		border-color: var(--profile-accent);
 		box-shadow: 0 14px 32px rgba(var(--portfolio-shadow-rgb), 0.1);
-		outline: none;
 		transform: translateY(-2px);
 	}
 
-	.project-card:focus-visible {
-		box-shadow: 0 0 0 3px rgba(var(--portfolio-focus-rgb), 0.22), 0 14px 32px rgba(var(--portfolio-shadow-rgb), 0.1);
+	/* Link esticado: o <a> do titulo cobre o card inteiro pelo :after, entao
+	   clicar em qualquer ponto abre o projeto, com tudo que um link de verdade
+	   tem (nova aba, botao do meio, leitor de tela lendo o card). Ver o
+	   renderProjectCard em projects.js. */
+	.project-card-link {
+		border-bottom: 0;
+		color: inherit;
+	}
+
+	/* o a:hover do base.css pintaria o titulo de verde com !important */
+	.project-card-link:hover {
+		color: inherit !important;
+	}
+
+	.project-card-link:after {
+		border-radius: 8px;
+		content: "";
+		inset: 0;
+		position: absolute;
+	}
+
+	.project-card-link:focus-visible {
+		outline: none;
+	}
+
+	.project-card-link:focus-visible:after {
+		box-shadow: 0 0 0 3px rgba(var(--portfolio-focus-rgb), 0.45);
 	}
 
 	.project-card.is-special {
@@ -866,11 +867,16 @@
 		text-align: center;
 	}
 
+	/* position + z-index: os botoes ficam por cima do link esticado do card
+	   (.project-card-link:after), senao o clique neles abriria a pagina do
+	   projeto em vez do link do botao */
 	.project-actions {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.6em;
 		margin-top: 1em;
+		position: relative;
+		z-index: 1;
 	}
 
 	body.portfolio-shell .button.primary {
@@ -1266,13 +1272,24 @@
 		margin-bottom: 0;
 	}
 
+	/* A galeria declara 2 colunas logo acima, mas TODA figura tinha
+	   `grid-column: span 2`, o que ocupava as duas e fazia o bloco renderizar
+	   sempre em 1 coluna. As duas regras se anulavam desde sempre e ninguem viu,
+	   porque nenhuma pagina usava o bloco de galeria ate 24/09/2026 (ver o
+	   "codigo nao exercitado" do CLAUDE.md).
+
+	   O span virou opcional, via .is-destaque, que e o que ele provavelmente
+	   queria ser: uma figura que merece a largura inteira no meio das outras. */
 	.detail-gallery figure {
 		background: var(--portfolio-paper);
 		border: 1px solid var(--portfolio-line);
 		border-radius: 8px;
-		grid-column: span 2;
 		margin: 0;
 		overflow: hidden;
+	}
+
+	.detail-gallery figure.is-destaque {
+		grid-column: span 2;
 	}
 
 	.detail-inline-image {
@@ -1524,12 +1541,14 @@
 		.detail-hero,
 		.detail-layout,
 		.filter-fields,
-		.certificates-grid,
 		.contact-grid {
 			grid-template-columns: 1fr;
 		}
 
-		.detail-gallery figure {
+		/* inclui .is-destaque: num grid de 1 coluna, um `span 2` criaria uma
+		   coluna implicita e estouraria a largura da pagina */
+		.detail-gallery figure,
+		.detail-gallery figure.is-destaque {
 			grid-column: auto;
 		}
 
